@@ -1,0 +1,10 @@
+@import "./globalStyling.module.scss";
+
+.sectionContainer {
+  font-family: $font;
+  margin: 0 24px;
+  h1 {
+    font-weight: normal;
+    margin-top: 120px;
+  }
+}

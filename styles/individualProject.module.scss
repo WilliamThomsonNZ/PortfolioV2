@@ -1,0 +1,40 @@
+@import "./globalStyling.module.scss";
+
+.heroOuterContainer {
+  margin-bottom: 70px;
+}
+.heroContent {
+  margin: 0 24px;
+  .headingTextContainer {
+    height: 55px;
+    overflow: Hidden;
+    .heading {
+      font-family: $font;
+      font-style: normal;
+      line-height: 1;
+      font-weight: 400;
+      font-size: 51px;
+      display: block;
+    }
+  }
+  .arrowLink {
+    display: block;
+    margin-top: 50px;
+  }
+  .projectDescription {
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 140%;
+    margin-top: 80px;
+  }
+}
+.heroImage {
+  margin: 50px 24px 0 24px;
+  height: 336px;
+  background-color: #c4c4c4;
+}
+.informationContainer {
+  padding: 70px 24px;
+}

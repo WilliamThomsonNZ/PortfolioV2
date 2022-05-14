@@ -107,3 +107,58 @@ export const HeaderVariants = {
     },
   },
 };
+
+export const ProjectVariants = {
+  headingTextContainer: {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  },
+  headingtext: {
+    initial: {
+      y: 50,
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+  },
+  a: {
+    initial: {
+      y: 20,
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.6,
+      },
+    },
+  },
+  description: {
+    initial: {
+      y: 50,
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.8,
+      },
+    },
+  },
+};
