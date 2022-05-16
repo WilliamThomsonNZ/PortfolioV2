@@ -1,11 +1,29 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../../../styles/individualProject.module.scss";
-import LinkArrow from "../../../assets/LinkArrowNew.svg";
-import { useEffect } from "react";
+import LinkArrow from "../../../assets/LinkArrowLarge.svg";
+import { useEffect, useRef } from "react";
 import { motion, useViewportScroll } from "framer-motion";
 import { ProjectVariants } from "../../../FramerVariants";
+import { useOnScreen } from "../../../utils";
+import { useInView } from "react-intersection-observer";
 export default function Projects() {
+  // const ref = useRef();
+  // const isVisible = useOnScreen(ref);
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 1,
+  });
+  useEffect(() => {
+    if (inView) {
+      // document.body.classList.add("darkMode");
+      // document.body.classList.remove("lightkMode");
+    } else {
+      // document.body.classList.remove("darkMode");
+      // document.body.classList.add("lightkMode");
+    }
+  }, [inView]);
+
   return (
     <>
       <Head>
@@ -13,7 +31,12 @@ export default function Projects() {
         <meta name="description" content="Oceans by Erin Fleming" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <motion.main initial={"initial"} animate={"animate"} exit={"exit"}>
+      <motion.main
+        initial={"initial"}
+        animate={"animate"}
+        exit={"exit"}
+        className={styles.pageContainer}
+      >
         <div className={styles.heroOuterContainer}>
           <section className={styles.heroContent}>
             <motion.div variants={ProjectVariants.headingTextContainer}>
@@ -40,17 +63,16 @@ export default function Projects() {
                 >
                   Fleming
                 </motion.span>
-              </div>
+              </div>{" "}
+              <motion.a
+                href={"#"}
+                target="_blank"
+                className={styles.arrowLink}
+                variants={ProjectVariants.a}
+              >
+                <LinkArrow />
+              </motion.a>
             </motion.div>
-
-            <motion.a
-              href={"#"}
-              target="_blank"
-              className={styles.arrowLink}
-              variants={ProjectVariants.a}
-            >
-              <LinkArrow />
-            </motion.a>
             <motion.p
               className={styles.projectDescription}
               variants={ProjectVariants.description}
@@ -65,8 +87,12 @@ export default function Projects() {
           </section>
           <div className={styles.heroImage}></div>
         </div>
-        <section className={styles.informationContainer}>
-          <div className={styles.projectInfo}>
+        <section
+          className={`${styles.informationContainer} ${
+            inView ? styles.darkMode : undefined
+          }`}
+        >
+          <div className={styles.projectInfo} ref={ref}>
             <div className={styles.projectStat}>
               <span>01. Date</span>
               <span>15 January, 2021</span>
@@ -88,8 +114,11 @@ export default function Projects() {
               </div>
             </div>
           </div>
-          <div className={styles.heroImage}></div>
+          <div className={styles.infoSectionImageContainer}>
+            <div className={styles.image}></div>
+          </div>
         </section>
+        <div className={styles.fullWidthImage}></div>
       </motion.main>
     </>
   );

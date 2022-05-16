@@ -3,8 +3,10 @@
 .heroOuterContainer {
   margin-bottom: 70px;
 }
-.heroContent {
+.pageContainer {
   margin: 0 24px;
+}
+.heroContent {
   .headingTextContainer {
     height: 55px;
     overflow: Hidden;
@@ -22,7 +24,7 @@
     margin-top: 50px;
   }
   .projectDescription {
-    font-family: "IBM Plex Sans";
+    font-family: $font;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -31,10 +33,146 @@
   }
 }
 .heroImage {
-  margin: 50px 24px 0 24px;
+  margin-top: 50px;
   height: 336px;
+  width: 100%;
   background-color: #c4c4c4;
 }
 .informationContainer {
-  padding: 70px 24px;
+  padding: 70px 0;
+  .projectStat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 40px;
+  }
+  &.darkMode {
+    .projectStat {
+      border-bottom: 1px solid #000;
+    }
+  }
+  .services {
+    span {
+      display: block;
+      text-align: right;
+      margin-bottom: 15px;
+      font-family: $font;
+    }
+  }
+  .image {
+    margin: 50px 0px 0 0px;
+    height: 336px;
+    width: 400px;
+    background-color: #c4c4c4;
+  }
+}
+
+.fullWidthImage {
+  width: 100%;
+  margin: 70px 0;
+  height: 336px;
+  background: #c4c4c4;
+}
+
+@media (min-width: $tablet) {
+  .heroOuterContainer {
+    display: flex;
+    gap: 50px;
+    .heroImage {
+      height: 600px;
+      margin: 0;
+    }
+    .heroContent {
+      width: 100%;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .projectDescription {
+        max-width: 550px;
+      }
+      .heading {
+        font-size: 70px;
+        line-height: 0.95;
+      }
+      .headingTextContainer {
+        height: 74px;
+      }
+    }
+  }
+  .pageContainer {
+    margin: 0 50px;
+  }
+  .informationContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 50px;
+    .image {
+      max-width: 550px;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+    .infoSectionImageContainer {
+      width: 100%;
+      height: 415px;
+    }
+    .projectInfo {
+      width: 100%;
+    }
+    .projectStat {
+      margin-bottom: 70px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .fullWidthImage {
+    height: 750px;
+  }
+}
+@media (min-width: $desktop) {
+  .pageContainer {
+    margin: 0 100px;
+  }
+  .heroOuterContainer {
+    margin-bottom: 100px;
+    .heroImage {
+      height: 900px;
+    }
+    .heroContent {
+      height: unset;
+      .heading {
+        font-size: 100px;
+        line-height: 0.75;
+      }
+      .headingTextContainer {
+        height: 105px;
+      }
+      .arrowLink {
+        margin-top: 110px;
+      }
+      .projectDescription {
+        font-size: 20px;
+        line-height: 1.7;
+      }
+    }
+  }
+  .informationContainer {
+    .infoSectionImageContainer {
+      width: 100%;
+      height: 500px;
+    }
+    .projectStat {
+      margin-bottom: 90px;
+      font-size: 20px;
+    }
+  }
+  .fullWidthImage {
+    margin-top: 100px;
+  }
 }

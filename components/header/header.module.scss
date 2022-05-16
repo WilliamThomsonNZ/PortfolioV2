@@ -5,6 +5,7 @@
   li {
     list-style: none;
     padding: 0 10px;
+    font-size: 15px;
     text-transform: uppercase;
     &:first-of-type {
       padding-left: 0;
@@ -104,6 +105,7 @@
   .header {
     padding: 37px 0 30px 0;
     margin: 0 50px;
+    margin-bottom: 110px;
     .mobileNavigationContainer {
       display: none;
     }
@@ -116,5 +118,6 @@
 @media (min-width: $desktop) {
   .header {
     margin: 0 100px;
+    margin-bottom: 110px;
   }
 }

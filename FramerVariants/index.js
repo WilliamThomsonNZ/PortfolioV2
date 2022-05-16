@@ -119,7 +119,7 @@ export const ProjectVariants = {
   },
   headingtext: {
     initial: {
-      y: 50,
+      y: 75,
       opacity: 0,
     },
     animate: {
