@@ -1,0 +1,50 @@
+@import "../../styles/globalStyling.module.scss";
+
+.innerCarousel {
+  display: flex;
+  gap: 24px;
+}
+.project {
+  min-width: 345px;
+  span {
+    pointer-events: none;
+  }
+  .projectImage {
+    object-fit: cover;
+  }
+}
+.title {
+  font-size: 32px;
+  font-family: $font;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 40px;
+}
+.carousel {
+  overflow: hidden;
+}
+.sectionContainer {
+  padding: 0 24px;
+  margin: 0;
+}
+.projectTitle {
+  font-size: 20px;
+  font-family: $font;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0;
+}
+.projectLink {
+  pointer-events: all;
+}
+.projectInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.arrowImage {
+  transform: rotate(-45deg);
+  pointer-events: all;
+}

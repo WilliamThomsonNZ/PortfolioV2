@@ -44,14 +44,17 @@
     display: flex;
     justify-content: space-between;
     font-size: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #000;
-    margin-bottom: 40px;
+    padding-bottom: 15px;
   }
   &.darkMode {
     .projectStat {
-      border-bottom: 1px solid #000;
     }
+  }
+  .underline {
+    width: 100%;
+    height: 1px;
+    background: #000;
+    margin-bottom: 40px;
   }
   .services {
     span {
@@ -124,7 +127,7 @@
     .projectInfo {
       width: 100%;
     }
-    .projectStat {
+    .underline {
       margin-bottom: 70px;
       &:last-of-type {
         margin-bottom: 0;
@@ -132,7 +135,7 @@
     }
   }
   .fullWidthImage {
-    height: 750px;
+    height: 900px;
   }
 }
 @media (min-width: $desktop) {
@@ -165,11 +168,14 @@
   .informationContainer {
     .infoSectionImageContainer {
       width: 100%;
-      height: 500px;
+      height: 535px;
     }
     .projectStat {
-      margin-bottom: 90px;
+      //margin-bottom: 90px;
       font-size: 20px;
+    }
+    .underline {
+      margin-bottom: 90px;
     }
   }
   .fullWidthImage {

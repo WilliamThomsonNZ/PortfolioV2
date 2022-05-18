@@ -161,4 +161,155 @@ export const ProjectVariants = {
       },
     },
   },
+  projectInfo: {
+    initial: {},
+    whileInView: {},
+    viewport: {},
+  },
+  underline: {
+    initial: {
+      width: 0,
+    },
+    whileInView: {
+      width: "100%",
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.8,
+      },
+    },
+    viewport: { once: true },
+  },
+  infoText: {
+    initial: {
+      opacity: 0,
+      y: 25,
+    },
+    whileInView: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.4,
+      },
+    },
+    viewport: { once: true },
+  },
+  infoImage: {
+    initial: {
+      height: 0,
+    },
+    whileInView: {
+      height: "100%",
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.4,
+      },
+    },
+  },
+};
+
+export const serviceVariants = {
+  serviceContainer: {
+    initial: {},
+    open: {
+      height: "auto",
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+    close: {
+      //TODO: FIND SOLUTION FOR UPDATING BASED ON WIDTH
+      height: 50,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.7,
+      },
+    },
+  },
+  serviceButton: {
+    open: {
+      rotate: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+    close: {
+      rotate: 90,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+  },
+  descriptions: {
+    initial: {
+      opacity: 0,
+      y: 25,
+    },
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.5,
+      },
+    },
+    close: {
+      opacity: 0,
+      y: 25,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+  },
+  images: {
+    initial: {
+      height: 0,
+    },
+    open: {
+      height: "100%",
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.4,
+      },
+    },
+    close: {
+      height: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.4,
+      },
+    },
+  },
+};
+const desktopServiceVariants = {
+  serviceContainer: {
+    initial: {},
+    open: {
+      height: "auto",
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+    close: {
+      //TODO: FIND SOLUTION FOR UPDATING BASED ON WIDTH
+      height: 110,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.7,
+      },
+    },
+  },
 };

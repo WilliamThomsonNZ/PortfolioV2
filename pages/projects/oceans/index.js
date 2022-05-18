@@ -92,30 +92,124 @@ export default function Projects() {
             inView ? styles.darkMode : undefined
           }`}
         >
-          <div className={styles.projectInfo} ref={ref}>
+          <motion.div
+            className={styles.projectInfo}
+            ref={ref}
+            variants={ProjectVariants.projectInfo}
+            initial={"initial"}
+          >
             <div className={styles.projectStat}>
-              <span>01. Date</span>
-              <span>15 January, 2021</span>
+              <motion.span
+                variants={ProjectVariants.infoText}
+                whileInView={"whileInView"}
+                viewport={{ once: true }}
+              >
+                01. Date
+              </motion.span>
+              <motion.span
+                variants={ProjectVariants.infoText}
+                whileInView={"whileInView"}
+                viewport={{ once: true }}
+              >
+                15 January, 2021
+              </motion.span>
             </div>
+            <motion.div
+              className={styles.underline}
+              variants={ProjectVariants.underline}
+              whileInView={"whileInView"}
+              viewport={{ once: true }}
+            ></motion.div>
             <div className={styles.projectStat}>
-              <span>02. Project</span>
-              <span>Oceans by Erin Fleming</span>
+              <motion.span
+                variants={ProjectVariants.infoText}
+                whileInView={"whileInView"}
+                viewport={{ once: true }}
+              >
+                02. Project
+              </motion.span>
+              <motion.span
+                variants={ProjectVariants.infoText}
+                whileInView={"whileInView"}
+                viewport={{ once: true }}
+              >
+                Oceans by Erin Fleming
+              </motion.span>
             </div>
+            <motion.div
+              className={styles.underline}
+              variants={ProjectVariants.underline}
+              whileInView={"whileInView"}
+              viewport={{ once: true }}
+            ></motion.div>
             <div className={styles.projectStat}>
-              <span>03. Client</span>
-              <span>Erin Fleming</span>
+              <motion.span
+                variants={ProjectVariants.infoText}
+                whileInView={"whileInView"}
+                viewport={{ once: true }}
+              >
+                03. Client
+              </motion.span>
+              <motion.span
+                variants={ProjectVariants.infoText}
+                whileInView={"whileInView"}
+                viewport={{ once: true }}
+              >
+                Erin Fleming
+              </motion.span>
             </div>
+            <motion.div
+              className={styles.underline}
+              variants={ProjectVariants.underline}
+              whileInView={"whileInView"}
+              viewport={{ once: true }}
+            ></motion.div>
             <div className={styles.projectStat}>
-              <span>04. Services</span>
+              <motion.span
+                variants={ProjectVariants.infoText}
+                whileInView={"whileInView"}
+                viewport={{ once: true }}
+              >
+                04. Services
+              </motion.span>
               <div className={styles.services}>
-                <span>Smart Contract Development</span>
-                <span>Frontend Dapp Development</span>
-                <span>UI/UX Design</span>
+                <motion.span
+                  variants={ProjectVariants.infoText}
+                  whileInView={"whileInView"}
+                  viewport={{ once: true }}
+                >
+                  Smart Contract Development
+                </motion.span>
+                <motion.span
+                  variants={ProjectVariants.infoText}
+                  whileInView={"whileInView"}
+                  viewport={{ once: true }}
+                >
+                  Frontend Dapp Development
+                </motion.span>
+                <motion.span
+                  variants={ProjectVariants.infoText}
+                  whileInView={"whileInView"}
+                  viewport={{ once: true }}
+                >
+                  UI/UX Design
+                </motion.span>
               </div>
             </div>
-          </div>
+            <motion.div
+              className={styles.underline}
+              variants={ProjectVariants.underline}
+              whileInView={"whileInView"}
+              viewport={{ once: true }}
+            ></motion.div>
+          </motion.div>
           <div className={styles.infoSectionImageContainer}>
-            <div className={styles.image}></div>
+            <motion.div
+              className={styles.image}
+              variants={ProjectVariants.infoImage}
+              whileInView={"whileInView"}
+              viewport={{ once: true }}
+            ></motion.div>
           </div>
         </section>
         <div className={styles.fullWidthImage}></div>

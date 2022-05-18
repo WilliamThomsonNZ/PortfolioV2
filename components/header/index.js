@@ -84,7 +84,7 @@ const Header = () => {
             />
             <g
               id="Ellipse_1"
-              dataName="Ellipse 1"
+              dataname="Ellipse 1"
               transform="translate(152 439)"
               fill="none"
               stroke="rgba(0,0,0,0.2)"
