@@ -10,17 +10,17 @@ const IndexServices = () => {
     threshold: 0.5,
   });
 
-  //   useEffect(() => {
-  //     if (inView) {
-  //       setDarkMode(true);
-  //       document.body.classList.add("darkMode");
-  //       document.body.classList.remove("lightkMode");
-  //     } else {
-  //       setDarkMode(false);
-  //       document.body.classList.remove("darkMode");
-  //       document.body.classList.add("lightkMode");
-  //     }
-  //   }, [inView]);
+  // useEffect(() => {
+  //   if (inView) {
+  //     setDarkMode(true);
+  //     document.body.classList.add("darkMode");
+  //     document.body.classList.remove("lightkMode");
+  //   } else {
+  //     setDarkMode(false);
+  //     document.body.classList.remove("darkMode");
+  //     document.body.classList.add("lightkMode");
+  //   }
+  // }, [inView]);
 
   const services = [
     {
@@ -47,12 +47,25 @@ const IndexServices = () => {
   ];
 
   return (
-    <section className={styles.sectionContainer} ref={ref}>
+    <motion.section
+      className={styles.sectionContainer}
+      ref={ref}
+      exit={{ opacity: 0 }}
+      transition={{
+        ease: [0.76, 0, 0.24, 1],
+        duration: 0.4,
+      }}
+    >
       <h2 className={styles.sectionTitle}>Services</h2>
       {services.map((service, index) => (
-        <ServiceCard service={service} key={service.name} index={index} />
+        <ServiceCard
+          service={service}
+          key={service.name}
+          index={index}
+          darkMode={darkMode}
+        />
       ))}
-    </section>
+    </motion.section>
   );
 };
 

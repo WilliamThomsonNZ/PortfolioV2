@@ -85,7 +85,21 @@ export default function Projects() {
               definiebas.
             </motion.p>
           </section>
-          <div className={styles.heroImage}></div>
+          <motion.div
+            layoutId="0"
+            className={styles.heroImage}
+            transition={{
+              ease: [0.76, 0, 0.24, 1],
+              duration: 1,
+            }}
+          >
+            <Image
+              src={"/portfolioProject.jpg"}
+              width={1000}
+              height={1350}
+              className={styles.projectImageDesktop}
+            />
+          </motion.div>
         </div>
         <section
           className={`${styles.informationContainer} ${

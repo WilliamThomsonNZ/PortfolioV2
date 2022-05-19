@@ -5,13 +5,25 @@
   gap: 24px;
 }
 .project {
-  min-width: 345px;
+  .imageContainer {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
   span {
     pointer-events: none;
   }
-  .projectImage {
+  .projectImage,
+  .projectImageDesktop {
     object-fit: cover;
   }
+  .projectImageDesktop {
+    display: none;
+  }
+}
+.headingTextContainer {
+  height: 55px;
+  overflow: Hidden;
 }
 .title {
   font-size: 32px;
@@ -47,4 +59,27 @@
 .arrowImage {
   transform: rotate(-45deg);
   pointer-events: all;
+}
+@media (min-width: $tablet) {
+  .sectionContainer {
+    padding: 0 50px;
+    padding-right: 0;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .project {
+    min-width: fit-content;
+    .projectImageDesktop {
+      display: block;
+    }
+    .projectImage {
+      display: none;
+    }
+  }
+  .innerCarousel {
+    gap: 50px;
+  }
+}
+@media (min-width: 1920px) {
 }

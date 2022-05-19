@@ -292,7 +292,7 @@ export const serviceVariants = {
     },
   },
 };
-const desktopServiceVariants = {
+export const desktopServiceVariants = {
   serviceContainer: {
     initial: {},
     open: {
@@ -303,12 +303,44 @@ const desktopServiceVariants = {
       },
     },
     close: {
-      //TODO: FIND SOLUTION FOR UPDATING BASED ON WIDTH
       height: 110,
       transition: {
         ease: [0.76, 0, 0.24, 1],
         duration: 1,
         delay: 0.7,
+      },
+    },
+  },
+};
+
+export const projectDisplayVariants = {
+  headingText: {
+    initial: {
+      y: 75,
+      opacity: 0,
+    },
+    whileInView: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+  },
+  imageVariants: {
+    initial: {},
+    animate: {
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+    whileHover: {
+      scale: 1.2,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.9],
+        duration: 0,
       },
     },
   },
