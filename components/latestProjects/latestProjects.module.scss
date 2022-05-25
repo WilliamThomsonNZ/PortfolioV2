@@ -4,6 +4,27 @@
   display: flex;
   gap: 24px;
 }
+.hoverCursor {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+
+  .backHex {
+    position: absolute;
+    transform-origin: center;
+  }
+  .frontHex {
+    position: absolute;
+    transform-origin: center;
+  }
+  span {
+    position: absolute;
+    color: #fff;
+    font-size: 12px;
+  }
+}
 .project {
   .imageContainer {
     width: 100%;
@@ -34,6 +55,7 @@
 }
 .carousel {
   overflow: hidden;
+  cursor: none;
 }
 .sectionContainer {
   padding: 0 24px;
@@ -64,7 +86,7 @@
   .sectionContainer {
     padding: 0 50px;
     padding-right: 0;
-    max-width: 1920px;
+    //max-width: 1920px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -81,5 +103,15 @@
     gap: 50px;
   }
 }
-@media (min-width: 1920px) {
+@media (min-width: $desktop) {
+  .title {
+    font-size: 100px;
+    margin-bottom: 60px;
+  }
+  .sectionContainer {
+    padding: 0 100px;
+  }
+  .carousel {
+    min-height: 800px;
+  }
 }

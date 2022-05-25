@@ -95,9 +95,10 @@
 @media (min-width: $tablet) {
   .sectionContainer {
     padding: 0 50px;
-    max-width: 1920px;
+    //ax-width: 1920px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 250px;
   }
   .underline {
     margin-bottom: 50px;
@@ -159,6 +160,24 @@
   .serviceContainer {
     .desktopImage {
       height: 600px;
+    }
+  }
+  .sectionContainer {
+    padding: 0 100px;
+  }
+  .sectionTitle {
+    font-size: 100px;
+    margin-bottom: 60px;
+  }
+  .servicesButtonDesktop {
+    margin-left: 200px;
+  }
+}
+@media (min-width: 1920px) {
+  .serviceContainer {
+    gap: 150px;
+    .desktopImage {
+      height: 800px;
     }
   }
 }

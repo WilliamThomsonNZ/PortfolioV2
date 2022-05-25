@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import styles from "./indexServices.module.scss";
 import { motion } from "framer-motion";
 import ServiceCard from "./serviceCard";
+import { ProjectVariants } from "../../FramerVariants";
 const IndexServices = () => {
   const [darkMode, setDarkMode] = useState(false);
   const { ref, inView, entry } = useInView({
@@ -10,17 +11,17 @@ const IndexServices = () => {
     threshold: 0.5,
   });
 
-  // useEffect(() => {
-  //   if (inView) {
-  //     setDarkMode(true);
-  //     document.body.classList.add("darkMode");
-  //     document.body.classList.remove("lightkMode");
-  //   } else {
-  //     setDarkMode(false);
-  //     document.body.classList.remove("darkMode");
-  //     document.body.classList.add("lightkMode");
-  //   }
-  // }, [inView]);
+  useEffect(() => {
+    if (inView) {
+      setDarkMode(true);
+      document.body.classList.add("darkMode");
+      document.body.classList.remove("lightkMode");
+    } else {
+      setDarkMode(false);
+      document.body.classList.remove("darkMode");
+      document.body.classList.add("lightkMode");
+    }
+  }, [inView]);
 
   const services = [
     {
@@ -56,7 +57,14 @@ const IndexServices = () => {
         duration: 0.4,
       }}
     >
-      <h2 className={styles.sectionTitle}>Services</h2>
+      <motion.h2
+        className={styles.sectionTitle}
+        variants={ProjectVariants.infoText}
+        whileInView={"whileInView"}
+        viewport={{ once: true }}
+      >
+        Services
+      </motion.h2>
       {services.map((service, index) => (
         <ServiceCard
           service={service}

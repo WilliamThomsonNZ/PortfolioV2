@@ -291,6 +291,20 @@ export const serviceVariants = {
       },
     },
   },
+  underline: {
+    initial: {
+      width: 0,
+    },
+    whileInView: {
+      width: "100%",
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.8,
+      },
+    },
+    viewport: { once: true },
+  },
 };
 export const desktopServiceVariants = {
   serviceContainer: {

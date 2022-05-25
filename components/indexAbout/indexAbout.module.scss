@@ -1,3 +1,104 @@
+@import "../../styles/globalStyling.module.scss";
+
 .aboutContainer {
   padding: 0 24px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+.imageContainer {
+  img {
+    object-fit: cover;
+  }
+}
+.title {
+  font-size: 32px;
+  font-family: $font;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 40px;
+}
+.topSection {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.desktopDescription {
+  display: none;
+}
+.arrowImage {
+  transform: rotate(-45deg);
+}
+.buttonContainer {
+  width: 90px;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+}
+.desktopButton {
+  display: none;
+}
+.buttonLabel {
+  font-size: 18px;
+  font-family: $font;
+  align-self: flex-end;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.mobileDescription,
+.desktopDescription {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 15px;
+  line-height: 140%;
+  font-family: $font;
+}
+@media (min-width: $tablet) {
+  .buttonContainer {
+    display: none;
+  }
+  .desktopDescription,
+  .desktopButton {
+    display: block;
+  }
+  .mobileDescription {
+    display: none;
+  }
+  .aboutContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 50px;
+    padding: 0 50px;
+
+    .topSection {
+      max-width: 35%;
+      flex-direction: column;
+    }
+    .imageContainer {
+      width: 65%;
+      img {
+        max-height: 600px !important;
+      }
+    }
+    .desktopButton {
+      align-self: end;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .title {
+    font-size: 100px;
+    line-height: 1;
+    margin-bottom: 120px;
+  }
+  .aboutContainer {
+    gap: 120px;
+    padding: 0 100px;
+    margin-top: 250px;
+  }
+  .desktopDescription {
+    margin-top: 0;
+    font-size: 16px;
+  }
 }

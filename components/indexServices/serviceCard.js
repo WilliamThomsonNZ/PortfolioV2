@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import styles from "./indexServices.module.scss";
 import { motion } from "framer-motion";
-import { serviceVariants, desktopServiceVariants } from "../../FramerVariants";
+import {
+  serviceVariants,
+  desktopServiceVariants,
+  ProjectVariants,
+} from "../../FramerVariants";
 import useWindowWidth from "../../utils/useWindowWidth";
 const ServiceCard = ({ service, index, darkMode }) => {
-  const [isOpen, setIsOpen] = useState(index == 0 ? true : false);
+  const [isOpen, setIsOpen] = useState(index == 1 ? true : false);
   const width = useWindowWidth(200);
   let variants = serviceVariants;
   //TODO: Create a hook to handle window width changing.
@@ -14,6 +18,7 @@ const ServiceCard = ({ service, index, darkMode }) => {
         className={`${styles.underline} ${
           darkMode ? styles.darkMode : undefined
         }`}
+        variants={ProjectVariants.underline}
         whileInView={"whileInView"}
         viewport={{ once: true }}
       ></motion.div>
@@ -48,7 +53,15 @@ const ServiceCard = ({ service, index, darkMode }) => {
         }
       >
         <div className={styles.serviceTop}>
-          <h6 className={styles.serviceTitle}> {service.name}</h6>
+          <motion.h6
+            className={styles.serviceTitle}
+            variants={ProjectVariants.infoText}
+            whileInView={"whileInView"}
+            viewport={{ once: true }}
+          >
+            {" "}
+            {service.name}
+          </motion.h6>
           <button
             className={styles.servicesButtonMobile}
             onClick={(e) => setIsOpen((state) => !state)}
@@ -66,6 +79,8 @@ const ServiceCard = ({ service, index, darkMode }) => {
             variants={variants.descriptions}
             initial={"initial"}
             animate={isOpen ? "open" : "close"}
+            whileInView={index == 1 ? "whileInView" : undefined}
+            viewport={{ once: true }}
           ></motion.div>
         </div>
         <motion.p
@@ -79,14 +94,21 @@ const ServiceCard = ({ service, index, darkMode }) => {
         <div className={styles.serviceImages}>
           <div>
             {" "}
-            <p className={styles.desktopDescription}>
+            <motion.p
+              variants={ProjectVariants.infoText}
+              whileInView={"whileInView"}
+              viewport={{ once: true }}
+              className={styles.desktopDescription}
+            >
               {service.initialDescription}
-            </p>
+            </motion.p>
             <motion.div
               className={styles.image}
               variants={variants.descriptions}
+              whileInView={index == 1 ? "whileInView" : undefined}
               initial={"initial"}
               animate={isOpen ? "open" : "close"}
+              viewport={{ once: true }}
             ></motion.div>
           </div>
 
@@ -96,6 +118,8 @@ const ServiceCard = ({ service, index, darkMode }) => {
               variants={variants.descriptions}
               initial={"initial"}
               animate={isOpen ? "open" : "close"}
+              whileInView={index == 1 ? "open" : undefined}
+              viewport={{ once: true }}
             >
               {service.largeDescription}
             </motion.p>
