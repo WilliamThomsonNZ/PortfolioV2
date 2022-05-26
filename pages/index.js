@@ -5,6 +5,7 @@ import Header from "../components/header";
 import LatestProjects from "../components/latestProjects";
 import IndexServices from "../components/indexServices";
 import IndexAbout from "../components/indexAbout";
+import Hero from "../components/hero";
 import { motion } from "framer-motion";
 export default function Home() {
   const variants = {};
@@ -22,7 +23,7 @@ export default function Home() {
         exit={"exit"}
         key={"main"}
       >
-        <section className={styles.heroContianer}></section>
+        <Hero />
         <LatestProjects />
         <IndexServices />
         <IndexAbout />

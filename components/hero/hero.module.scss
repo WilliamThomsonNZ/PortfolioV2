@@ -1,0 +1,72 @@
+@import "../../styles/globalStyling.module.scss";
+
+.heroContianer {
+  min-height: calc(100vh - 85px);
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .headingContainer {
+    margin-top: 15vh;
+    .heading {
+      span {
+        font-family: $font;
+        text-transform: uppercase;
+        display: block;
+        font-weight: normal;
+        font-size: 50px;
+        line-height: 1;
+      }
+    }
+    .portfolioText {
+      font-family: $font;
+      display: block;
+      text-align: right;
+    }
+  }
+  .scrollWrapper {
+    margin-bottom: 100px;
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 15px;
+    border: 1px solid #000;
+    border-radius: 100px;
+  }
+  .scrollContainer {
+    position: absolute;
+    left: 0;
+    z-index: 5;
+    .scrollInnerContainer {
+      display: flex;
+      overflow: scroll;
+      .slidingText {
+        display: block;
+        text-transform: uppercase;
+        min-width: 292px;
+        position: relative;
+        padding-left: 10px;
+        &:first-of-type {
+          padding-left: 0;
+          min-width: 282px;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+
+          background: #5c6c4f;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
