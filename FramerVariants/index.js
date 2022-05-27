@@ -359,3 +359,25 @@ export const projectDisplayVariants = {
     },
   },
 };
+export const heroVariants = {
+  container: {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  },
+  headingText: {
+    initial: {
+      y: 50,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+  },
+};

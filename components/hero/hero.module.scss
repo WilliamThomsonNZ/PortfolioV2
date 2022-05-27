@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: space-between;
   .headingContainer {
-    margin-top: 15vh;
+    margin-top: 20vh;
     .heading {
       span {
         font-family: $font;
@@ -22,6 +22,10 @@
       font-family: $font;
       display: block;
       text-align: right;
+    }
+    .headingTextContainer {
+      height: 50px;
+      overflow: hidden;
     }
   }
   .scrollWrapper {

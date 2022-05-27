@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import styles from "./hero.module.scss";
 import { motion, useAnimation } from "framer-motion";
 import useWindowWidth from "../../utils/useWindowWidth";
+import { heroVariants } from "../../FramerVariants";
 
 const Hero = () => {
   const controls = useAnimation();
@@ -35,14 +36,39 @@ const Hero = () => {
 
   return (
     <section className={styles.heroContianer}>
-      <div className={styles.headingContainer}>
+      <motion.div
+        className={styles.headingContainer}
+        variants={heroVariants.container}
+        animate={"animate"}
+        initial={"initial"}
+      >
         <h1 className={styles.heading}>
-          <span>Independent</span>
-          <span>Blockchain</span>
-          <span>&amp; web DEVELOPER</span>
+          <div className={styles.headingTextContainer}>
+            <motion.span variants={heroVariants.headingText}>
+              Independent
+            </motion.span>
+          </div>
+
+          <div className={styles.headingTextContainer}>
+            <motion.span variants={heroVariants.headingText}>
+              blockchain
+            </motion.span>
+          </div>
+          <div className={styles.headingTextContainer}>
+            <motion.span variants={heroVariants.headingText}>
+              &amp; web
+            </motion.span>
+          </div>
+          <div className={styles.headingTextContainer}>
+            <motion.span variants={heroVariants.headingText}>
+              Developer
+            </motion.span>
+          </div>
         </h1>
-        <span className={styles.portfolioText}>Portfolio 2022</span>
-      </div>
+        <motion.span className={styles.portfolioText}>
+          Portfolio 2022
+        </motion.span>
+      </motion.div>
       <div className={styles.scrollWrapper}>
         <div className={styles.scrollContainer}>
           <motion.div
