@@ -10,6 +10,7 @@ body {
   transition: all 0.4s ease-in-out;
   position: relative;
   z-index: 2;
+  overscroll-behavior-y: none;
 }
 
 body:after {
@@ -17,13 +18,22 @@ body:after {
   content: "";
   height: 300%;
   left: -50%;
-  opacity: 0.3;
+  opacity: 0.5;
   position: fixed;
   top: -100%;
   width: 300%;
   pointer-events: none;
   z-index: -1;
   animation: grain 8s steps(10) infinite;
+}
+.app {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
 }
 @keyframes grain {
   0%,

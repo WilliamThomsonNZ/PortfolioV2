@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { AnimatePresence } from "framer-motion";
+
 function MyApp({ Component, pageProps }) {
   let url;
   if (typeof window != "undefined") url = window.location.pathname;
@@ -9,7 +10,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Header />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence
+        exitBeforeEnter
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
         <Component {...pageProps} key={url + "hi"} />
       </AnimatePresence>
     </>

@@ -35,7 +35,7 @@ const Hero = () => {
   };
 
   return (
-    <section className={styles.heroContianer}>
+    <section className={styles.heroContainer}>
       <motion.div
         className={styles.headingContainer}
         variants={heroVariants.container}
@@ -43,33 +43,31 @@ const Hero = () => {
         initial={"initial"}
       >
         <h1 className={styles.heading}>
-          <div className={styles.headingTextContainer}>
-            <motion.span variants={heroVariants.headingText}>
-              Independent
-            </motion.span>
-          </div>
+          <motion.span variants={heroVariants.headingText}>
+            Independent
+          </motion.span>
 
-          <div className={styles.headingTextContainer}>
-            <motion.span variants={heroVariants.headingText}>
-              blockchain
-            </motion.span>
-          </div>
-          <div className={styles.headingTextContainer}>
-            <motion.span variants={heroVariants.headingText}>
-              &amp; web
-            </motion.span>
-          </div>
-          <div className={styles.headingTextContainer}>
-            <motion.span variants={heroVariants.headingText}>
-              Developer
-            </motion.span>
-          </div>
+          <motion.span variants={heroVariants.headingText}>
+            blockchain
+          </motion.span>
+
+          <motion.span variants={heroVariants.headingText}>
+            &amp; web Developer
+          </motion.span>
         </h1>
-        <motion.span className={styles.portfolioText}>
+        <motion.span
+          className={styles.portfolioText}
+          variants={heroVariants.portfolioText}
+        >
           Portfolio 2022
         </motion.span>
       </motion.div>
-      <div className={styles.scrollWrapper}>
+      <motion.div
+        className={styles.scrollWrapper}
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ ease: [0.76, 0, 0.24, 1], duration: 1, delay: 0.8 }}
+      >
         <div className={styles.scrollContainer}>
           <motion.div
             className={styles.scrollInnerContainer}
@@ -93,9 +91,12 @@ const Hero = () => {
             <span className={styles.slidingText}>
               Available for freelance work
             </span>
+            {/* <span className={styles.slidingText}>
+              Available for freelance work
+            </span> */}
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

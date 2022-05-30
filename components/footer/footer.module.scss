@@ -1,72 +1,52 @@
 @import "../../styles//globalStyling.module.scss";
 
 .footer {
-  background: #000;
-  color: #f3f3f5;
-  font-family: $font;
-  padding: 50px 28px;
-  margin-top: 100px;
-  .logo {
-    font-size: 40px;
-    font-weight: 400;
+  padding: 0 24px;
+  .heading {
+    font-size: 32px;
+    font-family: $font;
+    font-weight: normal;
     margin: 0;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
   }
-  .linksContainer {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 100px;
-
-    h6 {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 20px;
-      margin: 0;
-      margin-bottom: 20px;
-    }
-    ul {
-      margin: 0;
-      padding: 0;
-    }
-    .menuItem {
-      list-style: none;
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 15px;
-      margin-bottom: 12px;
-    }
-    .quickLinks,
-    .socialsLinks {
-      width: 50%;
-    }
+  .footerSocials {
+    display: none;
   }
-  .newsletterContainer {
-    margin-bottom: 90px;
-    h6 {
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 20px;
-      margin: 0;
-      margin-bottom: 35px;
-    }
-    .emailInput {
-      width: 100%;
+  .form {
+    .textForm,
+    .messageForm {
       background: none;
       border: none;
-      border-bottom: 1px solid #f3f3f5;
-      padding: 0;
-      padding-bottom: 15px;
-      font-size: 16px;
-      color: #fff;
+      width: 100%;
+      border-bottom: 1px solid #000;
+      padding-bottom: 22px;
+      margin-bottom: 70px;
+      font-size: 15px;
+      font-family: $font;
+      border-radius: 0;
       &::placeholder {
-        color: #fff;
+        font-size: 15px;
+        font-family: $font;
+        color: #000;
       }
     }
+
+    .submitButton {
+      width: 250px;
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 16px 25px;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-family: $font;
+      margin-bottom: 70px;
+    }
   }
-  .footerBottom {
-    font-size: 12px;
+  .lowerFooter {
+    border-top: 1px solid #000;
+    font-size: 15px;
+    font-family: $font;
+    padding: 22px 0;
   }
 }

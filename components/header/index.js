@@ -134,36 +134,38 @@ const Header = () => {
 
       <AnimatePresence exitBeforeEnter>
         {menuOpen && (
-          <nav className={styles.mobileNavigationContainer}>
-            <div className={styles.links}>
-              <ul className={styles.menuLinks}>
-                <motion.li className={styles.menuItem}>Home</motion.li>
-                <li className={styles.menuItem}>Projects</li>
-                <li className={styles.menuItem}>About</li>
-                <li className={styles.menuItem}>Contact</li>
-              </ul>
-              <ul>
-                <li>
-                  <a href="#" target="_blank" className={styles.socialLink}>
-                    <Twitter />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" target="_blank" className={styles.socialLink}>
-                    <Linked />
-                  </a>
-                </li>
-                <li>
-                  <a href="#" target="_blank" className={styles.socialLink}>
-                    <Instagram />
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.menuFooter}>
-              <span>&copy; Will 2021. All Rights Resevered</span>
-            </div>
-          </nav>
+          <div className={styles.mobileMenuOuterContainer}>
+            <nav className={styles.mobileNavigationContainer}>
+              <div className={styles.links}>
+                <ul className={styles.menuLinks}>
+                  <motion.li className={styles.menuItem}>Home</motion.li>
+                  <li className={styles.menuItem}>Projects</li>
+                  <li className={styles.menuItem}>About</li>
+                  <li className={styles.menuItem}>Contact</li>
+                </ul>
+                <ul>
+                  <li>
+                    <a href="#" target="_blank" className={styles.socialLink}>
+                      <Twitter />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank" className={styles.socialLink}>
+                      <Linked />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" target="_blank" className={styles.socialLink}>
+                      <Instagram />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.menuFooter}>
+                <span>&copy; Will 2021. All Rights Resevered</span>
+              </div>
+            </nav>
+          </div>
         )}
       </AnimatePresence>
     </motion.header>

@@ -2,14 +2,29 @@ import React from "react";
 import Image from "next/image";
 import styles from "./indexAbout.module.scss";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { ProjectVariants } from "../../FramerVariants";
+
 const IndexAbout = () => {
   return (
     <section className={styles.aboutContainer}>
       <div className={styles.topSection}>
         <div className={styles.desktopTop}>
-          <h6 className={styles.title}>About</h6>
+          <motion.h6
+            className={styles.title}
+            variants={ProjectVariants.infoText}
+            whileInView={"whileInView"}
+            viewport={{ once: true }}
+          >
+            About
+          </motion.h6>
           <Link href={"/about"}>
-            <div className={styles.buttonContainer}>
+            <motion.div
+              className={styles.buttonContainer}
+              variants={ProjectVariants.infoText}
+              whileInView={"whileInView"}
+              viewport={{ once: true }}
+            >
               <span className={styles.buttonLabel}>more</span>
               <Image
                 src={"/right-arrow.png"}
@@ -18,9 +33,14 @@ const IndexAbout = () => {
                 width={30}
                 className={styles.arrowImage}
               />
-            </div>
+            </motion.div>
           </Link>
-          <p className={styles.desktopDescription}>
+          <motion.p
+            className={styles.desktopDescription}
+            variants={ProjectVariants.infoText}
+            whileInView={"whileInView"}
+            viewport={{ once: true }}
+          >
             Our intelligent digital strategy and a pragmatic and thoughtful
             approach to solving business calls deliver a successful framework
             for both you and your audience. business calls deliver a successful
@@ -33,7 +53,7 @@ const IndexAbout = () => {
             in the middle of text. All the Lorem Ipsum generators on the
             Internet tend to repeat predefined chunks as necessary, making this
             the first true generator on the Internet
-          </p>
+          </motion.p>
         </div>
 
         <Link href={"/about"}>
@@ -49,14 +69,19 @@ const IndexAbout = () => {
           </div>
         </Link>
       </div>
-      <div className={styles.imageContainer}>
+      <motion.div
+        className={styles.imageContainer}
+        variants={ProjectVariants.infoText}
+        whileInView={"whileInView"}
+        viewport={{ once: true }}
+      >
         <Image
           src={"/portfolioProject.jpg"}
           layout={"responsive"}
           height={600}
           width={700}
         />
-      </div>
+      </motion.div>
       <p className={styles.mobileDescription}>
         Our intelligent digital strategy and a pragmatic and thoughtful approach
         to solving business calls deliver a successful framework for both you

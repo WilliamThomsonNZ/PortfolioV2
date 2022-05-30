@@ -41,7 +41,7 @@ const LatestProjects = () => {
       name: "Oceans",
       url: "/projects/oceans",
       image: "../../assets/portfolioProject.jpg",
-      width: largeImages ? 700 : 500,
+      width: largeImages ? 700 : 340,
     },
     {
       name: "Basik",
@@ -59,7 +59,7 @@ const LatestProjects = () => {
       name: "test",
       url: "/test",
       image: "../../assets/portfolioProject.jpg",
-      width: largeImages ? 700 : 500,
+      width: largeImages ? 700 : 340,
     },
     {
       name: "test",
@@ -77,19 +77,13 @@ const LatestProjects = () => {
       name: "test",
       url: "/test",
       image: "../../assets/portfolioProject.jpg",
-      width: largeImages ? 700 : 500,
+      width: largeImages ? 700 : 340,
     },
   ];
   return (
     <motion.section className={styles.sectionContainer}>
       <motion.h2 className={styles.title}>Latest Projects</motion.h2>
-      <motion.div
-        className={styles.carousel}
-        ref={carouselRef}
-        onMouseMove={handleMouseMove}
-        onMouseEnter={(e) => handleMouse(true)}
-        onMouseLeave={(e) => handleMouse(false)}
-      >
+      <motion.div className={styles.carousel} ref={carouselRef}>
         <motion.div
           drag="x"
           dragConstraints={{ left: -width, right: 0 }}
@@ -115,6 +109,10 @@ const LatestProjects = () => {
                   transition={{
                     duration: 0,
                   }}
+                  className={styles.imageContainer}
+                  onMouseMove={handleMouseMove}
+                  onMouseEnter={(e) => handleMouse(true)}
+                  onMouseLeave={(e) => handleMouse(false)}
                 >
                   <Image
                     src={"/portfolioProject.jpg"}
@@ -123,9 +121,16 @@ const LatestProjects = () => {
                     className={styles.projectImageDesktop}
                   />
                 </motion.div>
-                <div className={styles.projectInfo}>
+                <div
+                  className={styles.projectInfo}
+                  onMouseEnter={(e) => handleMouse(false)}
+                >
                   <h6 className={styles.projectTitle}>{project.name}</h6>
-                  <Link href={project.url} className={styles.projectLink}>
+                  <Link
+                    href={project.url}
+                    className={styles.projectLink}
+                    scroll={false}
+                  >
                     <Image
                       src={"/right-arrow.png"}
                       layout={"fixed"}
@@ -150,7 +155,7 @@ const LatestProjects = () => {
           transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
         >
           <svg width="121px" height="125px" viewBox="0 0 121 125">
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
               <g
                 transform="translate(-1135.000000, -1047.000000)"
                 stroke="black"
@@ -174,7 +179,7 @@ const LatestProjects = () => {
           transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
         >
           <svg width="122px" height="118px" viewBox="0 0 122 118">
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
               <g transform="translate(-1135.000000, -1050.000000)" fill="black">
                 <g transform="translate(91.000000, 177.000000)">
                   <g transform="translate(1017.532346, 844.532346)">

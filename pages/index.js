@@ -6,6 +6,7 @@ import LatestProjects from "../components/latestProjects";
 import IndexServices from "../components/indexServices";
 import IndexAbout from "../components/indexAbout";
 import Hero from "../components/hero";
+import Footer from "../components/footer";
 import { motion } from "framer-motion";
 export default function Home() {
   const variants = {};
@@ -27,6 +28,7 @@ export default function Home() {
         <LatestProjects />
         <IndexServices />
         <IndexAbout />
+        <Footer />
       </motion.main>
     </>
   );

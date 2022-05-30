@@ -11,17 +11,17 @@ const IndexServices = () => {
     threshold: 0.5,
   });
 
-  useEffect(() => {
-    if (inView) {
-      setDarkMode(true);
-      document.body.classList.add("darkMode");
-      document.body.classList.remove("lightkMode");
-    } else {
-      setDarkMode(false);
-      document.body.classList.remove("darkMode");
-      document.body.classList.add("lightkMode");
-    }
-  }, [inView]);
+  // useEffect(() => {
+  //   if (inView) {
+  //     setDarkMode(true);
+  //     document.body.classList.add("darkMode");
+  //     document.body.classList.remove("lightkMode");
+  //   } else {
+  //     setDarkMode(false);
+  //     document.body.classList.remove("darkMode");
+  //     document.body.classList.add("lightkMode");
+  //   }
+  // }, [inView]);
 
   const services = [
     {

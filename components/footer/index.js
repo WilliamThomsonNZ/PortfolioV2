@@ -1,39 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./footer.module.scss";
+import { motion } from "framer-motion";
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
   return (
     <footer className={styles.footer}>
-      <h6 className={styles.logo}>Will.</h6>
-      <div className={styles.linksContainer}>
-        <div className={styles.quickLinks}>
-          <h6>Quick Links</h6>
-          <ul>
-            <li className={styles.menuItem}>Home</li>
-            <li className={styles.menuItem}>About</li>
-            <li className={styles.menuItem}>Projects</li>
-            <li className={styles.menuItem}>Contact</li>
-          </ul>
-        </div>
-        <div className={styles.socialsLinks}>
-          <h6>Follow</h6>
-          <ul>
-            <li className={styles.menuItem}>Twitter</li>
-            <li className={styles.menuItem}>Linkedin</li>
-            <li className={styles.menuItem}>Github</li>
-          </ul>
-        </div>
-      </div>
-      <div className={styles.newsletterContainer}>
-        <h6>Sign up to the newsletter</h6>
+      <div className={styles.form}>
+        <motion.h2 className={styles.heading}>
+          Want to start a project?
+        </motion.h2>
+        <input
+          type={"text"}
+          placeholder={"NAME*"}
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+          className={styles.textForm}
+        />
         <input
           type={"email"}
-          className={styles.emailInput}
-          placeholder="Email"
+          placeholder={"EMAIL*"}
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+          className={styles.textForm}
         />
+        <textarea
+          placeholder={"MESSAGE*"}
+          onChange={(e) => setMessage(e.target.value)}
+          value={message}
+          className={styles.messageForm}
+        />
+        <button className={styles.submitButton}>Submit</button>
       </div>
-      <span className={styles.footerBottom}>
-        &copy; Will 2021. All Rights Reserved
-      </span>
+      <div className={styles.footerSocials}>
+        <a href="#" target="_blank" rel="noreferrer">
+          TWITTER
+        </a>
+        <a href="#" target="_blank" rel="noreferrer">
+          LINKEDIN
+        </a>
+      </div>
+      <div className={styles.lowerFooter}>
+        <span>&copy; Will 2021. All Rights Resevered</span>
+      </div>
     </footer>
   );
 };

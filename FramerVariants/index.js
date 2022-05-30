@@ -368,12 +368,26 @@ export const heroVariants = {
       },
     },
   },
-  headingText: {
+  portfolioText: {
     initial: {
-      y: 50,
+      opacity: 0,
     },
     animate: {
-      y: 0,
+      opacity: 1,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+  },
+  headingText: {
+    initial: {
+      x: 100,
+      opacity: 0,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
       transition: {
         ease: [0.76, 0, 0.24, 1],
         duration: 1,

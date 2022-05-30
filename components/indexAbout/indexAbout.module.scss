@@ -44,7 +44,11 @@
   line-height: 1;
   text-transform: uppercase;
 }
-
+.desktopTop {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .mobileDescription,
 .desktopDescription {
   margin-top: 40px;

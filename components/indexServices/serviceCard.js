@@ -8,7 +8,7 @@ import {
 } from "../../FramerVariants";
 import useWindowWidth from "../../utils/useWindowWidth";
 const ServiceCard = ({ service, index, darkMode }) => {
-  const [isOpen, setIsOpen] = useState(index == 1 ? true : false);
+  const [isOpen, setIsOpen] = useState(false);
   const width = useWindowWidth(200);
   let variants = serviceVariants;
   //TODO: Create a hook to handle window width changing.
@@ -62,7 +62,10 @@ const ServiceCard = ({ service, index, darkMode }) => {
             {" "}
             {service.name}
           </motion.h6>
-          <button
+          <motion.button
+            variants={ProjectVariants.infoText}
+            whileInView={"whileInView"}
+            viewport={{ once: true }}
             className={styles.servicesButtonMobile}
             onClick={(e) => setIsOpen((state) => !state)}
           >
@@ -73,7 +76,7 @@ const ServiceCard = ({ service, index, darkMode }) => {
               initial={"initial"}
               animate={isOpen ? "open" : "close"}
             ></motion.span>
-          </button>
+          </motion.button>
           <motion.div
             className={styles.desktopImage}
             variants={variants.descriptions}

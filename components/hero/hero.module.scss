@@ -1,13 +1,14 @@
 @import "../../styles/globalStyling.module.scss";
 
-.heroContianer {
-  min-height: calc(100vh - 85px);
+.heroContainer {
   padding: 0 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: calc(80vh);
+  margin-top: 20vh;
   .headingContainer {
-    margin-top: 20vh;
+    max-width: fit-content;
     .heading {
       span {
         font-family: $font;
@@ -16,6 +17,14 @@
         font-weight: normal;
         font-size: 50px;
         line-height: 1;
+        &:nth-child(2) {
+          &:before,
+          &:after {
+            content: attr("BLOCKCHAIN");
+            position: absolute;
+            left: 0;
+          }
+        }
       }
     }
     .portfolioText {
@@ -24,30 +33,32 @@
       text-align: right;
     }
     .headingTextContainer {
-      height: 50px;
-      overflow: hidden;
+      // height: 50px;
+      // overflow: hidden;
     }
   }
   .scrollWrapper {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     display: flex;
     width: 100%;
-    padding: 15px;
     overflow: hidden;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 15px;
+    height: 25px;
     border: 1px solid #000;
     border-radius: 100px;
   }
   .scrollContainer {
     position: absolute;
     left: 0;
-    z-index: 5;
+    top: 3px;
+
+    z-index: 2;
     .scrollInnerContainer {
       display: flex;
       overflow: scroll;
+      background: transparent;
       .slidingText {
         display: block;
         text-transform: uppercase;
@@ -70,6 +81,70 @@
           height: 10px;
           border-radius: 50%;
         }
+      }
+    }
+  }
+}
+@media (min-width: $largeMobile) {
+  .heroContainer {
+    .headingContainer {
+      .heading {
+        span {
+          font-size: 75px;
+          line-height: 1;
+        }
+      }
+    }
+  }
+  .scrollWrapper {
+    max-width: 650px;
+  }
+}
+
+@media (min-width: $tablet) {
+  .heroContainer {
+    padding: 0 50px;
+    .headingContainer {
+      width: 100%;
+      max-width: unset;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      .heading {
+        span {
+          font-size: 100px;
+          &:nth-child(3),
+          &:nth-child(1) {
+            padding-left: 100px;
+          }
+        }
+      }
+      .portfolioText {
+        align-self: flex-end;
+      }
+    }
+    .scrollWrapper {
+      max-width: 370px;
+      margin-bottom: 200px;
+    }
+  }
+}
+@media (min-width: $desktop) {
+  .heroContainer {
+    padding: 0 100px;
+    .headingContainer {
+      .heading {
+        span {
+          font-size: 150px;
+          &:nth-child(3),
+          &:nth-child(1) {
+            padding-left: 100px;
+          }
+        }
+      }
+      .portfolioText {
+        align-self: flex-end;
       }
     }
   }
