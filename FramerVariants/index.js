@@ -1,4 +1,50 @@
 export const HeaderVariants = {
+  mobileMenuItem: {
+    initial: {
+      x: 25,
+      opacity: 0,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 0.8,
+      },
+    },
+    exit: {
+      opacity: 0,
+    },
+  },
+  mobileMenuFooter: {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 0.8,
+      },
+    },
+    exit: {
+      opacity: 0,
+    },
+  },
+  mobileMenuContainer: {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        delay: 0.5,
+      },
+    },
+  },
   mobileToggle: {
     open: {
       scale: 0,
@@ -117,6 +163,16 @@ export const ProjectVariants = {
       },
     },
   },
+  mainImageOverlay: {
+    initial: { width: "100%" },
+    animate: {
+      width: 0,
+      transition: {
+        duration: 1.5,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+  },
   headingtext: {
     initial: {
       y: 75,
@@ -157,7 +213,7 @@ export const ProjectVariants = {
       transition: {
         ease: [0.76, 0, 0.24, 1],
         duration: 1,
-        delay: 0.8,
+        delay: 0.4,
       },
     },
   },

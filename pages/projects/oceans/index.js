@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../../../styles/individualProject.module.scss";
 import LinkArrow from "../../../assets/LinkArrowLarge.svg";
+import Footer from "../../../components/footer";
 import { useEffect, useRef } from "react";
 import { motion, useViewportScroll } from "framer-motion";
 import { ProjectVariants } from "../../../FramerVariants";
@@ -86,21 +87,21 @@ export default function Projects() {
             </motion.p>
           </section>
           <motion.div
-            layoutId="0"
-            className={styles.heroImage}
-            transition={{
-              ease: [0.76, 0, 0.24, 1],
-              duration: 1,
-            }}
+            className={styles.mainProjectImageContianer}
+            variants={ProjectVariants.headingtext}
+            initial={"initial"}
+            animate={"animate"}
           >
             <Image
               src={"/portfolioProject.jpg"}
-              width={1000}
-              height={1350}
+              width={1200}
+              height={1500}
+              objectFit={"contain"}
               className={styles.projectImageDesktop}
             />
           </motion.div>
         </div>
+
         <section
           className={`${styles.informationContainer} ${
             inView ? styles.darkMode : undefined
@@ -226,8 +227,32 @@ export default function Projects() {
             ></motion.div>
           </div>
         </section>
-        <div className={styles.fullWidthImage}></div>
+        <div className={styles.fullImageContainer}>
+          <motion.div
+            variants={ProjectVariants.infoImage}
+            whileInView={"whileInView"}
+            viewport={{ once: true }}
+            className={styles.fullWidthImage}
+          ></motion.div>
+        </div>
+        <div className={styles.fullImageContainer}>
+          <motion.div
+            variants={ProjectVariants.infoImage}
+            whileInView={"whileInView"}
+            viewport={{ once: true }}
+            className={styles.fullWidthImage}
+          ></motion.div>
+        </div>
+        <div className={styles.fullImageContainer}>
+          <motion.div
+            variants={ProjectVariants.infoImage}
+            whileInView={"whileInView"}
+            viewport={{ once: true }}
+            className={styles.fullWidthImage}
+          ></motion.div>
+        </div>
       </motion.main>
+      <Footer />
     </>
   );
 }

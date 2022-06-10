@@ -28,7 +28,11 @@
   justify-content: space-between;
   border-bottom: 1px solid #000;
   font-family: $font;
-
+  &.menuOpen {
+    background: #e1dfdd;
+    margin: 0;
+    padding: 24px;
+  }
   .logo {
     font-size: 25px;
     margin: 0;
@@ -63,21 +67,10 @@
     position: absolute;
     top: 80px;
     left: 0;
-    width: 100%;
+    width: 100vw;
     padding: 0 24px;
-    &::after {
-      background-image: url("/download.png");
-      content: "";
-      height: 300%;
-      left: -50%;
-      opacity: 0.3;
-      position: fixed;
-      top: -100%;
-      width: 300%;
-      pointer-events: none;
-      z-index: -1;
-      animation: grain 8s steps(10) infinite;
-    }
+    background: #e1dfdd;
+    z-index: 5;
   }
   .mobileNavigationContainer {
     display: flex;
@@ -89,13 +82,13 @@
     .menuLinks {
       padding: 0;
       margin: 0;
-      padding-top: 125px;
+      padding-top: 150px;
     }
     .menuItem {
       list-style: none;
       padding: 0;
       margin: 0;
-      font-size: 50px;
+      font-size: 65px;
       margin-bottom: 30px;
       line-height: 1;
     }

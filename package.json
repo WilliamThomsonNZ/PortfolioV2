@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@svgr/webpack": "^6.2.1",
+    "dotenv": "^16.0.1",
     "framer-motion": "^6.3.3",
     "lodash": "^4.17.21",
     "next": "12.1.6",
+    "next-connect": "^0.12.2",
+    "nodemailer": "^6.7.5",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-intersection-observer": "^9.1.0",

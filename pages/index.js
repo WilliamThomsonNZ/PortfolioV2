@@ -9,7 +9,11 @@ import Hero from "../components/hero";
 import Footer from "../components/footer";
 import { motion } from "framer-motion";
 export default function Home() {
-  const variants = {};
+  const variants = {
+    exit: {
+      opacity: 0,
+    },
+  };
   return (
     <>
       <Head>
@@ -25,9 +29,9 @@ export default function Home() {
         key={"main"}
       >
         <Hero />
+        <IndexAbout />
         <LatestProjects />
         <IndexServices />
-        <IndexAbout />
         <Footer />
       </motion.main>
     </>

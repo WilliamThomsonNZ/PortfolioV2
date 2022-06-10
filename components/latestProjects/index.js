@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import useWindowWidth from "../../utils/useWindowWidth";
-import { projectDisplayVariants } from "../../FramerVariants";
+import { projectDisplayVariants, ProjectVariants } from "../../FramerVariants";
 const LatestProjects = () => {
   const viewport = useWindowWidth(200);
   const carouselRef = useRef(null);
@@ -82,8 +82,21 @@ const LatestProjects = () => {
   ];
   return (
     <motion.section className={styles.sectionContainer}>
-      <motion.h2 className={styles.title}>Latest Projects</motion.h2>
-      <motion.div className={styles.carousel} ref={carouselRef}>
+      <motion.h2
+        className={styles.title}
+        variants={ProjectVariants.infoText}
+        whileInView={"whileInView"}
+        viewport={{ once: true }}
+      >
+        Latest Projects
+      </motion.h2>
+      <motion.div
+        className={styles.carousel}
+        ref={carouselRef}
+        variants={ProjectVariants.infoText}
+        whileInView={"whileInView"}
+        viewport={{ once: true }}
+      >
         <motion.div
           drag="x"
           dragConstraints={{ left: -width, right: 0 }}

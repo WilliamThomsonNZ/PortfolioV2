@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./header.module.scss";
 import { HeaderVariants } from "../../FramerVariants";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import Twitter from "../../assets/Twitter.svg";
 import Linked from "../../assets/Linked.svg";
 import Instagram from "../../assets/Instagram.svg";
@@ -10,10 +11,11 @@ const Header = () => {
 
   function handleMenuOpen() {
     setMenuOpen((menuState) => !menuState);
+    document.body.style.overFlow = "hidden";
   }
   return (
     <motion.header
-      className={styles.header}
+      className={`${styles.header} ${menuOpen ? styles.menuOpen : undefined}`}
       initial={"initial"}
       animate={menuOpen ? "open" : "close"}
       exit={"exit"}
@@ -105,7 +107,11 @@ const Header = () => {
       </motion.div>
       <nav className={styles.desktopNavigationContainer}>
         <ul className={styles.menulinks}>
-          <li className={styles.menuItem}>Home</li>
+          <li className={styles.menuItem}>
+            <Link href="/" to="/">
+              Home
+            </Link>
+          </li>
           <li className={styles.menuItem}>Projects</li>
           <li className={styles.menuItem}>About</li>
           <li className={styles.menuItem}>Contact</li>
@@ -134,38 +140,52 @@ const Header = () => {
 
       <AnimatePresence exitBeforeEnter>
         {menuOpen && (
-          <div className={styles.mobileMenuOuterContainer}>
+          <motion.div
+            className={styles.mobileMenuOuterContainer}
+            variants={HeaderVariants.mobileMenuContainer}
+            initial={"initial"}
+            animate={"animate"}
+            exit={"exit"}
+            key={"container"}
+          >
             <nav className={styles.mobileNavigationContainer}>
               <div className={styles.links}>
                 <ul className={styles.menuLinks}>
-                  <motion.li className={styles.menuItem}>Home</motion.li>
-                  <li className={styles.menuItem}>Projects</li>
-                  <li className={styles.menuItem}>About</li>
-                  <li className={styles.menuItem}>Contact</li>
+                  <motion.li
+                    className={styles.menuItem}
+                    variants={HeaderVariants.mobileMenuItem}
+                  >
+                    Home
+                  </motion.li>
+                  <motion.li
+                    className={styles.menuItem}
+                    variants={HeaderVariants.mobileMenuItem}
+                  >
+                    Projects
+                  </motion.li>
+                  <motion.li
+                    className={styles.menuItem}
+                    variants={HeaderVariants.mobileMenuItem}
+                  >
+                    About
+                  </motion.li>
+                  <motion.li
+                    className={styles.menuItem}
+                    variants={HeaderVariants.mobileMenuItem}
+                  >
+                    Contact
+                  </motion.li>
                 </ul>
-                <ul>
-                  <li>
-                    <a href="#" target="_blank" className={styles.socialLink}>
-                      <Twitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" target="_blank" className={styles.socialLink}>
-                      <Linked />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" target="_blank" className={styles.socialLink}>
-                      <Instagram />
-                    </a>
-                  </li>
-                </ul>
+                <ul></ul>
               </div>
-              <div className={styles.menuFooter}>
+              <motion.div
+                className={styles.menuFooter}
+                variants={HeaderVariants.mobileMenuFooter}
+              >
                 <span>&copy; Will 2021. All Rights Resevered</span>
-              </div>
+              </motion.div>
             </nav>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.header>

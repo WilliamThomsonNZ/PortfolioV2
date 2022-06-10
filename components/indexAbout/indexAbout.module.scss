@@ -2,7 +2,6 @@
 
 .aboutContainer {
   padding: 0 24px;
-  margin-top: 150px;
   margin-bottom: 150px;
 }
 .imageContainer {
@@ -58,12 +57,17 @@
   font-family: $font;
 }
 @media (min-width: $tablet) {
+  .desktopTop {
+    display: block;
+  }
   .buttonContainer {
     display: none;
   }
-  .desktopDescription,
-  .desktopButton {
+  .desktopDescription {
     display: block;
+  }
+  .desktopButton {
+    display: flex;
   }
   .mobileDescription {
     display: none;
@@ -96,10 +100,11 @@
     line-height: 1;
     margin-bottom: 120px;
   }
+
   .aboutContainer {
     gap: 120px;
     padding: 0 100px;
-    margin-top: 250px;
+    margin: 250px 0;
   }
   .desktopDescription {
     margin-top: 0;

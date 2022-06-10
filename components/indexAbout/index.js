@@ -57,7 +57,12 @@ const IndexAbout = () => {
         </div>
 
         <Link href={"/about"}>
-          <div className={`${styles.buttonContainer} ${styles.desktopButton}`}>
+          <motion.div
+            className={`${styles.buttonContainer} ${styles.desktopButton}`}
+            variants={ProjectVariants.infoText}
+            whileInView={"whileInView"}
+            viewport={{ once: true }}
+          >
             <span className={styles.buttonLabel}>more</span>
             <Image
               src={"/right-arrow.png"}
@@ -66,7 +71,7 @@ const IndexAbout = () => {
               width={30}
               className={styles.arrowImage}
             />
-          </div>
+          </motion.div>
         </Link>
       </div>
       <motion.div

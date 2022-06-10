@@ -12,6 +12,14 @@ const ServiceCard = ({ service, index, darkMode }) => {
   const width = useWindowWidth(200);
   let variants = serviceVariants;
   //TODO: Create a hook to handle window width changing.
+
+  // function handleOpen() {
+  //   if (index == 0) {
+  //     setTimeout(() => {
+  //       setIsOpen(true);
+  //     }, 3000);
+  //   }
+  // }
   return (
     <>
       <motion.div
