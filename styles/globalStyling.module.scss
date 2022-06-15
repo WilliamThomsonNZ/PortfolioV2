@@ -3,4 +3,10 @@
 $largeMobile: 650px;
 $tablet: 1000px;
 $desktop: 1400px;
-$font: "IBM Plex Sans", sans-serif;
+$headingFont: "Neue Machina", sans-serif;
+$font: "Inter", sans-serif;
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("../assets/Font/PPNeueMachina-PlainRegular.otf");
+}

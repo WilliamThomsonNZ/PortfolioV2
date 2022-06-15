@@ -4,6 +4,7 @@ import styles from "./indexServices.module.scss";
 import { motion } from "framer-motion";
 import ServiceCard from "./serviceCard";
 import { ProjectVariants } from "../../FramerVariants";
+import Lines from "../../assets/lines.svg";
 const IndexServices = () => {
   const [darkMode, setDarkMode] = useState(false);
   const { ref, inView, entry } = useInView({
@@ -25,21 +26,26 @@ const IndexServices = () => {
 
   const services = [
     {
-      name: "NFT Development",
+      name: "Website/Web Appliaction Development",
       initialDescription:
-        "Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.",
+        "I build scalable and performant experiences on the web. Having a fully functional and flawless website is one of the keys to a successful business.",
       largeDescription:
         "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
     },
     {
-      name: "DEFI Development",
+      name: "Smart Contract Development",
       initialDescription:
-        "Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.",
+        "Creating gas efficient and secure smart contracts to suit your project is my top priority. This includes NFT contracts, token/tokenomics contracts, whitelisting and governance.",
+    },
+    {
+      name: "Web3 Integration",
+      initialDescription:
+        "With a solid track record integrating wallets and other web3 functionality into projects, I deliver secure and optimised web3 integration.",
       largeDescription:
         "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
     },
     {
-      name: "WEB Development",
+      name: "UI/UX Design",
       initialDescription:
         "Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.",
       largeDescription:
@@ -56,6 +62,7 @@ const IndexServices = () => {
         ease: [0.76, 0, 0.24, 1],
         duration: 0.4,
       }}
+      id={"services"}
     >
       <motion.h2
         className={styles.sectionTitle}

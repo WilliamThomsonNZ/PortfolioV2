@@ -3,7 +3,7 @@ import styles from "./hero.module.scss";
 import { motion, useAnimation } from "framer-motion";
 import useWindowWidth from "../../utils/useWindowWidth";
 import { heroVariants } from "../../FramerVariants";
-
+import BackgroundGrid from "../../assets/Grid.svg";
 const Hero = () => {
   const controls = useAnimation();
   const width = useWindowWidth(700);
@@ -62,6 +62,9 @@ const Hero = () => {
           Portfolio 2022
         </motion.span>
       </motion.div>
+      <div className={styles.heroBackground}>
+        <BackgroundGrid />
+      </div>
       <motion.div
         className={styles.scrollWrapper}
         animate={{ opacity: 1 }}

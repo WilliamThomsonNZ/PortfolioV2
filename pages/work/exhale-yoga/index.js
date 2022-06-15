@@ -28,8 +28,8 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Will - Oceans by Erin Fleming</title>
-        <meta name="description" content="Oceans by Erin Fleming" />
+        <title>Will - Reduced to Clear</title>
+        <meta name="description" content="Will - Reduced to Clear" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <motion.main
@@ -46,7 +46,7 @@ export default function Projects() {
                   className={styles.heading}
                   variants={ProjectVariants.headingtext}
                 >
-                  Oceans
+                  Exhale
                 </motion.span>
               </div>
               <div className={styles.headingTextContainer}>
@@ -54,17 +54,9 @@ export default function Projects() {
                   className={styles.heading}
                   variants={ProjectVariants.headingtext}
                 >
-                  by Erin
+                  Yoga
                 </motion.span>
               </div>
-              <div className={styles.headingTextContainer}>
-                <motion.span
-                  className={styles.heading}
-                  variants={ProjectVariants.headingtext}
-                >
-                  Fleming
-                </motion.span>
-              </div>{" "}
               <motion.a
                 href={"#"}
                 target="_blank"
@@ -78,12 +70,13 @@ export default function Projects() {
               className={styles.projectDescription}
               variants={ProjectVariants.description}
             >
-              Alienum phaedrum torquatos nec eu, detr periculis ex, nihil
-              expetendis in mei. Mei an pericula euripidis hinc partem ei est.
-              Eos ei nisl graecis, vix aperiri consequat an. Eius lorem
-              tincidunt vix at, vel pertinax sensibus id, error epicurei mea et.
-              Mea facilisis urbanitas moderatius id. Vis ei rationibus
-              definiebas.
+              Exhale Yoga is the rebrand of a popular yoga studio based in
+              Napier, New Zealand. The requirements for the website included
+              mindbody integration (yoga management software ) that allowed
+              customers to book and mange their classes, content management set
+              up to allow editing of key elements across the website and to
+              display general information. My role in the rebrand was to
+              redesign and develop the website.
             </motion.p>
           </section>
           <motion.div
@@ -126,7 +119,7 @@ export default function Projects() {
                 whileInView={"whileInView"}
                 viewport={{ once: true }}
               >
-                15 January, 2021
+                03 March, 2022
               </motion.span>
             </div>
             <motion.div
@@ -148,7 +141,7 @@ export default function Projects() {
                 whileInView={"whileInView"}
                 viewport={{ once: true }}
               >
-                Oceans by Erin Fleming
+                Exhale Yoga Website
               </motion.span>
             </div>
             <motion.div
@@ -170,7 +163,7 @@ export default function Projects() {
                 whileInView={"whileInView"}
                 viewport={{ once: true }}
               >
-                Erin Fleming
+                Victoria &amp; Liam
               </motion.span>
             </div>
             <motion.div
@@ -193,14 +186,7 @@ export default function Projects() {
                   whileInView={"whileInView"}
                   viewport={{ once: true }}
                 >
-                  Smart Contract Development
-                </motion.span>
-                <motion.span
-                  variants={ProjectVariants.infoText}
-                  whileInView={"whileInView"}
-                  viewport={{ once: true }}
-                >
-                  Frontend Dapp Development
+                  Website development
                 </motion.span>
                 <motion.span
                   variants={ProjectVariants.infoText}

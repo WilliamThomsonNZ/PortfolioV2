@@ -26,6 +26,14 @@
     font-size: 12px;
   }
 }
+
+.backgroundAsset {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
+  z-index: -1;
+}
 .project {
   .imageContainer {
     width: 100%;
@@ -50,7 +58,7 @@
 }
 .title {
   font-size: 32px;
-  font-family: $font;
+  font-family: $headingFont;
   font-weight: normal;
   margin: 0;
   margin-bottom: 40px;
@@ -73,6 +81,13 @@
 .projectLink {
   pointer-events: all;
 }
+.projectA {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .projectInfo {
   display: flex;
   width: 100%;
@@ -108,11 +123,13 @@
 }
 @media (min-width: $desktop) {
   .title {
-    font-size: 100px;
-    margin-bottom: 60px;
+    font-size: 140px;
+    margin-bottom: 120px;
   }
   .sectionContainer {
     padding: 0 100px;
+    max-width: 2500px;
+    margin: 0 auto;
   }
   .carousel {
     min-height: 800px;

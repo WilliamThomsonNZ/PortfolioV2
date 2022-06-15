@@ -8,11 +8,38 @@ import Linked from "../../assets/Linked.svg";
 import Instagram from "../../assets/Instagram.svg";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const [temp, setTemp] = useState(0);
   function handleMenuOpen() {
     setMenuOpen((menuState) => !menuState);
     document.body.style.overFlow = "hidden";
   }
+  const date = new Date();
+  const utcTime = date.getTime() + date.getTimezoneOffset() * 60000;
+  const timeOffset = 12;
+  const NewZealandTime = new Date(utcTime + 3600000 * timeOffset);
+  const hours =
+    NewZealandTime.getHours() > 12
+      ? NewZealandTime.getHours() - 12
+      : NewZealandTime.getHours();
+
+  const morning = NewZealandTime.getHours() > 12 ? "PM" : "AM";
+  const time = `${hours}:${
+    NewZealandTime.getMinutes() < 10 ? "0" : ""
+  }${NewZealandTime.getMinutes()} ${morning}`;
+
+  async function getWeather() {
+    const location = await fetch(
+      "https://api.openweathermap.org/data/2.5/weather?lat=-36.852095&lon=174.7631803&units=metric&appid=b73619b950e514bac7748e50cfdea39b"
+    );
+    const data = await location.json();
+    const responseTemp = Math.round(data.main.temp);
+    setTemp(responseTemp);
+  }
+  -36.852095;
+  174.7631803;
+  useEffect(() => {
+    getWeather();
+  }, []);
   return (
     <motion.header
       className={`${styles.header} ${menuOpen ? styles.menuOpen : undefined}`}
@@ -109,35 +136,29 @@ const Header = () => {
         <ul className={styles.menulinks}>
           <li className={styles.menuItem}>
             <Link href="/" to="/">
-              Home
+              <a>Home</a>
             </Link>
           </li>
-          <li className={styles.menuItem}>Projects</li>
-          <li className={styles.menuItem}>About</li>
-          <li className={styles.menuItem}>Contact</li>
+          <li className={styles.menuItem}>
+            <Link href={"/#work"} to={"/work"}>
+              <a>Work</a>
+            </Link>
+          </li>
+          <li className={styles.menuItem}>
+            <Link href="/#services">
+              <a>Services</a>
+            </Link>
+          </li>
         </ul>
       </nav>
-      <nav className={styles.desktopSocialContainer}>
-        {" "}
+      <div className={styles.desktopSocialContainer}>
         <ul>
-          <li>
-            <a href="#" target="_blank" className={styles.socialLink}>
-              <Twitter />
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" className={styles.socialLink}>
-              <Linked />
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" className={styles.socialLink}>
-              <Instagram />
-            </a>
-          </li>
+          <li>AKL</li>
+          <li>{temp}&#176;C</li>
+          <li>{time}</li>
         </ul>
-      </nav>
-
+      </div>
+      {/* b73619b950e514bac7748e50cfdea39b */}
       <AnimatePresence exitBeforeEnter>
         {menuOpen && (
           <motion.div

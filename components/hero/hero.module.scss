@@ -7,11 +7,17 @@
   justify-content: space-between;
   min-height: 80vh;
   margin-top: 20vh;
+  position: relative;
+  .heroBackground {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
   .headingContainer {
     max-width: fit-content;
     .heading {
       span {
-        font-family: $font;
+        font-family: $headingFont;
         text-transform: uppercase;
         display: block;
         font-weight: normal;
@@ -28,10 +34,11 @@
       }
     }
     .portfolioText {
-      font-family: $font;
+      font-family: $headingFont;
       display: block;
       text-align: right;
     }
+
     .headingTextContainer {
       // height: 50px;
       // overflow: hidden;

@@ -5,12 +5,12 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Will - Projects</title>
+        <title>Will - Work</title>
         <meta name="description" content="previous works" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.sectionContainer}>
-        <h1>Projects</h1>
+        <h1>Work</h1>
         <section></section>
       </main>
     </>

@@ -25,7 +25,6 @@ const handler = nc()
     const options = {
       from: process.env.NODE_MAILER_EMAIL,
       to: process.env.NODE_MAILER_TO,
-      subject: "New form submission from Will's Portfolio",
       text: `
       NAME: ${name}
       EMAIL: ${email}

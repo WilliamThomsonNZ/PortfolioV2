@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import useWindowWidth from "../../utils/useWindowWidth";
 import { projectDisplayVariants, ProjectVariants } from "../../FramerVariants";
+import Lines from "../../assets/lines.svg";
 const LatestProjects = () => {
   const viewport = useWindowWidth(200);
   const carouselRef = useRef(null);
@@ -38,57 +39,45 @@ const LatestProjects = () => {
   console.log(viewport);
   const projects = [
     {
+      name: "Reduced to Clear",
+      url: "/work/reduced-to-clear",
+      image: "/rtcLogo.png",
+      width: largeImages ? 700 : 340,
+    },
+    {
+      name: "Basik Collective",
+      url: "/work/basik",
+      image: "/basik.jpg",
+      width: largeImages ? 500 : 300,
+    },
+    {
       name: "Oceans",
-      url: "/projects/oceans",
-      image: "../../assets/portfolioProject.jpg",
-      width: largeImages ? 700 : 340,
-    },
-    {
-      name: "Basik",
-      url: "/test",
-      image: "../../assets/portfolioProject.jpg",
-      width: largeImages ? 500 : 300,
-    },
-    {
-      name: "test",
-      url: "/test",
-      image: "../../assets/portfolioProject.jpg",
+      url: "/work/oceans",
+      image: "/oceans.jpg",
       width: largeImages ? 600 : 400,
     },
     {
-      name: "test",
-      url: "/test",
-      image: "../../assets/portfolioProject.jpg",
+      name: "Surfer Doodz",
+      url: "/work/surfer-doodz",
+      image: "/portfolioProject.jpg",
       width: largeImages ? 700 : 340,
     },
     {
-      name: "test",
-      url: "/test",
-      image: "../../assets/portfolioProject.jpg",
+      name: "Exhale Yoga",
+      url: "/work/exhale-yoga",
+      image: "/portfolioProject.jpg",
       width: largeImages ? 500 : 300,
-    },
-    {
-      name: "test",
-      url: "/test",
-      image: "../../assets/portfolioProject.jpg",
-      width: largeImages ? 600 : 400,
-    },
-    {
-      name: "test",
-      url: "/test",
-      image: "../../assets/portfolioProject.jpg",
-      width: largeImages ? 700 : 340,
     },
   ];
   return (
-    <motion.section className={styles.sectionContainer}>
+    <motion.section className={styles.sectionContainer} id={"work"}>
       <motion.h2
         className={styles.title}
         variants={ProjectVariants.infoText}
         whileInView={"whileInView"}
         viewport={{ once: true }}
       >
-        Latest Projects
+        Latest Work
       </motion.h2>
       <motion.div
         className={styles.carousel}
@@ -128,7 +117,7 @@ const LatestProjects = () => {
                   onMouseLeave={(e) => handleMouse(false)}
                 >
                   <Image
-                    src={"/portfolioProject.jpg"}
+                    src={project.image}
                     width={project.width}
                     height={project.width}
                     className={styles.projectImageDesktop}
@@ -138,19 +127,23 @@ const LatestProjects = () => {
                   className={styles.projectInfo}
                   onMouseEnter={(e) => handleMouse(false)}
                 >
-                  <h6 className={styles.projectTitle}>{project.name}</h6>
                   <Link
                     href={project.url}
+                    to={project.url}
                     className={styles.projectLink}
                     scroll={false}
                   >
-                    <Image
-                      src={"/right-arrow.png"}
-                      layout={"fixed"}
-                      width={30}
-                      height={30}
-                      className={styles.arrowImage}
-                    />
+                    <a className={styles.projectA}>
+                      <h6 className={styles.projectTitle}>{project.name}</h6>
+
+                      <Image
+                        src={"/right-arrow.png"}
+                        layout={"fixed"}
+                        width={30}
+                        height={30}
+                        className={styles.arrowImage}
+                      />
+                    </a>
                   </Link>
                 </div>
               </motion.article>

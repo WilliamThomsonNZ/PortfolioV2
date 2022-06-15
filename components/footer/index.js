@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./footer.module.scss";
 import { motion } from "framer-motion";
 import { ProjectVariants } from "../../FramerVariants";
+import Grid from "../../assets/Grid.svg";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -33,6 +34,9 @@ const Footer = () => {
   return (
     <>
       <footer className={styles.footer}>
+        <div className={styles.backgroundAssets}>
+          <Grid />
+        </div>
         <div className={styles.form}>
           <motion.h2
             className={styles.heading}
