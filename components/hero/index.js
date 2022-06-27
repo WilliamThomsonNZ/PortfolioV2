@@ -4,11 +4,17 @@ import { motion, useAnimation } from "framer-motion";
 import useWindowWidth from "../../utils/useWindowWidth";
 import { heroVariants } from "../../FramerVariants";
 import BackgroundGrid from "../../assets/Grid.svg";
+import ButtonArrow from "../../assets/ARROW.svg";
+import Link from "next/link";
+import Button from "../button";
 const Hero = () => {
   const controls = useAnimation();
   const width = useWindowWidth(700);
   const [sliderWidth, setSliderWidth] = useState(0);
+  const [yHeight, setYHeight] = useState(0);
   const slider = useRef(null);
+
+  const movingValue = 12;
   useEffect(() => {
     setSliderWidth(slider.current.offsetWidth);
   }, [width]);
@@ -34,6 +40,25 @@ const Hero = () => {
     },
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setYHeight((prev) => {
+        if (prev > 90) return 0;
+        else return prev + 8.33333;
+      });
+    }, 2300);
+
+    return () => clearInterval(interval);
+  }, []);
+  const innerScrollContainer = {
+    animate: {
+      y: `-${yHeight}%`,
+      transition: {
+        duration: 1,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+  };
   return (
     <section className={styles.heroContainer}>
       <motion.div
@@ -43,33 +68,56 @@ const Hero = () => {
         initial={"initial"}
       >
         <h1 className={styles.heading}>
-          <motion.span variants={heroVariants.headingText}>
-            Independent
-          </motion.span>
-
-          <motion.span variants={heroVariants.headingText}>
-            blockchain
-          </motion.span>
-
-          <motion.span variants={heroVariants.headingText}>
-            &amp; web Developer
-          </motion.span>
+          <div className={styles.heroSpanContainer}>
+            <motion.span variants={heroVariants.headingText1}>
+              development
+            </motion.span>
+          </div>
+          <div className={styles.heroSpanContainer}>
+            <motion.span variants={heroVariants.headingText2}>
+              solutions&nbsp;
+            </motion.span>
+          </div>
+          <div className={styles.heroSpanContainer}>
+            <motion.span variants={heroVariants.headingText2}>
+              for the&nbsp;
+            </motion.span>
+          </div>
+          <div className={styles.heroSpanContainer}>
+            <motion.span variants={heroVariants.headingText3}>
+              web3&nbsp;
+            </motion.span>
+          </div>
+          <div className={styles.heroSpanContainer}>
+            <motion.div variants={heroVariants.headingText3}>
+              <motion.div
+                className={styles.innerScrollContainer}
+                variants={innerScrollContainer}
+                animate={"animate"}
+              >
+                <span>creators.</span>
+                <span>Builders.</span>
+                <span>enthusiasts.</span>
+                <span>creators.</span>
+                <span>Builders.</span>
+                <span>enthusiasts.</span>
+                <span>creators.</span>
+                <span>Builders.</span>
+                <span>enthusiasts.</span>
+                <span>creators.</span>
+                <span>Builders.</span>
+                <span>enthusiasts.</span>
+              </motion.div>
+            </motion.div>
+          </div>
         </h1>
-        <motion.span
-          className={styles.portfolioText}
-          variants={heroVariants.portfolioText}
-        >
-          Portfolio 2022
-        </motion.span>
       </motion.div>
       <div className={styles.heroBackground}>
         <BackgroundGrid />
       </div>
       <motion.div
         className={styles.scrollWrapper}
-        animate={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ ease: [0.76, 0, 0.24, 1], duration: 1, delay: 0.8 }}
+        variants={heroVariants.portfolioText}
       >
         <div className={styles.scrollContainer}>
           <motion.div
@@ -94,11 +142,16 @@ const Hero = () => {
             <span className={styles.slidingText}>
               Available for freelance work
             </span>
-            {/* <span className={styles.slidingText}>
-              Available for freelance work
-            </span> */}
           </motion.div>
         </div>
+      </motion.div>
+      <motion.div
+        className={styles.heroCTAContainer}
+        variants={heroVariants.portfolioText}
+      >
+        <Link href="/contact">
+          <Button label={"Get in touch"} />
+        </Link>
       </motion.div>
     </section>
   );

@@ -1,0 +1,76 @@
+@import "../../styles//globalStyling.module.scss";
+
+.button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin-top: 0;
+  font-size: 25px;
+  position: relative;
+  font-weight: 500;
+  padding: 15px 20px 10px 25px;
+
+  background: #fff;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-family: $headingFont;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #000;
+  transition: all 0.4s ease-in;
+
+  .arrowIcon {
+    font-size: 14px;
+    font-weight: lighter;
+    display: block;
+    transform: rotate(-90deg);
+    width: 30px;
+    font-weight: lighter;
+    display: block;
+    color: $accentColour;
+    &:first-of-type {
+      margin-bottom: 15px;
+    }
+  }
+  span {
+    font-family: $headingFont;
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 1;
+    display: block;
+  }
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}
+
+.arrowContainer {
+  //   transform: rotate(45deg);
+  display: inline-block;
+  margin-left: 8px;
+  width: 50px;
+  height: 40px;
+  overflow: hidden;
+  svg {
+  }
+}
+
+// .button {
+//   //font-weight: 700;
+//   font-size: 18px;
+//   .arrowIcon {
+//     font-size: 12px;
+//   }
+// }
+
+@media (min-width: $tablet) {
+  .button {
+    padding: 25px 30px 20px 35px;
+    span {
+      font-size: 30px;
+    }
+  }
+}

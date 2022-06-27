@@ -3,10 +3,12 @@
 $largeMobile: 650px;
 $tablet: 1000px;
 $desktop: 1400px;
+$largeDesktop: 1800px;
 $headingFont: "Neue Machina", sans-serif;
 $font: "Inter", sans-serif;
+$accentColour: #ff9633;
 
 @font-face {
   font-family: "Neue Machina";
-  src: url("../assets/Font/PPNeueMachina-PlainRegular.otf");
+  src: url("../assets/Font/PPNeueMachina-InktrapRegular.otf");
 }

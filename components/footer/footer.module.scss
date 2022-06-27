@@ -2,105 +2,169 @@
 
 .footer {
   padding: 0 24px;
-  margin-top: 150px;
-  position: relative;
-  .heading {
-    font-size: 32px;
+
+  .ctaContainer {
+  }
+  .ox {
     font-family: $headingFont;
-    font-weight: normal;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 100%;
+    /* or 27px */
+    color: #ff9533;
+    display: block;
+    margin-bottom: 111px;
+  }
+  .startProject {
+    font-family: $font;
     margin: 0;
-    margin-bottom: 40px;
-    max-width: 300px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 21px;
+    /* or 22px */
   }
-  .footerSocials {
-    display: none;
-  }
-  .form {
-    .textForm,
-    .messageForm {
-      background: none;
-      border: none;
-      width: 100%;
-      border-bottom: 1px solid #000;
-      padding-bottom: 22px;
-      margin-bottom: 70px;
-      font-size: 15px;
-      font-family: $font;
-      border-radius: 0;
-      &::placeholder {
-        font-size: 15px;
-        font-family: $font;
-        color: #000;
-      }
+  .chat {
+    font-family: "PP Neue Machina";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 62px;
+    line-height: 1;
+    margin: 0;
+    cursor: pointer;
+    margin-bottom: 110px;
+    text-transform: uppercase;
+    position: relative;
+    width: fit-content;
+    display: block;
+    &::after {
+      width: 0%;
+      height: 8px;
+      background-color: $accentColour;
+      position: absolute;
+      content: "";
+      right: 0;
+      transition: all 0.4s ease-in-out;
+      bottom: 50%;
+      transform: translateY(-50%);
     }
 
-    .submitButton {
-      text-transform: uppercase;
-      font-size: 15px;
-      font-family: $font;
-      margin-bottom: 70px;
-      border: 1px solid #000;
-      background: transparent;
-      padding: 15px 25px;
+    &:hover {
+      &::after {
+        right: unset;
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+  .contactLinks {
+  }
+  .contactLink {
+    font-family: $font;
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 12px;
+    &:nth-child(3) {
+      margin-bottom: 40px;
+    }
+    &:nth-child(5) {
+      margin-bottom: 120px;
+    }
+    position: relative;
+    width: fit-content;
+    &::after {
+      width: 0%;
+      height: 3px;
+      background-color: $accentColour;
+      position: absolute;
+      content: "";
+      right: 0;
+      transition: all 0.4s ease-in-out;
+      bottom: 8px;
+    }
+    &:hover {
+      &::after {
+        right: unset;
+        width: 100%;
+        left: 0;
+      }
     }
   }
 }
-.lowerFooter {
-  border-top: 1px solid #000;
+.copy {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
   font-size: 15px;
-  font-family: $font;
-  padding: 22px 0;
-  margin: 0 24px;
+  line-height: 140%;
+  display: block;
+  padding-bottom: 38px;
+  padding-left: 24px;
 }
-.backgroundAssets {
-  position: absolute;
-  right: 0;
-}
-@media (min-width: $tablet) {
-  .footer {
-    padding: 0 50px;
-    margin-top: 250px;
-  }
-  .lowerFooter {
-    margin: 0 50px;
-  }
-}
-@media (min-width: $desktop) {
-  .lowerFooter {
-    margin: 0 100px;
-  }
+@media (min-width: 768px) {
   .footer {
     display: flex;
     justify-content: space-between;
-    padding: 0 100px;
+    width: 100%;
+  }
+}
 
-    .footerSocials {
-      display: block;
-      padding-top: 25px;
-      a {
-        display: block;
-        font-family: "IBM Plex Sans";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 34px;
-        line-height: 130%;
+@media (min-width: $tablet) {
+  .footer {
+    padding: 0 50px;
+    .chat {
+      font-size: 100px;
+    }
+  }
+  .copy {
+    padding-left: 50px;
+  }
+}
+
+@media (min-width: $desktop) {
+  .footer {
+    padding: 0 100px;
+    .chat {
+      font-size: 160px;
+      margin-bottom: 150px;
+      &::after {
+        height: 15px;
       }
     }
-    .heading {
-      font-size: 140px;
-      max-width: 930px;
-      margin-bottom: 120px;
+    .startProject {
+      font-size: 20px;
+      margin-bottom: 35px;
+      margin-left: 10px;
     }
-    .form {
-      width: 1000px;
-      .submitButton {
-        margin-bottom: 250px;
+    .ox {
+      margin-bottom: 227px;
+    }
+    .contactLink {
+      font-size: 20px;
+      margin-bottom: 16px;
+      &::after {
+        height: 5px;
+      }
+      &:nth-child(3) {
+        margin-bottom: 40px;
       }
     }
-    .upperInputs {
-      display: flex;
-      gap: 100px;
-      margin-bottom: 100px;
+  }
+  .copy {
+    padding-left: 100px;
+  }
+}
+
+@media (min-width: $largeDesktop) {
+  .footer {
+    .chat {
+      font-size: 200px;
     }
   }
 }

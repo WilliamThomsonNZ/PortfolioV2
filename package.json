@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@svgr/webpack": "^6.2.1",
     "dotenv": "^16.0.1",
     "framer-motion": "^6.3.3",
+    "locomotive-scroll": "^4.1.4",
     "lodash": "^4.17.21",
     "next": "12.1.6",
     "next-connect": "^0.12.2",

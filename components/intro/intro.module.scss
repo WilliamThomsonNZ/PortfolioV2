@@ -1,0 +1,41 @@
+@import "../../styles/globalStyling.module.scss";
+.introContainer {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .innerContainer {
+  }
+  .text {
+    height: 20px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0;
+  }
+  .span {
+    font-family: $headingFont;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    &.spanWill {
+      color: $accentColour;
+    }
+  }
+}
+@media (min-width: 1100px) {
+  .introContainer {
+    .text {
+      height: 80px;
+      overflow: hidden;
+      .span {
+        font-size: 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,257 @@
+@import "./globalStyling.module.scss";
+
+.sectionContainer {
+  background: #000;
+  margin: 0;
+  padding: 0 36px;
+  color: #fff;
+  padding-bottom: 100px;
+  .contactHeading {
+    font-family: $headingFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 128%;
+    margin: 0;
+    padding-top: 100px;
+    margin-bottom: 50px;
+  }
+  .contactDetailsMobile {
+    margin-bottom: 64px;
+  }
+  .sectionTitle {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .socialLink {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  a.socialLink {
+    position: relative;
+    width: fit-content;
+    &::after {
+      width: 0%;
+      height: 3px;
+      background-color: $accentColour;
+      position: absolute;
+      content: "";
+      right: 0;
+      transition: all 0.4s ease-in-out;
+      bottom: 8px;
+    }
+    &:hover {
+      &::after {
+        right: unset;
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+
+  .number {
+    font-family: $headingFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    /* or 10px */
+
+    color: #ff9533;
+  }
+  .question {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    margin-bottom: 10px;
+    display: inline-block;
+    /* identical to box height, or 28px */
+
+    color: #ffffff;
+  }
+  .textInput {
+    background: none;
+    border: none;
+    margin-bottom: 28px;
+    width: 100%;
+    display: block;
+    color: #fff;
+    font-family: $font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    &::placeholder {
+      font-family: $font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 140%;
+      /* identical to box height, or 28px */
+
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  .formLabel {
+    border-top: 1px solid rgba(255, 255, 255, 0.72);
+    padding-top: 28px;
+    display: flex;
+  }
+  .submitButton {
+    background: #fff;
+    border: none;
+    font-family: $headingFont;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    padding: 18px 29px;
+    border-radius: 62.5px;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 115px;
+    /* or 26px */
+
+    text-transform: uppercase;
+  }
+  .contactDetailsDesktop {
+    display: none;
+  }
+  .socials {
+    margin-bottom: 45px;
+  }
+  .location {
+    margin-bottom: 100px;
+  }
+  .copyright {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+.labelInner {
+  width: 100%;
+}
+@media (min-width: $tablet) {
+  .contentContainer {
+    display: flex;
+    width: 100%;
+    gap: 100px;
+    justify-content: space-between;
+    .formContainer {
+      width: 100%;
+    }
+    .contactDetailsContainer {
+      width: 30%;
+    }
+  }
+
+  .sectionContainer {
+    padding-left: 50px;
+    padding-right: 50px;
+    .contactDetailsMobile {
+      display: none;
+    }
+    .contactDetailsDesktop {
+      display: block;
+    }
+    .contactHeading {
+      font-size: 91px;
+      max-width: 1058px;
+      padding-top: 200px;
+      margin-bottom: 100px;
+    }
+    .contactDetails {
+      .sectionTitle {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .contentContainer {
+    display: flex;
+    width: 100%;
+    gap: 170px;
+    justify-content: space-between;
+    .formContainer {
+      width: 100%;
+    }
+    .contactDetailsContainer {
+      width: 30%;
+    }
+  }
+
+  .sectionContainer {
+    padding-left: 100px;
+    padding-right: 100px;
+    .sectionTitle {
+      font-size: 18px;
+      margin-bottom: 26px;
+      margin-top: 81px;
+    }
+    .socialLink {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+    .formLabel {
+      padding-top: 66px;
+      margin-bottom: 66px;
+      gap: 30px;
+    }
+    .question {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+    .textInput {
+      margin-bottom: 0;
+      &::placeholder {
+        font-size: 28px;
+      }
+    }
+    .number {
+      font-size: 20px;
+      margin-top: 15px;
+    }
+    .contactHeading {
+      padding-top: 200px;
+      margin-bottom: 200px;
+    }
+    .submitButton {
+      font-size: 30px;
+      line-height: 1;
+      margin-top: 120px;
+      padding: 30px 60px;
+      margin-bottom: 200px;
+    }
+    a.socialLink {
+      &::after {
+        height: 6px;
+      }
+    }
+  }
+}
+
+@media (min-width: $largeDesktop) {
+  .sectionContainer {
+    .contactHeading {
+      font-size: 110px;
+      max-width: 1200px;
+    }
+  }
+}

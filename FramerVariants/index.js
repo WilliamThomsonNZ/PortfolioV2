@@ -1,4 +1,17 @@
 export const HeaderVariants = {
+  header: {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.5,
+      },
+    },
+  },
   mobileMenuItem: {
     initial: {
       x: 25,
@@ -418,35 +431,130 @@ export const projectDisplayVariants = {
 export const heroVariants = {
   container: {
     initial: {},
-    animate: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+    animate: {},
   },
   portfolioText: {
     initial: {
       opacity: 0,
+      y: 50,
     },
     animate: {
       opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 1,
+      },
+    },
+  },
+  headingText1: {
+    initial: {
+      y: 180,
+      //opacity: 0,
+    },
+    animate: {
+      y: 0,
+      //opacity: 1,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.8,
+      },
+    },
+  },
+  headingText2: {
+    initial: {
+      y: 180,
+      //opacity: 0,
+    },
+    animate: {
+      y: 0,
+      //opacity: 1,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 1,
+      },
+    },
+  },
+  headingText3: {
+    initial: {
+      y: 180,
+      //opacity: 0,
+    },
+    animate: {
+      y: 0,
+      //opacity: 1,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 1.2,
+      },
+    },
+  },
+  headingTextSlider: {
+    initial: {
+      y: 150,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.2,
+      },
+    },
+  },
+};
+
+export const introVariants = {
+  introContainer: {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 1,
+      },
+    },
+  },
+  introContainer2: {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 2.5,
+      },
+    },
+  },
+  span: {
+    initial: {
+      y: 100,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+    exit: {
+      y: -100,
       transition: {
         ease: [0.76, 0, 0.24, 1],
         duration: 1,
       },
     },
   },
-  headingText: {
-    initial: {
-      x: 100,
-      opacity: 0,
-    },
-    animate: {
-      x: 0,
-      opacity: 1,
+  heroContainer: {
+    initial: {},
+    animate: {},
+    exit: {
+      y: "-100vw",
       transition: {
         ease: [0.76, 0, 0.24, 1],
         duration: 1,
+        delay: 0.5,
       },
     },
   },

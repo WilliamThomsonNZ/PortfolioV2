@@ -6,7 +6,7 @@ import Link from "next/link";
 import Twitter from "../../assets/Twitter.svg";
 import Linked from "../../assets/Linked.svg";
 import Instagram from "../../assets/Instagram.svg";
-const Header = () => {
+const Header = ({ currentPage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [temp, setTemp] = useState(0);
   function handleMenuOpen() {
@@ -42,12 +42,21 @@ const Header = () => {
   }, []);
   return (
     <motion.header
-      className={`${styles.header} ${menuOpen ? styles.menuOpen : undefined}`}
+      className={`${styles.header} ${menuOpen ? styles.menuOpen : undefined} ${
+        currentPage == "work" || currentPage == "contact"
+          ? styles.dark
+          : undefined
+      }`}
       initial={"initial"}
-      animate={menuOpen ? "open" : "close"}
+      animate={"animate"}
       exit={"exit"}
+      variants={HeaderVariants.header}
     >
-      <h6 className={styles.logo}>Will.</h6>
+      <h6 className={styles.logo}>
+        <span className={styles.name}>Will</span>
+        <br />
+        Thomson
+      </h6>
       <motion.div
         className={styles.menuToggle}
         initial={"initial"}
@@ -136,17 +145,31 @@ const Header = () => {
         <ul className={styles.menulinks}>
           <li className={styles.menuItem}>
             <Link href="/" to="/">
-              <a>Home</a>
+              <a
+                className={currentPage == "home" ? styles.selected : undefined}
+              >
+                Home
+              </a>
             </Link>
           </li>
           <li className={styles.menuItem}>
             <Link href={"/#work"} to={"/work"}>
-              <a>Work</a>
+              <a
+                className={currentPage == "work" ? styles.selected : undefined}
+              >
+                Work
+              </a>
             </Link>
           </li>
           <li className={styles.menuItem}>
             <Link href="/#services">
-              <a>Services</a>
+              <a
+                className={
+                  currentPage == "contact" ? styles.selected : undefined
+                }
+              >
+                Contact
+              </a>
             </Link>
           </li>
         </ul>
@@ -155,7 +178,11 @@ const Header = () => {
         <ul>
           <li>AKL</li>
           <li>{temp}&#176;C</li>
-          <li>{time}</li>
+          <li>
+            {time}
+            <br />
+            <span className={styles.localTime}>LOCAL TIME</span>
+          </li>
         </ul>
       </div>
       {/* b73619b950e514bac7748e50cfdea39b */}
@@ -209,6 +236,7 @@ const Header = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* <div className={styles.darkUnderline}></div> */}
     </motion.header>
   );
 };

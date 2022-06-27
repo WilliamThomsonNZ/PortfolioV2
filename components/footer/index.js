@@ -3,6 +3,7 @@ import styles from "./footer.module.scss";
 import { motion } from "framer-motion";
 import { ProjectVariants } from "../../FramerVariants";
 import Grid from "../../assets/Grid.svg";
+import Link from "next/link";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -34,64 +35,34 @@ const Footer = () => {
   return (
     <>
       <footer className={styles.footer}>
-        <div className={styles.backgroundAssets}>
-          <Grid />
+        <div className={styles.ctaContainer}>
+          <span className={styles.ox}>//0x</span>
+          <h6 className={styles.startProject}>Got A Project In Mind?</h6>
+          <Link href={"/contact"}>
+            <h2 className={styles.chat}>Let's Talk</h2>
+          </Link>
         </div>
-        <div className={styles.form}>
-          <motion.h2
-            className={styles.heading}
-            variants={ProjectVariants.infoText}
-            whileInView={"whileInView"}
-            viewport={{ once: true }}
-          >
-            Want to start a project?
-          </motion.h2>
-          <div className={styles.upperInputs}>
-            <input
-              type={"text"}
-              placeholder={"NAME*"}
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-              className={styles.textForm}
-            />
-            <input
-              type={"email"}
-              placeholder={"EMAIL*"}
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              className={styles.textForm}
-            />
-          </div>
-          <textarea
-            placeholder={"MESSAGE*"}
-            onChange={(e) => setMessage(e.target.value)}
-            value={message}
-            className={styles.messageForm}
-          />
-          <button
-            className={styles.submitButton}
-            onClick={(e) => sendContactMessage()}
-          >
-            {submitButtonText}
-          </button>
+        <div className={styles.contactLinks}>
+          <a href="#" className={styles.contactLink}>
+            Twitter
+          </a>
+          <a href="#" className={styles.contactLink}>
+            Github
+          </a>
+          <a href="#" className={styles.contactLink}>
+            Linkedin
+          </a>
+          <a href="#" className={styles.contactLink}>
+            Discord Willl#8451
+          </a>
+          <a href="#" className={styles.contactLink}>
+            hello@williamthomson.co.nz
+          </a>
         </div>
-        <motion.div
-          className={styles.footerSocials}
-          variants={ProjectVariants.infoText}
-          whileInView={"whileInView"}
-          viewport={{ once: true }}
-        >
-          <a href="#" target="_blank" rel="noreferrer">
-            TWITTER
-          </a>
-          <a href="#" target="_blank" rel="noreferrer">
-            LINKEDIN
-          </a>
-        </motion.div>
       </footer>
-      <div className={styles.lowerFooter}>
-        <span>&copy; Will 2021. All Rights Resevered</span>
-      </div>
+      <span className={styles.copy}>
+        &copy; Will Thomson 2022. All Rights Resevered
+      </span>
     </>
   );
 };

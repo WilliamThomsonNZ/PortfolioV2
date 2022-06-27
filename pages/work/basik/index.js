@@ -75,7 +75,7 @@ export default function Projects() {
               idea of escaping the comfort zone. The initial phase of this
               project was to design and develop a minimalist coming soon landing
               page. The main functionality on this page was to collect emails
-              for a email list. This project is in progress and will be
+              for an email list. This project is in progress and will be
               releasing a headless drop-shipping service to sell photography
               prints. We will also be implementing a blog powered by Contentful.
             </motion.p>

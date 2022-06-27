@@ -3,15 +3,58 @@
 .heroContainer {
   padding: 0 24px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 80vh;
-  margin-top: 20vh;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: calc(100vh - 200px);
   position: relative;
+
   .heroBackground {
     position: absolute;
     right: 0;
     bottom: 0;
+    z-index: -1;
+    display: none;
+  }
+  .heroSpanContainer {
+    height: 45px;
+    overflow: hidden;
+    &:nth-child(3),
+    &:nth-child(4) {
+      display: inline-block;
+    }
+    .innerScrollContainer {
+      display: inline-block;
+      span {
+        display: block;
+
+        &:nth-child(even) {
+          color: $accentColour;
+        }
+      }
+    }
+  }
+
+  .heroCTAContainer {
+    position: absolute;
+    left: 24px;
+    bottom: 0;
+    min-width: 355px;
+    .ctaButton {
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 5px;
+      cursor: pointer;
+      span {
+        font-family: $headingFont;
+        font-size: 16px;
+        text-transform: uppercase;
+        line-height: 1;
+        display: block;
+      }
+    }
   }
   .headingContainer {
     max-width: fit-content;
@@ -21,7 +64,7 @@
         text-transform: uppercase;
         display: block;
         font-weight: normal;
-        font-size: 50px;
+        font-size: 45px;
         line-height: 1;
         &:nth-child(2) {
           &:before,
@@ -45,7 +88,6 @@
     }
   }
   .scrollWrapper {
-    margin-bottom: 150px;
     display: flex;
     width: 100%;
     overflow: hidden;
@@ -55,6 +97,10 @@
     height: 25px;
     border: 1px solid #000;
     border-radius: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    display: none;
   }
   .scrollContainer {
     position: absolute;
@@ -83,7 +129,7 @@
           top: 50%;
           transform: translateY(-50%);
 
-          background: #5c6c4f;
+          background: $accentColour;
           width: 10px;
           height: 10px;
           border-radius: 50%;
@@ -97,12 +143,16 @@
     .headingContainer {
       .heading {
         span {
-          font-size: 75px;
+          font-size: 70px;
           line-height: 1;
         }
       }
     }
+    .heroSpanContainer {
+      height: 70px;
+    }
   }
+
   .scrollWrapper {
     max-width: 650px;
   }
@@ -111,43 +161,97 @@
 @media (min-width: $tablet) {
   .heroContainer {
     padding: 0 50px;
+    .heroBackground {
+      display: block;
+    }
+    .heroCTAContainer {
+      left: unset;
+      right: 50px;
+    }
     .headingContainer {
       width: 100%;
       max-width: unset;
       display: flex;
       justify-content: center;
       flex-direction: column;
-      align-items: center;
       .heading {
         span {
-          font-size: 100px;
-          &:nth-child(3),
-          &:nth-child(1) {
-            padding-left: 100px;
-          }
+          font-size: 75px;
+          // &:nth-child(3),
+          // &:nth-child(1) {
+          //   padding-left: 100px;
+          // }
         }
       }
       .portfolioText {
         align-self: flex-end;
       }
     }
+    .heroSpanContainer {
+      height: 75px;
+      display: inline-block;
+    }
     .scrollWrapper {
       max-width: 370px;
-      margin-bottom: 200px;
+      display: flex;
+      bottom: 22px;
     }
   }
 }
 @media (min-width: $desktop) {
   .heroContainer {
     padding: 0 100px;
+    .heroSpanContainer {
+      height: 100px;
+    }
+    .heroCTAContainer {
+      right: 100px;
+    }
     .headingContainer {
+      max-width: 1350px;
+      .heading {
+        span {
+          font-size: 100px;
+        }
+      }
+      .portfolioText {
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+@media (min-width: $largeDesktop) {
+  .heroContainer {
+    padding: 0 100px;
+    .heroSpanContainer {
+      height: 150px;
+    }
+    .headingContainer {
+      max-width: 1800px;
       .heading {
         span {
           font-size: 150px;
-          &:nth-child(3),
-          &:nth-child(1) {
-            padding-left: 100px;
-          }
+        }
+      }
+      .portfolioText {
+        align-self: flex-end;
+      }
+    }
+  }
+}
+
+@media (min-width: 2200px) {
+  .heroContainer {
+    padding: 0 100px;
+    .heroSpanContainer {
+      height: 180px;
+    }
+    .headingContainer {
+      max-width: 90vw;
+      .heading {
+        span {
+          font-size: 180px;
         }
       }
       .portfolioText {

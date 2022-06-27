@@ -2,11 +2,43 @@
 .desktopNavigationContainer,
 .desktopSocialContainer {
   display: none;
+  .localTime {
+    font-size: 11px;
+    font-family: $font;
+    opacity: 0.5;
+  }
   li {
     list-style: none;
     padding: 0 10px;
-    font-size: 15px;
+    font-size: 16px;
     text-transform: uppercase;
+    a {
+      display: block;
+      position: relative;
+      &::after {
+        width: 0%;
+        height: 3px;
+        background-color: $accentColour;
+        position: absolute;
+        content: "";
+        right: 0;
+        transition: all 0.4s ease-in-out;
+        bottom: 8px;
+      }
+      &:hover {
+        &::after {
+          right: unset;
+          width: 100%;
+          left: 0;
+        }
+      }
+      &.selected {
+        &::after {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
     &:first-of-type {
       padding-left: 0;
     }
@@ -28,6 +60,7 @@
   justify-content: space-between;
   border-bottom: 1px solid #000;
   font-family: $font;
+  margin-bottom: 0;
   &.menuOpen {
     background: #e1dfdd;
     margin: 0;
@@ -38,6 +71,11 @@
     margin: 0;
     padding: 0;
     font-weight: normal;
+    font-family: $headingFont;
+    text-transform: uppercase;
+    .name {
+      color: $accentColour;
+    }
   }
   .mobileMenuButton {
     border: none;
@@ -103,6 +141,25 @@
     }
   }
 }
+
+.dark {
+  background: #000;
+  padding: 24px;
+  margin: 0;
+  border-bottom: none;
+  color: #fff;
+  .mobileMenuButton {
+    span {
+      background: #fff;
+    }
+  }
+  // .darkUnderline {
+  //   width: 100%;
+  //   padding: 0 24px;
+  //   height: 1px;
+  //   background: #fff;
+  // }
+}
 @keyframes grain {
   0%,
   100% {
@@ -145,7 +202,11 @@
   .header {
     padding: 37px 0 30px 0;
     margin: 0 50px;
-    margin-bottom: 110px;
+    margin-bottom: 0;
+    &.dark {
+      padding: 37px 50px 30px 50px;
+      margin: 0;
+    }
     .mobileNavigationContainer {
       display: none;
     }
@@ -158,6 +219,6 @@
 @media (min-width: $desktop) {
   .header {
     margin: 0 100px;
-    margin-bottom: 150px;
+    margin-bottom: 0;
   }
 }
