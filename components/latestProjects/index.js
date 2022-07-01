@@ -13,30 +13,32 @@ const LatestProjects = () => {
   const [showProjects, setShowProjects] = useState(false);
   const [largeImages, setLargeImages] = useState(false);
   const [showMouse, setShowMouse] = useState(false);
-  const [mousePosition, setMousePosition] = useState({
-    left: 0,
-    top: 0,
-  });
-  function handleMouseMove(e) {
-    setMousePosition({ left: e.pageX, top: e.pageY });
-  }
-  function handleMouse(enter) {
-    if (enter) {
-      setShowMouse(true);
-    } else {
-      setShowMouse(false);
-    }
-  }
-  useEffect(() => {
-    console.log(viewport, width);
-    if (typeof window != undefined)
-      setLargeImages(window.innerWidth > 1400 ? true : false);
-    setShowProjects(true);
-  }, []);
-  useEffect(() => {
-    setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
-  }, [showProjects]);
-  console.log(viewport);
+  const [isHovering1, setIsHovering1] = useState(false);
+  const [isHovering2, setIsHovering2] = useState(false);
+  // const [mousePosition, setMousePosition] = useState({
+  //   left: 0,
+  //   top: 0,
+  // });
+  // function handleMouseMove(e) {
+  //   setMousePosition({ left: e.pageX, top: e.pageY });
+  // }
+  // function handleMouse(enter) {
+  //   if (enter) {
+  //     setShowMouse(true);
+  //   } else {
+  //     setShowMouse(false);
+  //   }
+  // }
+  // useEffect(() => {
+  //   console.log(viewport, width);
+  //   if (typeof window != undefined)
+  //     setLargeImages(window.innerWidth > 1400 ? true : false);
+  //   setShowProjects(true);
+  // }, []);
+  // useEffect(() => {
+  //   setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
+  // }, [showProjects]);
+  // console.log(viewport);
   const projects = [
     {
       name: "Reduced to Clear",
@@ -69,6 +71,22 @@ const LatestProjects = () => {
       width: largeImages ? 500 : 300,
     },
   ];
+  const imageHover = {
+    stopHover: {
+      scale: 1,
+      transition: {
+        duration: 2,
+        ease: [0.405, 0, 0.025, 1],
+      },
+    },
+    startHover: {
+      scale: 1.1,
+      transition: {
+        duration: 2,
+        ease: [0.405, 0, 0.025, 1],
+      },
+    },
+  };
   return (
     <motion.section className={styles.sectionContainer} id={"work"}>
       <motion.h2
@@ -77,9 +95,65 @@ const LatestProjects = () => {
         whileInView={"whileInView"}
         viewport={{ once: true }}
       >
-        Latest Work
+        <span className={styles.number}>//02</span>Latest Work
       </motion.h2>
-      <motion.div
+      <motion.section
+        className={styles.projectsContainer}
+        variants={ProjectVariants.infoText}
+        whileInView={"whileInView"}
+        viewport={{ once: true }}
+      >
+        <Link href="/work/basik">
+          <article className={styles.project}>
+            <div className={styles.imageOuter}>
+              <motion.div
+                className={styles.imageInner}
+                animate={isHovering2 ? "startHover" : "stopHover"}
+                onHoverStart={(e) => setIsHovering2(true)}
+                onHoverEnd={(e) => setIsHovering2(false)}
+                variants={imageHover}
+              >
+                <Image
+                  src={"/testProjectImage.jpg"}
+                  alt={"Reduced to Clear"}
+                  width={1000}
+                  height={1200}
+                  objectFit={"cover"}
+                  layout={"responsive"}
+                />
+              </motion.div>
+            </div>
+            <h2 className={styles.projectName}>MAGMA</h2>
+          </article>
+        </Link>
+        <Link href="/work/basik">
+          <article className={styles.project}>
+            <div className={styles.imageOuter}>
+              <motion.div
+                className={styles.imageInner}
+                variants={imageHover}
+                animate={isHovering1 ? "startHover" : "stopHover"}
+                onHoverStart={(e) => setIsHovering1(true)}
+                onHoverEnd={(e) => setIsHovering1(false)}
+              >
+                <Image
+                  src={"/testProjectImage2.jpg"}
+                  alt={"Reduced to Clear"}
+                  width={1000}
+                  height={1200}
+                  objectFit={"cover"}
+                  layout={"responsive"}
+                />{" "}
+              </motion.div>
+            </div>
+            <h2 className={styles.projectName}>REDUCED TO CLEAR</h2>
+          </article>
+        </Link>
+      </motion.section>
+      <Link href={"/work"}>
+        <a className={styles.moreWorkButton}>VIEW MORE</a>
+      </Link>
+      {/* <motion.div
         className={styles.carousel}
         ref={carouselRef}
         variants={ProjectVariants.infoText}
@@ -99,12 +173,6 @@ const LatestProjects = () => {
                 className={styles.project}
                 style={{ minWidth: project.width }}
               >
-                {/* <Image
-                src={"/portfolioProject.jpg"}
-                width={400}
-                height={400}
-                className={styles.projectImage}
-              /> */}
                 <motion.div
                   layoutId={index.toString()}
                   variants={projectDisplayVariants.imageVariants}
@@ -149,58 +217,7 @@ const LatestProjects = () => {
               </motion.article>
             ))}
         </motion.div>
-      </motion.div>
-      <motion.div
-        className={styles.hoverCursor}
-        style={{ left: mousePosition.left, top: mousePosition.top }}
-        animate={showMouse ? { opacity: 1 } : { opacity: 0 }}
-      >
-        <motion.div
-          className={styles.backHex}
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-        >
-          <svg width="121px" height="125px" viewBox="0 0 121 125">
-            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-              <g
-                transform="translate(-1135.000000, -1047.000000)"
-                stroke="black"
-              >
-                <g transform="translate(91.000000, 177.000000)">
-                  <g transform="translate(1017.532346, 844.532346)">
-                    <path
-                      d="M86.9676538,25.045004 L141.460267,56.5063289 L141.460267,119.428979 L86.9676538,150.890304 L32.4750406,119.428979 L32.4750406,56.5063289 L86.9676538,25.045004 Z"
-                      id="Polygon-Copy"
-                      transform="translate(86.967654, 87.967654) rotate(-251.000000) translate(-86.967654, -87.967654) "
-                    ></path>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </motion.div>
-        <motion.div
-          className={styles.frontHex}
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-        >
-          <svg width="122px" height="118px" viewBox="0 0 122 118">
-            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-              <g transform="translate(-1135.000000, -1050.000000)" fill="black">
-                <g transform="translate(91.000000, 177.000000)">
-                  <g transform="translate(1017.532346, 844.532346)">
-                    <polygon
-                      transform="translate(87.467654, 87.467654) rotate(-221.000000) translate(-87.467654, -87.467654) "
-                      points="87.4676538 25.4676538 141.161229 56.4676538 141.161229 118.467654 87.4676538 149.467654 33.7740787 118.467654 33.7740787 56.4676538"
-                    ></polygon>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </motion.div>
-        <motion.span>DRAG</motion.span>
-      </motion.div>
+      </motion.div> */}
     </motion.section>
   );
 };

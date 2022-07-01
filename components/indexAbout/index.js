@@ -8,9 +8,9 @@ import Lines from "../../assets/lines.svg";
 const IndexAbout = () => {
   return (
     <section className={styles.aboutContainer}>
-      <div className={styles.backgroundAssets}>
+      {/* <div className={styles.backgroundAssets}>
         <Lines />
-      </div>
+      </div> */}
 
       <div className={styles.topSection}>
         <div className={styles.desktopTop}>
@@ -20,7 +20,7 @@ const IndexAbout = () => {
             whileInView={"whileInView"}
             viewport={{ once: true }}
           >
-            About
+            <span className={styles.number}>//03</span>About
           </motion.h6>
           <Link href={"/about"}>
             <motion.div
@@ -60,7 +60,7 @@ const IndexAbout = () => {
           </motion.p>
         </div>
 
-        <Link href={"/about"}>
+        {/* <Link href={"/about"}>
           <motion.div
             className={`${styles.buttonContainer} ${styles.desktopButton}`}
             variants={ProjectVariants.infoText}
@@ -76,7 +76,7 @@ const IndexAbout = () => {
               className={styles.arrowImage}
             />
           </motion.div>
-        </Link>
+        </Link> */}
       </div>
       <motion.div
         className={styles.imageContainer}
@@ -84,12 +84,7 @@ const IndexAbout = () => {
         whileInView={"whileInView"}
         viewport={{ once: true }}
       >
-        <Image
-          src={"/portfolioProject.jpg"}
-          layout={"responsive"}
-          height={600}
-          width={700}
-        />
+        <Image src={"/photo.jpg"} height={1000} width={1000} />
       </motion.div>
       <p className={styles.mobileDescription}>
         Our intelligent digital strategy and a pragmatic and thoughtful approach

@@ -8,6 +8,10 @@ import { motion, useViewportScroll } from "framer-motion";
 import { ProjectVariants } from "../../../FramerVariants";
 import { useOnScreen } from "../../../utils";
 import { useInView } from "react-intersection-observer";
+import Header from "../../../components/header";
+import OrangeArrow from "../../../assets/orangeArrow.svg";
+import OrangeDesktop from "../../../assets/orangeArrowDesktop.svg";
+import Link from "next/link";
 export default function Projects() {
   // const ref = useRef();
   // const isVisible = useOnScreen(ref);
@@ -24,7 +28,9 @@ export default function Projects() {
       // document.body.classList.add("lightkMode");
     }
   }, [inView]);
-
+  useEffect(() => {
+    document.body.classList.add("light");
+  }, []);
   return (
     <>
       <Head>
@@ -32,6 +38,7 @@ export default function Projects() {
         <meta name="description" content="Will - Reduced to Clear" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <motion.main
         initial={"initial"}
         animate={"animate"}
@@ -54,15 +61,7 @@ export default function Projects() {
                   className={styles.heading}
                   variants={ProjectVariants.headingtext}
                 >
-                  To
-                </motion.span>
-              </div>
-              <div className={styles.headingTextContainer}>
-                <motion.span
-                  className={styles.heading}
-                  variants={ProjectVariants.headingtext}
-                >
-                  Clear
+                  to Clear
                 </motion.span>
               </div>{" "}
               <motion.a
@@ -265,6 +264,22 @@ export default function Projects() {
           ></motion.div>
         </div>
       </motion.main>
+      <div className={styles.nextProjectContainer}>
+        <Link href={"/work/basik"}>
+          <a>
+            <span className={styles.nextName}>Basik Collective</span>
+            <div className={styles.nextContainer}>
+              <span className={styles.nextText}>NEXT PROJECT</span>
+              <div className={styles.arrowContainer}>
+                <OrangeArrow />
+              </div>
+              <div className={styles.arrowContainerDesktop}>
+                <OrangeDesktop />
+              </div>
+            </div>
+          </a>
+        </Link>
+      </div>
       <Footer />
     </>
   );

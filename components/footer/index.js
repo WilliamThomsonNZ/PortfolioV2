@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styles from "./footer.module.scss";
 import { motion } from "framer-motion";
-import { ProjectVariants } from "../../FramerVariants";
+import { footerVariants } from "../../FramerVariants";
 import Grid from "../../assets/Grid.svg";
 import Link from "next/link";
+
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -35,34 +36,81 @@ const Footer = () => {
   return (
     <>
       <footer className={styles.footer}>
-        <div className={styles.ctaContainer}>
+        <motion.div
+          className={styles.ctaContainer}
+          variants={footerVariants.links}
+          initial={"initial"}
+          whileInView={"animate"}
+          viewport={{ once: true }}
+        >
           <span className={styles.ox}>//0x</span>
           <h6 className={styles.startProject}>Got A Project In Mind?</h6>
           <Link href={"/contact"}>
             <h2 className={styles.chat}>Let's Talk</h2>
           </Link>
-        </div>
-        <div className={styles.contactLinks}>
-          <a href="#" className={styles.contactLink}>
+        </motion.div>
+        <motion.div
+          className={styles.contactLinks}
+          variants={footerVariants.linksContainer}
+          initial={"initial"}
+          whileInView={"animate"}
+          viewport={{ once: true }}
+        >
+          <motion.a
+            href="#"
+            className={styles.contactLink}
+            variants={footerVariants.links}
+            whileInView={"animate"}
+            viewport={{ once: true }}
+          >
             Twitter
-          </a>
-          <a href="#" className={styles.contactLink}>
+          </motion.a>
+          <motion.a
+            href="#"
+            className={styles.contactLink}
+            variants={footerVariants.links}
+            whileInView={"animate"}
+            viewport={{ once: true }}
+          >
             Github
-          </a>
-          <a href="#" className={styles.contactLink}>
+          </motion.a>
+          <motion.a
+            href="#"
+            className={styles.contactLink}
+            variants={footerVariants.links}
+            whileInView={"animate"}
+            viewport={{ once: true }}
+          >
             Linkedin
-          </a>
-          <a href="#" className={styles.contactLink}>
+          </motion.a>
+          <motion.a
+            href="#"
+            className={styles.contactLink}
+            variants={footerVariants.links}
+            whileInView={"animate"}
+            viewport={{ once: true }}
+          >
             Discord Willl#8451
-          </a>
-          <a href="#" className={styles.contactLink}>
+          </motion.a>
+          <motion.a
+            href="#"
+            className={styles.contactLink}
+            variants={footerVariants.links}
+            whileInView={"animate"}
+            viewport={{ once: true }}
+          >
             hello@williamthomson.co.nz
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </footer>
-      <span className={styles.copy}>
-        &copy; Will Thomson 2022. All Rights Resevered
-      </span>
+      <motion.span
+        className={styles.copy}
+        variants={footerVariants.links}
+        whileInView={"animate"}
+        viewport={{ once: true }}
+      >
+        &copy; Will Thomson 2022. All Rights Resevered.
+      </motion.span>
     </>
   );
 };

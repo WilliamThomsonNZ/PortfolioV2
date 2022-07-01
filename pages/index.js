@@ -11,23 +11,32 @@ import Intro from "../components/intro";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { introVariants } from "../FramerVariants";
-import QuoteImage from "../components/quoteImage";
+import SocialProof from "../components/socialProof";
 export default function Home() {
-  const [introRun, setIntroRun] = useState(false);
-
+  const [introRun, setIntroRun] = useState(true);
+  useEffect(() => {
+    document.body.classList.add("light");
+    if (sessionStorage.getItem("introRun") == null) {
+      setIntroRun(false);
+      setTimeout(() => {
+        setIntroRun(true);
+        sessionStorage.setItem("introRun", "true");
+      }, 4000);
+    }
+  }, []);
   const variants = {
     exit: {
       opacity: 0,
     },
   };
   return (
-    <>
+    <motion.div
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+    >
       <Head>
         <title>WILL - Web3 Development Solutions</title>
-        <meta
-          name="description"
-          content="Development solutions for the Web3 Creators"
-        />
+        <meta name="description" content="WEB3 DEVELOPMENT SERVICES" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AnimatePresence>
@@ -43,7 +52,7 @@ export default function Home() {
           </motion.div>
         ) : (
           <>
-            <Header />
+            <Header currentPage={"home"} />
             <motion.main
               variants={variants}
               initial={"initial"}
@@ -52,7 +61,7 @@ export default function Home() {
               key={"main"}
             >
               <Hero />
-              <QuoteImage />
+              <SocialProof />
               <IndexServices />
               <LatestProjects />
               <IndexAbout />
@@ -61,6 +70,6 @@ export default function Home() {
           </>
         )}
       </AnimatePresence>
-    </>
+    </motion.div>
   );
 }

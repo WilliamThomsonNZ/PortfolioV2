@@ -8,11 +8,8 @@ function MyApp({ Component, pageProps }) {
   else url = "testing";
 
   return (
-    <div data-scroll-container>
-      <AnimatePresence
-        exitBeforeEnter
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
+    <div>
+      <AnimatePresence>
         <Component {...pageProps} key={url + "hi"} />
       </AnimatePresence>
     </div>

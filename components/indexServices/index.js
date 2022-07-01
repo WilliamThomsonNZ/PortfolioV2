@@ -26,7 +26,7 @@ const IndexServices = () => {
 
   const services = [
     {
-      name: "Website/Web Appliaction Development",
+      name: "Web Application Development",
       initialDescription:
         "I build scalable and performant experiences on the web. Having a fully functional and flawless website is one of the keys to a successful business.",
       largeDescription:
@@ -44,13 +44,13 @@ const IndexServices = () => {
       largeDescription:
         "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
     },
-    {
-      name: "UI/UX Design",
-      initialDescription:
-        "Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.",
-      largeDescription:
-        "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
-    },
+    // {
+    //   name: "UI/UX Design",
+    //   initialDescription:
+    //     "Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.",
+    //   largeDescription:
+    //     "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
+    // },
   ];
 
   return (
@@ -64,14 +64,22 @@ const IndexServices = () => {
       }}
       id={"services"}
     >
-      <motion.h2
-        className={styles.sectionTitle}
-        variants={ProjectVariants.infoText}
-        whileInView={"whileInView"}
-        viewport={{ once: true }}
-      >
-        Services
-      </motion.h2>
+      <div className={styles.headingContainer}>
+        <motion.h2
+          className={styles.sectionTitle}
+          variants={ProjectVariants.infoText}
+          whileInView={"whileInView"}
+          viewport={{ once: true }}
+        >
+          <span className={styles.number}>//01</span>Services
+        </motion.h2>
+        {/* <p className={styles.serviceDescription}>
+          Our intelligent digital strategy and a pragmatic and thoughtful
+          approach to solving business calls deliver a successful framework for
+          both you and your audience. business calls deliver a successful
+          framework for both you and your clients
+        </p> */}
+      </div>
       {services.map((service, index) => (
         <ServiceCard
           service={service}

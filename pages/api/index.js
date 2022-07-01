@@ -18,26 +18,9 @@ const handler = nc()
     });
   })
   .post(async (req, res) => {
-    const email = req.body.email;
-    const name = req.body.name;
-    const message = req.body.message;
-
-    const options = {
-      from: process.env.NODE_MAILER_EMAIL,
-      to: process.env.NODE_MAILER_TO,
-      text: `
-      NAME: ${name}
-      EMAIL: ${email}
-      MESSAGE: ${message}
-    `,
-    };
-    transporter.sendMail(options, function (err, info) {
-      if (err) {
-        console.log(err);
-        res.json({ code: 400, message: err });
-        return;
-      }
-      res.json({ code: 200, message: info.response });
+    res.json({
+      code: 200,
+      message: "API RUNNING",
     });
   });
 

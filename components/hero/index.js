@@ -145,14 +145,14 @@ const Hero = () => {
           </motion.div>
         </div>
       </motion.div>
-      <motion.div
-        className={styles.heroCTAContainer}
-        variants={heroVariants.portfolioText}
-      >
-        <Link href="/contact">
+      <Link href="/contact">
+        <motion.div
+          className={styles.heroCTAContainer}
+          variants={heroVariants.portfolioText}
+        >
           <Button label={"Get in touch"} />
-        </Link>
-      </motion.div>
+        </motion.div>
+      </Link>
     </section>
   );
 };

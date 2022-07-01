@@ -8,6 +8,7 @@ import { motion, useViewportScroll } from "framer-motion";
 import { ProjectVariants } from "../../../FramerVariants";
 import { useOnScreen } from "../../../utils";
 import { useInView } from "react-intersection-observer";
+import Header from "../../../components/header";
 export default function Projects() {
   // const ref = useRef();
   // const isVisible = useOnScreen(ref);
@@ -24,7 +25,9 @@ export default function Projects() {
       // document.body.classList.add("lightkMode");
     }
   }, [inView]);
-
+  useEffect(() => {
+    document.body.classList.add("light");
+  }, []);
   return (
     <>
       <Head>
@@ -32,6 +35,7 @@ export default function Projects() {
         <meta name="description" content="Oceans by Erin Fleming" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <motion.main
         initial={"initial"}
         animate={"animate"}

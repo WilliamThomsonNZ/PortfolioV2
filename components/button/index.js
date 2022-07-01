@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import styles from "./button.module.scss";
-const Button = ({ cb = () => {}, label }) => {
+const Button = ({ label }) => {
   const [hover, setHover] = useState(false);
   const arrowVariants = {
     stopHover: {
@@ -29,7 +29,6 @@ const Button = ({ cb = () => {}, label }) => {
   return (
     <motion.button
       className={styles.button}
-      onClick={cb}
       onHoverStart={() => setHover(true)}
       onHoverEnd={() => setHover(false)}
     >

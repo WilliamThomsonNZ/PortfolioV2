@@ -6,8 +6,11 @@ import Footer from "../../../components/footer";
 import { useEffect, useRef } from "react";
 import { motion, useViewportScroll } from "framer-motion";
 import { ProjectVariants } from "../../../FramerVariants";
-import { useOnScreen } from "../../../utils";
+import Header from "../../../components/header";
 import { useInView } from "react-intersection-observer";
+import OrangeArrow from "../../../assets/orangeArrow.svg";
+import OrangeDesktop from "../../../assets/orangeArrowDesktop.svg";
+import Link from "next/link";
 export default function Projects() {
   // const ref = useRef();
   // const isVisible = useOnScreen(ref);
@@ -25,6 +28,9 @@ export default function Projects() {
     }
   }, [inView]);
 
+  useEffect(() => {
+    document.body.classList.add("light");
+  }, []);
   return (
     <>
       <Head>
@@ -32,6 +38,7 @@ export default function Projects() {
         <meta name="description" content="Will - Basik Collective" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <motion.main
         initial={"initial"}
         animate={"animate"}
@@ -239,6 +246,22 @@ export default function Projects() {
           ></motion.div>
         </div>
       </motion.main>
+      <div className={styles.nextProjectContainer}>
+        <Link href={"/work/basik"}>
+          <a>
+            <span className={styles.nextName}>Basik Collective</span>
+            <div className={styles.nextContainer}>
+              <span className={styles.nextText}>NEXT PROJECT</span>
+              <div className={styles.arrowContainer}>
+                <OrangeArrow />
+              </div>
+              <div className={styles.arrowContainerDesktop}>
+                <OrangeDesktop />
+              </div>
+            </div>
+          </a>
+        </Link>
+      </div>
       <Footer />
     </>
   );

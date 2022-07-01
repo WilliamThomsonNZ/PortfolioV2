@@ -3,6 +3,7 @@
 .aboutContainer {
   padding: 0 24px;
   margin-bottom: 150px;
+  margin-top: 150px;
   position: relative;
 }
 .imageContainer {
@@ -11,11 +12,17 @@
   }
 }
 .title {
-  font-size: 32px;
+  font-size: 40px;
   font-family: $headingFont;
   font-weight: normal;
   margin: 0;
-  margin-bottom: 40px;
+  text-transform: uppercase;
+  .number {
+    font-size: 16px;
+    color: $accentColour;
+    display: inline-block;
+    margin-right: 15px;
+  }
 }
 .topSection {
   display: flex;
@@ -85,13 +92,19 @@
     }
     .imageContainer {
       width: 65%;
-      img {
-        max-height: 600px !important;
-      }
+      // img {
+      //   max-height: 600px !important;
+      // }
     }
     .desktopButton {
       align-self: end;
     }
+  }
+}
+.title {
+  font-size: 85px;
+  .number {
+    font-size: 20px;
   }
 }
 .backgroundAssets {
@@ -102,7 +115,7 @@
 }
 @media (min-width: $desktop) {
   .title {
-    font-size: 140px;
+    font-size: 110px;
     line-height: 1;
     margin-bottom: 120px;
   }
@@ -110,7 +123,7 @@
   .aboutContainer {
     gap: 120px;
     padding: 0 100px;
-    margin: 150px 0 350px;
+    margin: 350px 0 350px;
   }
   .desktopDescription {
     margin-top: 0;

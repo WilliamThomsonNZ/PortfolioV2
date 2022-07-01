@@ -6,11 +6,22 @@
 }
 
 .sectionTitle {
-  font-size: 32px;
+  font-size: 40px;
   font-family: $headingFont;
   font-weight: normal;
   margin: 0;
-  margin-bottom: 40px;
+  text-transform: uppercase;
+  .number {
+    font-size: 16px;
+    color: $accentColour;
+    display: inline-block;
+    margin-right: 15px;
+  }
+}
+.serviceDescription {
+  line-height: 145%;
+  margin-bottom: 60px;
+  font-family: $font;
 }
 .desktopDescription {
   display: none;
@@ -27,9 +38,10 @@
   overflow: hidden;
   font-family: $font;
   .serviceTitle {
-    font-size: 20px;
+    font-size: 18px;
+
     font-family: $font;
-    font-weight: normal;
+    font-weight: 500;
     margin: 0;
   }
   .image,
@@ -91,17 +103,36 @@
     background: #fff;
   }
 }
-
+.headingContainer {
+  margin-bottom: 30px;
+}
 @media (min-width: $tablet) {
   .sectionContainer {
     padding: 0 50px;
     //ax-width: 1920px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 250px;
+    margin-top: 350px;
   }
   .underline {
     margin-bottom: 50px;
+  }
+  .sectionTitle {
+    font-size: 60px;
+    .number {
+      font-size: 20px;
+    }
+  }
+  .headingContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 100px;
+    .serviceDescription {
+      max-width: 600px;
+      margin: 0;
+    }
   }
   .serviceTop {
     margin-bottom: 50px;
@@ -115,6 +146,7 @@
     .serviceTitle {
       align-self: flex-start;
       width: 400px;
+      font-size: 22px;
       margin-bottom: 59px;
     }
     .mobileDescription {
@@ -162,12 +194,13 @@
       height: 600px;
     }
   }
+  .headingContainer {
+  }
   .sectionContainer {
     padding: 0 100px;
   }
   .sectionTitle {
-    font-size: 140px;
-    margin-bottom: 120px;
+    font-size: 85px;
   }
   .servicesButtonDesktop {
     margin-left: 200px;
@@ -178,6 +211,34 @@
     gap: 150px;
     .desktopImage {
       height: 800px;
+    }
+  }
+}
+@media (min-width: 1600px) {
+  .sectionContainer {
+    .headingContainer {
+      .serviceDescription {
+        max-width: 795px;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media (min-width: $largeDesktop) {
+  .sectionContainer {
+    .sectionTitle {
+      font-size: 110px;
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .sectionContainer {
+    .headingContainer {
+      .serviceDescription {
+        max-width: 900px;
+        font-size: 24px;
+      }
     }
   }
 }

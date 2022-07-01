@@ -19,6 +19,12 @@
   .contactDetailsMobile {
     margin-bottom: 64px;
   }
+  .headingTextContainer {
+    overflow-y: hidden;
+    span {
+      display: inline-block;
+    }
+  }
   .sectionTitle {
     font-family: $font;
     font-style: normal;
@@ -124,8 +130,13 @@
     margin-top: 40px;
     margin-bottom: 115px;
     /* or 26px */
-
     text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+    &:hover {
+      background: $accentColour;
+      color: #fff;
+    }
   }
   .contactDetailsDesktop {
     display: none;
@@ -159,7 +170,13 @@
       width: 30%;
     }
   }
-
+  .headingTextContainer {
+    height: 100px;
+    overflow-y: hidden;
+    span {
+      display: inline-block;
+    }
+  }
   .sectionContainer {
     padding-left: 50px;
     padding-right: 50px;
@@ -220,6 +237,7 @@
     }
     .textInput {
       margin-bottom: 0;
+      font-size: 28px;
       &::placeholder {
         font-size: 28px;
       }
@@ -252,6 +270,13 @@
     .contactHeading {
       font-size: 110px;
       max-width: 1200px;
+    }
+    .headingTextContainer {
+      height: 120px;
+      overflow-y: hidden;
+      span {
+        display: inline-block;
+      }
     }
   }
 }

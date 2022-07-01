@@ -24,7 +24,9 @@ export default function Projects() {
       // document.body.classList.add("lightkMode");
     }
   }, [inView]);
-
+  useEffect(() => {
+    document.body.classList.add("light");
+  }, []);
   return (
     <>
       <Head>

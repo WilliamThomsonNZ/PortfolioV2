@@ -2,32 +2,82 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../../styles/contact.module.scss";
 import Header from "../../components/header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { contactVariants } from "../../FramerVariants";
+import useWindowWidth from "../../utils/useWindowWidth";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [org, setOrg] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [submitButtonText, setSubmitButtonText] = useState("send");
+  const width = useWindowWidth(700);
 
-  function handleFormSubmission(e) {
+  useEffect(() => {
+    document.body.classList.remove("light");
+  }, []);
+  async function handleFormSubmission(e) {
     e.preventDefault();
+    setLoading(true);
+    const body = JSON.stringify({ name, message, org, email });
+    const url = "/api/contact";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        body: body,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const json = await response.json();
+      setSubmitButtonText("sent!");
+    } catch (err) {
+      setSubmitButtonText("Error Occured");
+    }
+    setTimeout(() => {
+      setSubmitButtonText("send");
+      setLoading(false);
+    }, 4000);
   }
   return (
-    <>
+    <motion.div
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+      key={"contactPageContainer"}
+    >
       <Head>
-        <title>Will - Work</title>
-        <meta name="description" content="previous works" />
+        <title>Will - Contact</title>
+        <meta name="description" content="Let's discuss your next project" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header currentPage={"contact"} />
       <main className={styles.sectionContainer}>
-        <h1 className={styles.contactHeading}>
-          <motion.span>LET'S DISCUSS YOUR</motion.span>
-          <motion.span>NEXT PROJECT.</motion.span>
-        </h1>
-        <div className={styles.contentContainer}>
+        <motion.h1
+          className={styles.contactHeading}
+          variants={contactVariants.headingContainer}
+          initial={"initial"}
+          animate={"animate"}
+        >
+          <div className={styles.headingTextContainer}>
+            <motion.span variants={contactVariants.headingText}>
+              LET'S DISCUSS YOUR
+            </motion.span>
+          </div>
+          <div className={styles.headingTextContainer}>
+            <motion.span variants={contactVariants.headingText}>
+              NEXT PROJECT.
+            </motion.span>
+          </div>
+        </motion.h1>
+        <motion.div
+          className={styles.contentContainer}
+          variants={contactVariants.mainContainer}
+          initial={"initial"}
+          animate={"animate"}
+        >
           <section className={styles.contactDetailsMobile}>
             <h6 className={styles.sectionTitle}>Contact details</h6>
             <a
@@ -104,8 +154,9 @@ export default function Contact() {
               <button
                 className={styles.submitButton}
                 onClick={(e) => handleFormSubmission(e)}
+                disabled={loading}
               >
-                SEND
+                {submitButtonText}
               </button>
             </form>
           </section>
@@ -146,11 +197,11 @@ export default function Contact() {
               <span className={styles.socialLink}>Auckland, New Zealand</span>
             </div>
           </div>
-        </div>
+        </motion.div>
         <span className={styles.copyright}>
           &copy; Will Thomson 2022. All Rights Resevered
         </span>
       </main>
-    </>
+    </motion.div>
   );
 }

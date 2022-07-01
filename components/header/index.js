@@ -22,7 +22,7 @@ const Header = ({ currentPage }) => {
       ? NewZealandTime.getHours() - 12
       : NewZealandTime.getHours();
 
-  const morning = NewZealandTime.getHours() > 12 ? "PM" : "AM";
+  const morning = NewZealandTime.getHours() > 11 ? "PM" : "AM";
   const time = `${hours}:${
     NewZealandTime.getMinutes() < 10 ? "0" : ""
   }${NewZealandTime.getMinutes()} ${morning}`;
@@ -52,11 +52,14 @@ const Header = ({ currentPage }) => {
       exit={"exit"}
       variants={HeaderVariants.header}
     >
-      <h6 className={styles.logo}>
-        <span className={styles.name}>Will</span>
-        <br />
-        Thomson
-      </h6>
+      <Link href={"/"}>
+        <h6 className={styles.logo}>
+          <span className={styles.name}>Will</span>
+          <br />
+          Thomson
+        </h6>
+      </Link>
+
       <motion.div
         className={styles.menuToggle}
         initial={"initial"}
@@ -153,7 +156,7 @@ const Header = ({ currentPage }) => {
             </Link>
           </li>
           <li className={styles.menuItem}>
-            <Link href={"/#work"} to={"/work"}>
+            <Link href={"/work"} to={"/work"}>
               <a
                 className={currentPage == "work" ? styles.selected : undefined}
               >
@@ -162,7 +165,7 @@ const Header = ({ currentPage }) => {
             </Link>
           </li>
           <li className={styles.menuItem}>
-            <Link href="/#services">
+            <Link href="/contact">
               <a
                 className={
                   currentPage == "contact" ? styles.selected : undefined

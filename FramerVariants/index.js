@@ -8,7 +8,14 @@ export const HeaderVariants = {
       transition: {
         ease: [0.76, 0, 0.24, 1],
         duration: 1,
-        delay: 0.5,
+        delay: 1,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
       },
     },
   },
@@ -550,11 +557,112 @@ export const introVariants = {
     initial: {},
     animate: {},
     exit: {
-      y: "-100vw",
+      y: "-100vh",
       transition: {
         ease: [0.76, 0, 0.24, 1],
         duration: 1,
         delay: 0.5,
+      },
+    },
+  },
+};
+
+export const contactVariants = {
+  headingContainer: {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  },
+  headingText: {
+    initial: {
+      y: 110,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+  },
+  mainContainer: {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 1,
+      },
+    },
+  },
+};
+
+export const footerVariants = {
+  links: {
+    initial: {
+      y: 50,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+  },
+  linksContainer: {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  },
+};
+
+export const socialVariants = {
+  iconsContainer: {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  },
+  headingText: {
+    initial: {
+      opacity: 0,
+      y: 50,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+  },
+  icons: {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
       },
     },
   },
