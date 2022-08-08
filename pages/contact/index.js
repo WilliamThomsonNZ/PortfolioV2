@@ -11,6 +11,7 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [org, setOrg] = useState("");
+  const [services, setServices] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitButtonText, setSubmitButtonText] = useState("send");
@@ -22,7 +23,7 @@ export default function Contact() {
   async function handleFormSubmission(e) {
     e.preventDefault();
     setLoading(true);
-    const body = JSON.stringify({ name, message, org, email });
+    const body = JSON.stringify({ name, message, services, org, email });
     const url = "/api/contact";
     try {
       const response = await fetch(url, {
@@ -44,6 +45,8 @@ export default function Contact() {
   }
   return (
     <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
       key={"contactPageContainer"}
@@ -127,6 +130,21 @@ export default function Contact() {
                 <span className={styles.number}>//03</span>
                 <div className={styles.labelInner}>
                   <span className={styles.question}>
+                    What services do you require?
+                  </span>
+                  <input
+                    type={"text"}
+                    value={services}
+                    className={styles.textInput}
+                    placeholder={"Smart contract development *"}
+                    onChange={(e) => setServices(e.target.value)}
+                  />
+                </div>
+              </label>
+              <label className={styles.formLabel}>
+                <span className={styles.number}>//04</span>
+                <div className={styles.labelInner}>
+                  <span className={styles.question}>
                     What’s the name of your organization?
                   </span>
                   <input
@@ -139,10 +157,10 @@ export default function Contact() {
                 </div>
               </label>
               <label className={styles.formLabel}>
-                <span className={styles.number}>//04</span>
+                <span className={styles.number}>//05</span>
                 <div className={styles.labelInner}>
                   <span className={styles.question}>What’s your message?</span>
-                  <input
+                  <textarea
                     type={"text"}
                     placeholder={"What you would like to say *"}
                     value={message}
@@ -205,3 +223,29 @@ export default function Contact() {
     </motion.div>
   );
 }
+
+// .latternContainer {
+//   top: -10px;
+//   left: 200px;
+//   position: absolute;
+//   transform-origin: 50% 0;
+//   animation: pendulum 3s ease-in-out infinite;
+// }
+// @keyframes pendulum {
+//   0%,
+//   100% {
+//     transform: rotate(45deg);
+//   }
+//   50% {
+//     transform: rotate(-45deg);
+//   }
+// }
+
+// <div className={styles.latternContainer}>
+// <Image
+//   src={"/testLattern.png"}
+//   height={300}
+//   width={65}
+//   alt="lattern"
+// />
+// </div>

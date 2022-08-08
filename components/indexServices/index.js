@@ -26,7 +26,7 @@ const IndexServices = () => {
 
   const services = [
     {
-      name: "Web Application Development",
+      name: "Web Development",
       initialDescription:
         "I build scalable and performant experiences on the web. Having a fully functional and flawless website is one of the keys to a successful business.",
       largeDescription:

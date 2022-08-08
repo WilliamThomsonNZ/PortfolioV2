@@ -24,6 +24,7 @@ export default function Home() {
       }, 4000);
     }
   }, []);
+
   const variants = {
     exit: {
       opacity: 0,

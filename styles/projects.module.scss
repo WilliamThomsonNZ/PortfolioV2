@@ -2,7 +2,9 @@
 .pageContainer {
   background: #000;
   color: #fff;
-  padding: 0 24px;
+}
+.projectOuterContainer {
+  cursor: pointer;
 }
 .contactHeading {
   font-family: $headingFont;
@@ -13,6 +15,10 @@
   margin: 0;
   padding-top: 100px;
   margin-bottom: 50px;
+  padding: 100px 24px 0 24px;
+}
+.imageContainer {
+  overflow: hidden;
 }
 .headingTextContainer {
   overflow-y: hidden;
@@ -20,16 +26,32 @@
     display: inline-block;
   }
 }
+.projectName {
+  font-family: $headingFont;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+.projectContainer {
+  margin-bottom: 80px;
+}
 .workContainer {
   color: #fff;
+  background: #000;
+  // padding: 0 24px;
 }
-
+.projectGrid {
+  padding: 0 24px;
+  margin-bottom: 100px;
+}
 @media (min-width: $tablet) {
   .contactHeading {
     font-size: 91px;
     max-width: 1058px;
     padding-top: 200px;
     margin-bottom: 100px;
+  }
+  .projectName {
+    font-size: 28px;
   }
   .headingTextContainer {
     height: 100px;
@@ -38,9 +60,13 @@
       display: inline-block;
     }
   }
-  .pageContainer {
+  .projectGrid,
+  .contactHeading {
     padding-left: 50px;
     padding-right: 50px;
+  }
+  .projectGrid {
+    margin-bottom: 200px;
   }
 }
 
@@ -49,16 +75,61 @@
     padding-top: 200px;
     margin-bottom: 200px;
   }
-  .pageContainer {
+  .projectGrid,
+  .contactHeading {
     padding-left: 100px;
     padding-right: 100px;
+  }
+  .projectGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 200px;
+    // justify-content: center;
+
+    .projectOuterContainer {
+      &:nth-child(1) {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        .projectContainer {
+          max-width: 1200px;
+          justify-self: center;
+        }
+      }
+      &:nth-child(2) {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        .projectContainer {
+          max-width: 900px;
+        }
+      }
+      &:nth-child(3) {
+        display: flex;
+        width: calc(50% - 100px);
+        justify-self: flex-end;
+
+        .projectContainer {
+          max-width: 900px;
+        }
+      }
+      &:nth-child(4) {
+        display: flex;
+        width: calc(50% - 100px);
+        padding-top: 50px;
+        justify-self: flex-end;
+        .projectContainer {
+          max-width: 900px;
+        }
+      }
+    }
   }
 }
 
 @media (min-width: $largeDesktop) {
   .contactHeading {
     font-size: 110px;
-    max-width: 1400px;
+    max-width: 1450px;
   }
   .headingTextContainer {
     height: 120px;

@@ -4,6 +4,7 @@
   display: flex;
   gap: 24px;
 }
+
 .hoverCursor {
   position: absolute;
   display: flex;
@@ -11,7 +12,6 @@
   align-items: center;
   pointer-events: none;
   opacity: 0;
-
   .backHex {
     position: absolute;
     transform-origin: center;

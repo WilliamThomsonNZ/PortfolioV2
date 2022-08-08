@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div>
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} key={url + "hi"} />
       </AnimatePresence>
     </div>

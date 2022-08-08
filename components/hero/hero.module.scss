@@ -95,8 +95,8 @@
     align-items: center;
     position: relative;
     height: 25px;
-    border: 1px solid #000;
-    border-radius: 100px;
+    // border: 1px solid #000;
+    // border-radius: 100px;
     position: absolute;
     bottom: 0;
     left: 50px;
@@ -106,12 +106,12 @@
     position: absolute;
     left: 0;
     top: 3px;
-
     z-index: 2;
     .scrollInnerContainer {
       display: flex;
       overflow: scroll;
-      background: transparent;
+      background: #e0e0e0;
+      height: 38px;
       .slidingText {
         display: block;
         text-transform: uppercase;
@@ -126,9 +126,7 @@
           content: "";
           position: absolute;
           right: 0;
-          top: 50%;
-          transform: translateY(-50%);
-
+          top: 4px;
           background: $accentColour;
           width: 10px;
           height: 10px;

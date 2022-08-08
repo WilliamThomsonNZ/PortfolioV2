@@ -6,6 +6,7 @@ import Link from "next/link";
 import Footer from "../../components/Footer";
 import { motion } from "framer-motion";
 import { contactVariants } from "../../FramerVariants";
+import { useState } from "react";
 export default function Projects() {
   const projects = [
     {
@@ -24,23 +25,23 @@ export default function Projects() {
     },
     {
       name: "Shadow Labs",
-      image: "/basik.jpg",
+      image: "/testProjectImage2.jpg",
       link: "/work/shadow-labs",
-      height: 827,
-      width: 1240,
+      height: 850,
+      width: 700,
     },
     {
       name: "Basik",
-      image: "/basik.jpg",
+      image: "/testProjectImage.jpg",
       link: "/work/basik-collective",
-      height: 827,
-      width: 1240,
+      height: 1000,
+      width: 800,
     },
     {
       name: "Oceans by Erin Fleming",
-      image: "/basik.jpg",
+      image: "/testProjectImage.jpg",
       link: "/work/oceans",
-      height: 827,
+      height: 1000,
       width: 1240,
     },
   ];
@@ -48,6 +49,8 @@ export default function Projects() {
   return (
     <motion.div
       className={styles.workContainer}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
     >
@@ -77,28 +80,85 @@ export default function Projects() {
         </motion.h1>
         <section className={styles.projectGrid}>
           {projects.map((project, index) => (
-            <article
-              className={styles.projectContainer}
-              key={`${index} project`}
-              data-scroll-speed="4"
-            >
-              <div className={styles.imageContainer}>
-                <Image
-                  src={project.image}
-                  height={project.height}
-                  className={styles.image}
-                  width={project.width}
-                  objectFit={"cover"}
-                />
-              </div>
-              <Link href={project.link}>
-                <h1 className={styles.projectName}>{project.name}</h1>
-              </Link>
-            </article>
+            <WorkTile
+              title={project.name}
+              image={project.image}
+              link={project.link}
+              width={project.width}
+              height={project.height}
+            />
           ))}
         </section>
+        <Footer />
       </main>
-      <Footer />
     </motion.div>
   );
 }
+
+const WorkTile = ({ title, image, link, index, height, width }) => {
+  const [isHovering, setIsHovering] = useState(false);
+  const imageHover = {
+    stopHover: {
+      scale: 1,
+      transition: {
+        duration: 2,
+        ease: [0.405, 0, 0.025, 1],
+      },
+    },
+    startHover: {
+      scale: 1.1,
+      transition: {
+        duration: 2,
+        ease: [0.405, 0, 0.025, 1],
+      },
+    },
+  };
+
+  const projectVariants = {
+    initial: {
+      opacity: 0,
+      y: 50,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+      },
+    },
+  };
+
+  return (
+    <Link href={link}>
+      <motion.div
+        className={styles.projectOuterContainer}
+        initial={"initial"}
+        whileInView={"animate"}
+        variants={projectVariants}
+        viewport={{ once: true }}
+      >
+        <article className={styles.projectContainer} key={`${index}-project`}>
+          <div className={styles.imageContainer}>
+            <motion.div
+              className={styles.imageInner}
+              variants={imageHover}
+              animate={isHovering ? "startHover" : "stopHover"}
+              onHoverStart={(e) => setIsHovering(true)}
+              onHoverEnd={(e) => setIsHovering(false)}
+            >
+              <Image
+                src={image}
+                alt={"Project Image"}
+                width={width}
+                height={height}
+              />
+            </motion.div>
+          </div>
+
+          <h1 className={styles.projectName}>{title}</h1>
+        </article>
+      </motion.div>
+    </Link>
+  );
+};

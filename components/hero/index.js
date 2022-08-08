@@ -75,18 +75,16 @@ const Hero = () => {
           </div>
           <div className={styles.heroSpanContainer}>
             <motion.span variants={heroVariants.headingText2}>
-              solutions&nbsp;
+              services&nbsp;
             </motion.span>
           </div>
           <div className={styles.heroSpanContainer}>
             <motion.span variants={heroVariants.headingText2}>
-              for the&nbsp;
+              for web3
             </motion.span>
           </div>
           <div className={styles.heroSpanContainer}>
-            <motion.span variants={heroVariants.headingText3}>
-              web3&nbsp;
-            </motion.span>
+            <motion.span variants={heroVariants.headingText3}></motion.span>
           </div>
           <div className={styles.heroSpanContainer}>
             <motion.div variants={heroVariants.headingText3}>

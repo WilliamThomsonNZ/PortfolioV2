@@ -7,6 +7,8 @@
   position: relative;
 }
 .imageContainer {
+  overflow: hidden;
+
   img {
     object-fit: cover;
   }
@@ -124,6 +126,9 @@
     gap: 120px;
     padding: 0 100px;
     margin: 350px 0 350px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1900px;
   }
   .desktopDescription {
     margin-top: 0;

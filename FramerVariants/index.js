@@ -1,16 +1,16 @@
 export const HeaderVariants = {
   header: {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-      transition: {
-        ease: [0.76, 0, 0.24, 1],
-        duration: 1,
-        delay: 1,
-      },
-    },
+    // initial: {
+    //   opacity: 0,
+    // },
+    // animate: {
+    //   opacity: 1,
+    //   transition: {
+    //     ease: [0.76, 0, 0.24, 1],
+    //     duration: 1,
+    //     delay: 1,
+    //   },
+    // },
     exit: {
       opacity: 0,
       transition: {
@@ -183,6 +183,18 @@ export const ProjectVariants = {
       },
     },
   },
+  nextProject: {
+    initial: {
+      opacity: 0,
+    },
+    whileInView: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+  },
   mainImageOverlay: {
     initial: { width: "100%" },
     animate: {
@@ -193,6 +205,7 @@ export const ProjectVariants = {
       },
     },
   },
+
   headingtext: {
     initial: {
       y: 75,

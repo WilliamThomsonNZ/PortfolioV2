@@ -22,6 +22,7 @@ const handler = nc()
     const name = req.body.name;
     const org = req.body.org;
     const message = req.body.message;
+    const services = req.body.services;
 
     const options = {
       from: process.env.NODE_MAILER_EMAIL,
@@ -31,8 +32,10 @@ const handler = nc()
       EMAIL: ${email}
       ORG: ${org}
       MESSAGE: ${message}
+      SERVICES: ${services}
     `,
     };
+
     transporter.sendMail(options, function (err, info) {
       if (err) {
         console.log(err);

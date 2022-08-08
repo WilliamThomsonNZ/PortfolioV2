@@ -22,41 +22,31 @@ const IndexAbout = () => {
           >
             <span className={styles.number}>//03</span>About
           </motion.h6>
-          <Link href={"/about"}>
-            <motion.div
-              className={styles.buttonContainer}
-              variants={ProjectVariants.infoText}
-              whileInView={"whileInView"}
-              viewport={{ once: true }}
-            >
-              <span className={styles.buttonLabel}>more</span>
-              <Image
-                src={"/right-arrow.png"}
-                layout={"fixed"}
-                height={30}
-                width={30}
-                className={styles.arrowImage}
-              />
-            </motion.div>
-          </Link>
+
           <motion.p
             className={styles.desktopDescription}
             variants={ProjectVariants.infoText}
             whileInView={"whileInView"}
             viewport={{ once: true }}
           >
-            Our intelligent digital strategy and a pragmatic and thoughtful
-            approach to solving business calls deliver a successful framework
-            for both you and your audience. business calls deliver a successful
-            framework for both you and I. <br />
-            <br /> There are many variations of passages of Lorem Ipsum
-            available, but the majority have suffered alteration in some form,
-            by injected humour, or randomised words which don&apos;t look even
-            slightly believable. If you are going to use a passage of Lorem
-            Ipsum, you need to be sure there isn&apos;t anything embarrassing
-            hidden in the middle of text. All the Lorem Ipsum generators on the
-            Internet tend to repeat predefined chunks as necessary, making this
-            the first true generator on the Internet
+            If you have got to this point , you are probably ready to find out
+            more about me. So Hey! I’m Will, a passionate web3 developer and
+            strategist currently based in Auckland, New Zealand. I help projects
+            achieve success through performant decentralised application
+            development, strong understanding of user motivation and the ability
+            to advise on UI/UX design decisions to ensure user’s are engaged and
+            satisfied. <br /> 
+            <br /> Non fungible tokens ( NFTs ) are here to stay and will play a
+            major part in our online identities. My goal is to integrate this
+            technology into communities and businesses to improve the users
+            overall experience. By focusing directly on the user, I am able to
+            understand their motivation and create an experience and product
+            that is bespoke and engaging.
+            <br />
+            <br />
+            If you would like to chat about your project/vision/idea or just
+            want to have a conversation around how this technology can improve
+            your business, Shoot me a message.
           </motion.p>
         </div>
 

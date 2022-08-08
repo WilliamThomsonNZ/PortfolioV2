@@ -32,7 +32,11 @@ export default function Projects() {
     document.body.classList.add("light");
   }, []);
   return (
-    <>
+    <motion.div
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+      key={"reducedToClearCase"}
+    >
       <Head>
         <title>Will - Reduced to Clear</title>
         <meta name="description" content="Will - Reduced to Clear" />
@@ -265,9 +269,9 @@ export default function Projects() {
         </div>
       </motion.main>
       <div className={styles.nextProjectContainer}>
-        <Link href={"/work/basik"}>
+        <Link href={"/work/shadowlabs"}>
           <a>
-            <span className={styles.nextName}>Basik Collective</span>
+            <span className={styles.nextName}>Shadow Labs</span>
             <div className={styles.nextContainer}>
               <span className={styles.nextText}>NEXT PROJECT</span>
               <div className={styles.arrowContainer}>
@@ -281,6 +285,6 @@ export default function Projects() {
         </Link>
       </div>
       <Footer />
-    </>
+    </motion.div>
   );
 }

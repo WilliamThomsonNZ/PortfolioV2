@@ -6,8 +6,11 @@ import Footer from "../../../components/footer";
 import { useEffect, useRef } from "react";
 import { motion, useViewportScroll } from "framer-motion";
 import { ProjectVariants } from "../../../FramerVariants";
-import { useOnScreen } from "../../../utils";
+import Header from "../../../components/header";
 import { useInView } from "react-intersection-observer";
+import OrangeArrow from "../../../assets/orangeArrow.svg";
+import OrangeDesktop from "../../../assets/orangeArrowDesktop.svg";
+import Link from "next/link";
 export default function Projects() {
   // const ref = useRef();
   // const isVisible = useOnScreen(ref);
@@ -24,16 +27,18 @@ export default function Projects() {
       // document.body.classList.add("lightkMode");
     }
   }, [inView]);
+
   useEffect(() => {
     document.body.classList.add("light");
   }, []);
   return (
     <>
       <Head>
-        <title>Will - Reduced to Clear</title>
-        <meta name="description" content="Will - Reduced to Clear" />
+        <title>Will - Shadow Labs</title>
+        <meta name="description" content="Will - Shadow Labs" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <motion.main
         initial={"initial"}
         animate={"animate"}
@@ -48,7 +53,7 @@ export default function Projects() {
                   className={styles.heading}
                   variants={ProjectVariants.headingtext}
                 >
-                  Exhale
+                  Shadow
                 </motion.span>
               </div>
               <div className={styles.headingTextContainer}>
@@ -56,11 +61,12 @@ export default function Projects() {
                   className={styles.heading}
                   variants={ProjectVariants.headingtext}
                 >
-                  Yoga
+                  Labs
                 </motion.span>
               </div>
+
               <motion.a
-                href={"#"}
+                href={"https://shadow-labs.xyz/"}
                 target="_blank"
                 className={styles.arrowLink}
                 variants={ProjectVariants.a}
@@ -72,13 +78,10 @@ export default function Projects() {
               className={styles.projectDescription}
               variants={ProjectVariants.description}
             >
-              Exhale Yoga is the rebrand of a popular yoga studio based in
-              Napier, New Zealand. The requirements for the website included
-              mindbody integration (yoga management software ) that allowed
-              customers to book and mange their classes, content management set
-              up to allow editing of key elements across the website and to
-              display general information. My role in the rebrand was to
-              redesign and develop the website.
+              Shadow Labs is Web3 agency offering services in marketing,
+              development, community management, web3 integration and strategic
+              consulting. I was brought on to build out the initial coming soon
+              page.
             </motion.p>
           </section>
           <motion.div
@@ -121,7 +124,7 @@ export default function Projects() {
                 whileInView={"whileInView"}
                 viewport={{ once: true }}
               >
-                03 March, 2022
+                02 May, 2022
               </motion.span>
             </div>
             <motion.div
@@ -143,7 +146,7 @@ export default function Projects() {
                 whileInView={"whileInView"}
                 viewport={{ once: true }}
               >
-                Exhale Yoga Website
+                Shadow Labs Coming Soon
               </motion.span>
             </div>
             <motion.div
@@ -158,14 +161,14 @@ export default function Projects() {
                 whileInView={"whileInView"}
                 viewport={{ once: true }}
               >
-                03. Client
+                03. Team
               </motion.span>
               <motion.span
                 variants={ProjectVariants.infoText}
                 whileInView={"whileInView"}
                 viewport={{ once: true }}
               >
-                Victoria &amp; Liam
+                Shadow Labs
               </motion.span>
             </div>
             <motion.div
@@ -188,14 +191,7 @@ export default function Projects() {
                   whileInView={"whileInView"}
                   viewport={{ once: true }}
                 >
-                  Website development
-                </motion.span>
-                <motion.span
-                  variants={ProjectVariants.infoText}
-                  whileInView={"whileInView"}
-                  viewport={{ once: true }}
-                >
-                  UI/UX Design
+                  Website Development
                 </motion.span>
               </div>
             </div>
@@ -240,6 +236,28 @@ export default function Projects() {
           ></motion.div>
         </div>
       </motion.main>
+      <motion.div
+        className={styles.nextProjectContainer}
+        vairants={ProjectVariants.nextProject}
+        initial={"initial"}
+        whileInView={"whileInView"}
+        viewport={{ once: true }}
+      >
+        <Link href={"/work/basik"}>
+          <a>
+            <span className={styles.nextName}>Basik Collective</span>
+            <div className={styles.nextContainer}>
+              <span className={styles.nextText}>NEXT PROJECT</span>
+              <div className={styles.arrowContainer}>
+                <OrangeArrow />
+              </div>
+              <div className={styles.arrowContainerDesktop}>
+                <OrangeDesktop />
+              </div>
+            </div>
+          </a>
+        </Link>
+      </motion.div>
       <Footer />
     </>
   );

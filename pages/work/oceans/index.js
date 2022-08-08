@@ -9,6 +9,9 @@ import { ProjectVariants } from "../../../FramerVariants";
 import { useOnScreen } from "../../../utils";
 import { useInView } from "react-intersection-observer";
 import Header from "../../../components/header";
+import Link from "next/link";
+import OrangeArrow from "../../../assets/orangeArrow.svg";
+import OrangeDesktop from "../../../assets/orangeArrowDesktop.svg";
 export default function Projects() {
   // const ref = useRef();
   // const isVisible = useOnScreen(ref);
@@ -204,14 +207,14 @@ export default function Projects() {
                   whileInView={"whileInView"}
                   viewport={{ once: true }}
                 >
-                  Frontend Dapp Development
+                  Website Development
                 </motion.span>
                 <motion.span
                   variants={ProjectVariants.infoText}
                   whileInView={"whileInView"}
                   viewport={{ once: true }}
                 >
-                  UI/UX Design
+                  Web3 Integration
                 </motion.span>
               </div>
             </div>
@@ -254,6 +257,22 @@ export default function Projects() {
             viewport={{ once: true }}
             className={styles.fullWidthImage}
           ></motion.div>
+        </div>
+        <div className={styles.nextProjectContainer}>
+          <Link href={"/work/reduced-to-clear"}>
+            <a>
+              <span className={styles.nextName}>Reduced to Clear</span>
+              <div className={styles.nextContainer}>
+                <span className={styles.nextText}>NEXT PROJECT</span>
+                <div className={styles.arrowContainer}>
+                  <OrangeArrow />
+                </div>
+                <div className={styles.arrowContainerDesktop}>
+                  <OrangeDesktop />
+                </div>
+              </div>
+            </a>
+          </Link>
         </div>
       </motion.main>
       <Footer />

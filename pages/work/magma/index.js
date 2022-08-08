@@ -34,8 +34,8 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Will - Basik Collective</title>
-        <meta name="description" content="Will - Basik Collective" />
+        <title>Will - MAGMA</title>
+        <meta name="description" content="Will - MAGMA" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
@@ -53,22 +53,23 @@ export default function Projects() {
                   className={styles.heading}
                   variants={ProjectVariants.headingtext}
                 >
-                  Basik
+                  MAGMA
                 </motion.span>
               </div>
-              <div className={styles.headingTextContainer}>
+              {/* <div className={styles.headingTextContainer}>
                 <motion.span
                   className={styles.heading}
                   variants={ProjectVariants.headingtext}
                 >
-                  Collective
+
                 </motion.span>
-              </div>
+              </div> */}
 
               <motion.a
-                href={"https://www.basik.co.nz"}
+                href={"https://www.magmanft.io/"}
                 target="_blank"
                 className={styles.arrowLink}
+                rel={"noreferrer"}
                 variants={ProjectVariants.a}
               >
                 <LinkArrow />
@@ -149,7 +150,7 @@ export default function Projects() {
                 whileInView={"whileInView"}
                 viewport={{ once: true }}
               >
-                Basik Launching Soon
+                MAGMA Website
               </motion.span>
             </div>
             <motion.div
@@ -171,7 +172,7 @@ export default function Projects() {
                 whileInView={"whileInView"}
                 viewport={{ once: true }}
               >
-                Basik Collective
+                Astra
               </motion.span>
             </div>
             <motion.div
@@ -201,7 +202,7 @@ export default function Projects() {
                   whileInView={"whileInView"}
                   viewport={{ once: true }}
                 >
-                  UI/UX Design
+                  Web3 Integration
                 </motion.span>
               </div>
             </div>
@@ -253,9 +254,9 @@ export default function Projects() {
         whileInView={"whileInView"}
         viewport={{ once: true }}
       >
-        <Link href={"/work/magma"}>
+        <Link href={"/work/oceans"}>
           <a>
-            <span className={styles.nextName}>MAGMA</span>
+            <span className={styles.nextName}>Oceans by Erin Fleming</span>
             <div className={styles.nextContainer}>
               <span className={styles.nextText}>NEXT PROJECT</span>
               <div className={styles.arrowContainer}>
