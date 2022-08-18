@@ -19,6 +19,17 @@ export const HeaderVariants = {
       },
     },
   },
+  logoWill: {
+    initial: {
+      color: "#000",
+    },
+    animate: {
+      color: "#ff9633",
+      transition: {
+        delay: 2,
+      },
+    },
+  },
   mobileMenuItem: {
     initial: {
       x: 25,
@@ -180,6 +191,19 @@ export const ProjectVariants = {
     animate: {
       transition: {
         staggerChildren: 0.2,
+      },
+    },
+  },
+  fade: {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.8,
       },
     },
   },

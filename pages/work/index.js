@@ -11,38 +11,31 @@ export default function Projects() {
   const projects = [
     {
       name: "Reduced to Clear",
-      image: "/basik.jpg",
+      image: "/reducedtoClear.jpeg",
       link: "/work/reduced-to-clear",
-      height: 827,
+      height: 697,
       width: 1240,
     },
     {
       name: "Magma",
-      image: "/oceans.jpg",
+      image: "/magma123.png",
       link: "/work/magma",
-      height: 827,
-      width: 1240,
+      height: 562,
+      width: 1000,
     },
     {
       name: "Shadow Labs",
-      image: "/testProjectImage2.jpg",
-      link: "/work/shadow-labs",
-      height: 850,
-      width: 700,
+      image: "/shadow.png",
+      link: "/work/shadowlabs",
+      height: 478,
+      width: 850,
     },
     {
-      name: "Basik",
-      image: "/testProjectImage.jpg",
-      link: "/work/basik-collective",
+      name: "BASIK COLLECTIVE",
+      image: "/basikLanding.jpg",
+      link: "/work/basik",
       height: 1000,
       width: 800,
-    },
-    {
-      name: "Oceans by Erin Fleming",
-      image: "/testProjectImage.jpg",
-      link: "/work/oceans",
-      height: 1000,
-      width: 1240,
     },
   ];
 
@@ -57,7 +50,7 @@ export default function Projects() {
       <Head>
         <title>Will - Latest Work</title>
         <meta name="description" content="Will - Latest Work" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Header currentPage={"work"} />
       <main className={styles.pageContainer}>

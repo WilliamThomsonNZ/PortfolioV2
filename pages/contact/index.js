@@ -54,7 +54,7 @@ export default function Contact() {
       <Head>
         <title>Will - Contact</title>
         <meta name="description" content="Let's discuss your next project" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Header currentPage={"contact"} />
       <main className={styles.sectionContainer}>

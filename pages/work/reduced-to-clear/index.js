@@ -12,6 +12,8 @@ import Header from "../../../components/header";
 import OrangeArrow from "../../../assets/orangeArrow.svg";
 import OrangeDesktop from "../../../assets/orangeArrowDesktop.svg";
 import Link from "next/link";
+import ProjectHero from "../../../components/projectHero";
+
 export default function Projects() {
   // const ref = useRef();
   // const isVisible = useOnScreen(ref);
@@ -31,6 +33,10 @@ export default function Projects() {
   useEffect(() => {
     document.body.classList.add("light");
   }, []);
+
+  const pageDescription =
+    "Services included implementing a headless drop-shipping solution to sell brand merchandise, building a custom smart contract, designing and developing an immersive web experience, Metamask and   walletConnect wallet integration, Art generation and IPFS metadata hosting.";
+
   return (
     <motion.div
       exit={{ opacity: 0 }}
@@ -40,233 +46,49 @@ export default function Projects() {
       <Head>
         <title>Will - Reduced to Clear</title>
         <meta name="description" content="Will - Reduced to Clear" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Header />
+      <ProjectHero
+        name={"REDUCED TO CLEAR"}
+        link={"https://www.reducedtoclear.wtf/"}
+        description={pageDescription}
+        roles={[
+          "WEB DEVELOPMENT",
+          "UI/UX DESIGN",
+          "SMART CONTRACT DEVELOPMENT",
+          "WEB3 INTEGRATION",
+        ]}
+        bannerImg={"/reducedBanner.png"}
+      />
+
       <motion.main
         initial={"initial"}
         animate={"animate"}
         exit={"exit"}
         className={styles.pageContainer}
       >
-        <div className={styles.heroOuterContainer}>
-          <section className={styles.heroContent}>
-            <motion.div variants={ProjectVariants.headingTextContainer}>
-              <div className={styles.headingTextContainer}>
-                <motion.span
-                  className={styles.heading}
-                  variants={ProjectVariants.headingtext}
-                >
-                  Reduced
-                </motion.span>
-              </div>
-              <div className={styles.headingTextContainer}>
-                <motion.span
-                  className={styles.heading}
-                  variants={ProjectVariants.headingtext}
-                >
-                  to Clear
-                </motion.span>
-              </div>{" "}
-              <motion.a
-                href={"https://www.reducedtoclear.wtf/"}
-                target="_blank"
-                className={styles.arrowLink}
-                variants={ProjectVariants.a}
-              >
-                <LinkArrow />
-              </motion.a>
-            </motion.div>
-            <motion.p
-              className={styles.projectDescription}
-              variants={ProjectVariants.description}
-            >
-              With a heavy focus on satire content, RTC aims to be the light at
-              the end of the tunnel for the falling NFT market. My role as the
-              lead developer included implementing a headless drop-shipping
-              solution to sell brand merchandise, building a custom smart
-              contract, designing and developing an immersive web experience,
-              Metamask and walletConnect wallet integration, Art generation and
-              IPFS metadata hosting.
-            </motion.p>
-          </section>
-          <motion.div
-            className={styles.mainProjectImageContianer}
-            variants={ProjectVariants.headingtext}
-            initial={"initial"}
-            animate={"animate"}
-          >
-            <Image
-              src={"/portfolioProject.jpg"}
-              width={1200}
-              height={1500}
-              objectFit={"contain"}
-              className={styles.projectImageDesktop}
-            />
-          </motion.div>
+        <div className={styles.firstImage}>
+          <Image src={"/rtc0.png"} width={1500} height={800} />
         </div>
-
-        <section
-          className={`${styles.informationContainer} ${
-            inView ? styles.darkMode : undefined
-          }`}
+        <motion.div
+          className={styles.seccondImage}
+          variants={ProjectVariants.fade}
         >
-          <motion.div
-            className={styles.projectInfo}
-            ref={ref}
-            variants={ProjectVariants.projectInfo}
-            initial={"initial"}
-          >
-            <div className={styles.projectStat}>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                01. Date
-              </motion.span>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                10 June, 2022
-              </motion.span>
-            </div>
-            <motion.div
-              className={styles.underline}
-              variants={ProjectVariants.underline}
-              whileInView={"whileInView"}
-              viewport={{ once: true }}
-            ></motion.div>
-            <div className={styles.projectStat}>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                02. Project
-              </motion.span>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                Reduced to Clear NFT
-              </motion.span>
-            </div>
-            <motion.div
-              className={styles.underline}
-              variants={ProjectVariants.underline}
-              whileInView={"whileInView"}
-              viewport={{ once: true }}
-            ></motion.div>
-            <div className={styles.projectStat}>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                03. Client
-              </motion.span>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                RTC
-              </motion.span>
-            </div>
-            <motion.div
-              className={styles.underline}
-              variants={ProjectVariants.underline}
-              whileInView={"whileInView"}
-              viewport={{ once: true }}
-            ></motion.div>
-            <div className={styles.projectStat}>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                04. Services
-              </motion.span>
-              <div className={styles.services}>
-                <motion.span
-                  variants={ProjectVariants.infoText}
-                  whileInView={"whileInView"}
-                  viewport={{ once: true }}
-                >
-                  Smart Contract Development
-                </motion.span>
-                <motion.span
-                  variants={ProjectVariants.infoText}
-                  whileInView={"whileInView"}
-                  viewport={{ once: true }}
-                >
-                  Website Development
-                </motion.span>
-                <motion.span
-                  variants={ProjectVariants.infoText}
-                  whileInView={"whileInView"}
-                  viewport={{ once: true }}
-                >
-                  UI/UX Design
-                </motion.span>
-                <motion.span
-                  variants={ProjectVariants.infoText}
-                  whileInView={"whileInView"}
-                  viewport={{ once: true }}
-                >
-                  NFT Art Generation
-                </motion.span>
-              </div>
-            </div>
-            <motion.div
-              className={styles.underline}
-              variants={ProjectVariants.underline}
-              whileInView={"whileInView"}
-              viewport={{ once: true }}
-            ></motion.div>
-          </motion.div>
-          <motion.div
-            className={styles.infoSectionImageContainer}
-            variants={ProjectVariants.infoText}
-            whileInView={"whileInView"}
-            viewport={{ once: true }}
-          >
-            <Image
-              src={"/rtcLogo.png"}
-              width={550}
-              height={535}
-              className={styles.infoImage}
-            />
-          </motion.div>
-        </section>
-        <div className={styles.fullImageContainer}>
-          <motion.div
-            variants={ProjectVariants.infoImage}
-            whileInView={"whileInView"}
-            viewport={{ once: true }}
-            className={styles.fullWidthImage}
-          ></motion.div>
-        </div>
-        <div className={styles.fullImageContainer}>
-          <motion.div
-            variants={ProjectVariants.infoImage}
-            whileInView={"whileInView"}
-            viewport={{ once: true }}
-            className={styles.fullWidthImage}
-          ></motion.div>
-        </div>
-        <div className={styles.fullImageContainer}>
-          <motion.div
-            variants={ProjectVariants.infoImage}
-            whileInView={"whileInView"}
-            viewport={{ once: true }}
-            className={styles.fullWidthImage}
-          ></motion.div>
-        </div>
+          <Image src={"/reduced2.png"} width={1500} height={838.12} />
+        </motion.div>
+        <motion.div
+          className={styles.thirdImage}
+          variants={ProjectVariants.fade}
+        >
+          <Image src={"/reduced3.png"} width={1500} height={838.12} />
+        </motion.div>
+        <motion.div
+          className={styles.seccondImage}
+          variants={ProjectVariants.fade}
+        >
+          <Image src={"/reduced4.png"} width={1500} height={838.12} />
+        </motion.div>
       </motion.main>
       <div className={styles.nextProjectContainer}>
         <Link href={"/work/shadowlabs"}>

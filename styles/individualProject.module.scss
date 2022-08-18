@@ -5,7 +5,7 @@
 }
 .pageContainer {
   margin: 0 24px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .nextProjectContainer {
   display: flex;
@@ -16,6 +16,7 @@
   a {
     display: block;
   }
+  margin-top: 50px;
   .nextName {
     font-family: $font;
     display: block;
@@ -34,6 +35,21 @@
   .arrowContainerDesktop {
     display: none;
   }
+}
+.firstImage {
+  margin: 0 auto;
+  width: fit-content;
+  // margin-top: -270px;
+}
+
+.seccondImage {
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.thirdImage {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: fit-content;
 }
 .heroContent {
   margin-top: 110px;
@@ -125,6 +141,10 @@
 }
 
 @media (min-width: $tablet) {
+  .firstImage {
+    margin-top: -250px;
+  }
+
   .nextProjectContainer {
     padding: 0 50px;
   }
@@ -196,6 +216,15 @@
   }
 }
 @media (min-width: $desktop) {
+  .thirdImage {
+    margin: unset;
+    margin-left: auto;
+    margin-top: 100px;
+    width: fit-content;
+  }
+  .seccondImage {
+    margin-top: 100px;
+  }
   .nextProjectContainer {
     display: flex;
     justify-content: flex-end;

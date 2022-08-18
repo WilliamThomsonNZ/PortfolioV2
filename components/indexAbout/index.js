@@ -48,25 +48,18 @@ const IndexAbout = () => {
             want to have a conversation around how this technology can improve
             your business, Shoot me a message.
           </motion.p>
-        </div>
 
-        {/* <Link href={"/about"}>
-          <motion.div
-            className={`${styles.buttonContainer} ${styles.desktopButton}`}
-            variants={ProjectVariants.infoText}
-            whileInView={"whileInView"}
-            viewport={{ once: true }}
-          >
-            <span className={styles.buttonLabel}>more</span>
-            <Image
-              src={"/right-arrow.png"}
-              layout={"fixed"}
-              height={30}
-              width={30}
-              className={styles.arrowImage}
-            />
-          </motion.div>
-        </Link> */}
+          <Link href="/contact">
+            <motion.a
+              variants={ProjectVariants.infoText}
+              className={styles.getInTouch}
+              whileInView={"whileInView"}
+              viewport={{ once: true }}
+            >
+              Get in Touch
+            </motion.a>
+          </Link>
+        </div>
       </div>
       <motion.div
         className={styles.imageContainer}
@@ -74,13 +67,15 @@ const IndexAbout = () => {
         whileInView={"whileInView"}
         viewport={{ once: true }}
       >
-        <Image src={"/photo.jpg"} height={1000} width={1000} />
+        <Image src={"/will2.jpg"} height={1000} width={1000} />
       </motion.div>
       <p className={styles.mobileDescription}>
-        Our intelligent digital strategy and a pragmatic and thoughtful approach
-        to solving business calls deliver a successful framework for both you
-        and your audience. business calls deliver a successful framework for
-        both you and{" "}
+        If you have got to this point , you are probably ready to find out more
+        about me. So Hey! I’m Will, a passionate web3 developer and strategist
+        currently based in Auckland, New Zealand. I help projects achieve
+        success through performant decentralised application development, strong
+        understanding of user motivation and the ability to advise on UI/UX
+        design decisions to ensure user’s are engaged and satisfied.
       </p>
     </section>
   );

@@ -57,7 +57,7 @@ const SocialProof = () => {
             target="_blank"
           >
             <Image
-              src={"/magma.png"}
+              src={"/magmaLogo.png"}
               width={350}
               height={133}
               alt={"MAGMA logo"}

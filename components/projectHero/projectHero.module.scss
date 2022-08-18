@@ -1,0 +1,140 @@
+@import "../../styles/globalStyling.module.scss";
+.container {
+  .name {
+    font-family: $headingFont;
+    padding: 0 24px;
+    font-size: 50px;
+    margin-top: 100px;
+    margin-bottom: 32px;
+    font-weight: normal;
+    text-transform: uppercase;
+    height: fit-content;
+    line-height: 1;
+    overflow: hidden;
+    .text {
+      display: block;
+    }
+  }
+  .mobileLink {
+    margin-left: 24px;
+    padding: 0;
+    padding-bottom: 5px;
+
+    display: inline-block;
+    font-family: $font;
+    font-size: 18px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid $accentColour;
+  }
+  .informationContainer {
+    padding: 0 24px;
+  }
+  .blackBox {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #000, #000, #00dd59);
+  }
+  .description {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0;
+    margin-bottom: 32px;
+  }
+  .desktopLink {
+    margin-left: 24px;
+    padding: 0;
+    padding-bottom: 5px;
+    display: inline-block;
+    font-family: $font;
+    font-size: 18px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid $accentColour;
+    display: none;
+    margin-left: 0;
+  }
+  .roles {
+    .role {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-family: $font;
+      list-style: none;
+    }
+    margin-bottom: 32px;
+  }
+  .bannerContainer {
+    height: 300px;
+    width: 100%;
+    img {
+      height: 300px !important;
+      width: 100vw !important;
+    }
+  }
+  @media (min-width: 1000px) {
+    .bannerContainer {
+      height: 400px;
+      img {
+        height: 400px !important;
+      }
+    }
+    .mobileLink {
+      display: none;
+    }
+    .desktopLink {
+      display: inline-block;
+    }
+    .name {
+      text-align: center;
+      font-size: 70px;
+      margin-bottom: 50px;
+    }
+    .informationContainer {
+      padding: 0 50px;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .description {
+      width: calc(100% / 3);
+      max-width: 600px;
+    }
+    .linkContainer {
+      width: calc(100% / 3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .roles {
+      width: calc(100% / 3);
+      .role {
+        text-align: right;
+      }
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .bannerContainer {
+      height: 500px;
+      img {
+        height: 500px !important;
+      }
+    }
+    .name {
+      margin: 0 auto;
+      font-size: 150px;
+      margin-top: 200px;
+      margin-bottom: 100px;
+      max-width: 1200px;
+    }
+    .informationContainer {
+      margin: 0 auto;
+      margin-bottom: 50px;
+      padding: 0 100px;
+      max-width: 1920px;
+    }
+  }
+}

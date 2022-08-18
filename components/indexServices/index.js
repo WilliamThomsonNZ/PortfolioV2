@@ -28,7 +28,7 @@ const IndexServices = () => {
     {
       name: "Web Development",
       initialDescription:
-        "I build scalable and performant experiences on the web. Having a fully functional and flawless website is one of the keys to a successful business.",
+        "I build scalable and performant applications on the web. Having a fully functional and flawless website is one of the keys to a successful business.",
       largeDescription:
         "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
     },
@@ -40,17 +40,17 @@ const IndexServices = () => {
     {
       name: "Web3 Integration",
       initialDescription:
-        "With a solid track record integrating wallets and other web3 functionality into projects, I deliver secure and optimised web3 integration.",
+        "With a solid track record integrating wallets and other web3 functionality into projects, I deliver secure and optimised web3 integration into both new and existing projects.",
       largeDescription:
         "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
     },
-    // {
-    //   name: "UI/UX Design",
-    //   initialDescription:
-    //     "Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.",
-    //   largeDescription:
-    //     "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
-    // },
+    {
+      name: "Technical Advisory",
+      initialDescription:
+        "Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.",
+      largeDescription:
+        "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
+    },
   ];
 
   return (

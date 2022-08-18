@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../../../styles/individualProject.module.scss";
 import LinkArrow from "../../../assets/LinkArrowLarge.svg";
+import ProjectHero from "../../../components/projectHero";
 import Footer from "../../../components/footer";
 import { useEffect, useRef } from "react";
 import { motion, useViewportScroll } from "framer-motion";
@@ -31,221 +32,47 @@ export default function Projects() {
   useEffect(() => {
     document.body.classList.add("light");
   }, []);
+  const pageDescription =
+    "MAGMA is an exclusive club of dedicated NFT enthusiasts, Artists, Launchpads & VCs. Development for MAGMA Landing page and Web3 integration for MAGMA Pass mint. Full stack development for MAGMA Connect, a networking tool where memebers are able create profiles and connect.";
   return (
     <>
       <Head>
         <title>Will - MAGMA</title>
         <meta name="description" content="Will - MAGMA" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Header />
+      <ProjectHero
+        name={"MAGMA"}
+        link={"https://www.magmanft.io/"}
+        description={pageDescription}
+        roles={["WEB DEVELOPMENT", "WEB3 INTEGRATION"]}
+        bannerImg={"/magmaBanner.jpg"}
+      />
       <motion.main
         initial={"initial"}
         animate={"animate"}
         exit={"exit"}
         className={styles.pageContainer}
       >
-        <div className={styles.heroOuterContainer}>
-          <section className={styles.heroContent}>
-            <motion.div variants={ProjectVariants.headingTextContainer}>
-              <div className={styles.headingTextContainer}>
-                <motion.span
-                  className={styles.heading}
-                  variants={ProjectVariants.headingtext}
-                >
-                  MAGMA
-                </motion.span>
-              </div>
-              {/* <div className={styles.headingTextContainer}>
-                <motion.span
-                  className={styles.heading}
-                  variants={ProjectVariants.headingtext}
-                >
-
-                </motion.span>
-              </div> */}
-
-              <motion.a
-                href={"https://www.magmanft.io/"}
-                target="_blank"
-                className={styles.arrowLink}
-                rel={"noreferrer"}
-                variants={ProjectVariants.a}
-              >
-                <LinkArrow />
-              </motion.a>
-            </motion.div>
-            <motion.p
-              className={styles.projectDescription}
-              variants={ProjectVariants.description}
-            >
-              Basik collective is a lifestyle and photography brand pushing the
-              idea of escaping the comfort zone. The initial phase of this
-              project was to design and develop a minimalist coming soon landing
-              page. The main functionality on this page was to collect emails
-              for an email list. This project is in progress and will be
-              releasing a headless drop-shipping service to sell photography
-              prints. We will also be implementing a blog powered by Contentful.
-            </motion.p>
-          </section>
-          <motion.div
-            className={styles.mainProjectImageContianer}
-            variants={ProjectVariants.headingtext}
-            initial={"initial"}
-            animate={"animate"}
-          >
-            <Image
-              src={"/portfolioProject.jpg"}
-              width={1200}
-              height={1500}
-              objectFit={"contain"}
-              className={styles.projectImageDesktop}
-            />
-          </motion.div>
-        </div>
-
-        <section
-          className={`${styles.informationContainer} ${
-            inView ? styles.darkMode : undefined
-          }`}
+        <motion.div
+          className={styles.firstImage}
+          variants={ProjectVariants.fade}
         >
-          <motion.div
-            className={styles.projectInfo}
-            ref={ref}
-            variants={ProjectVariants.projectInfo}
-            initial={"initial"}
-          >
-            <div className={styles.projectStat}>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                01. Date
-              </motion.span>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                02 May, 2022
-              </motion.span>
-            </div>
-            <motion.div
-              className={styles.underline}
-              variants={ProjectVariants.underline}
-              whileInView={"whileInView"}
-              viewport={{ once: true }}
-            ></motion.div>
-            <div className={styles.projectStat}>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                02. Project
-              </motion.span>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                MAGMA Website
-              </motion.span>
-            </div>
-            <motion.div
-              className={styles.underline}
-              variants={ProjectVariants.underline}
-              whileInView={"whileInView"}
-              viewport={{ once: true }}
-            ></motion.div>
-            <div className={styles.projectStat}>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                03. Client
-              </motion.span>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                Astra
-              </motion.span>
-            </div>
-            <motion.div
-              className={styles.underline}
-              variants={ProjectVariants.underline}
-              whileInView={"whileInView"}
-              viewport={{ once: true }}
-            ></motion.div>
-            <div className={styles.projectStat}>
-              <motion.span
-                variants={ProjectVariants.infoText}
-                whileInView={"whileInView"}
-                viewport={{ once: true }}
-              >
-                04. Services
-              </motion.span>
-              <div className={styles.services}>
-                <motion.span
-                  variants={ProjectVariants.infoText}
-                  whileInView={"whileInView"}
-                  viewport={{ once: true }}
-                >
-                  Website Development
-                </motion.span>
-                <motion.span
-                  variants={ProjectVariants.infoText}
-                  whileInView={"whileInView"}
-                  viewport={{ once: true }}
-                >
-                  Web3 Integration
-                </motion.span>
-              </div>
-            </div>
-            <motion.div
-              className={styles.underline}
-              variants={ProjectVariants.underline}
-              whileInView={"whileInView"}
-              viewport={{ once: true }}
-            ></motion.div>
-          </motion.div>
-          <div className={styles.infoSectionImageContainer}>
-            <motion.div
-              className={styles.image}
-              variants={ProjectVariants.infoImage}
-              whileInView={"whileInView"}
-              viewport={{ once: true }}
-            ></motion.div>
-          </div>
-        </section>
-        <div className={styles.fullImageContainer}>
-          <motion.div
-            variants={ProjectVariants.infoImage}
-            whileInView={"whileInView"}
-            viewport={{ once: true }}
-            className={styles.fullWidthImage}
-          ></motion.div>
-        </div>
-        <div className={styles.fullImageContainer}>
-          <motion.div
-            variants={ProjectVariants.infoImage}
-            whileInView={"whileInView"}
-            viewport={{ once: true }}
-            className={styles.fullWidthImage}
-          ></motion.div>
-        </div>
-        <div className={styles.fullImageContainer}>
-          <motion.div
-            variants={ProjectVariants.infoImage}
-            whileInView={"whileInView"}
-            viewport={{ once: true }}
-            className={styles.fullWidthImage}
-          ></motion.div>
-        </div>
+          <Image src={"/magma1.png"} width={1500} height={838.12} />
+        </motion.div>
+        <motion.div
+          className={styles.seccondImage}
+          variants={ProjectVariants.fade}
+        >
+          <Image src={"/magma2.png"} width={1500} height={838.12} />
+        </motion.div>
+        <motion.div
+          className={styles.thirdImage}
+          variants={ProjectVariants.fade}
+        >
+          <Image src={"/magma4.png"} width={1500} height={838.12} />
+        </motion.div>
       </motion.main>
       <motion.div
         className={styles.nextProjectContainer}
@@ -254,9 +81,9 @@ export default function Projects() {
         whileInView={"whileInView"}
         viewport={{ once: true }}
       >
-        <Link href={"/work/oceans"}>
+        <Link href={"/work/reduced-to-clear"}>
           <a>
-            <span className={styles.nextName}>Oceans by Erin Fleming</span>
+            <span className={styles.nextName}>Reduced to clear</span>
             <div className={styles.nextContainer}>
               <span className={styles.nextText}>NEXT PROJECT</span>
               <div className={styles.arrowContainer}>

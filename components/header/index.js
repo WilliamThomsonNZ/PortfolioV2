@@ -9,6 +9,7 @@ import Instagram from "../../assets/Instagram.svg";
 const Header = ({ currentPage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [temp, setTemp] = useState(0);
+  const [menuRendered, setMenuRendered] = useState(false);
   function handleMenuOpen() {
     setMenuOpen((menuState) => !menuState);
     document.body.style.overFlow = "hidden";
@@ -35,11 +36,13 @@ const Header = ({ currentPage }) => {
     const responseTemp = Math.round(data.main.temp);
     setTemp(responseTemp);
   }
-  -36.852095;
-  174.7631803;
   useEffect(() => {
     getWeather();
+    setTimeout(() => {
+      setMenuRendered(true);
+    }, 2000);
   }, []);
+
   return (
     <motion.header
       className={`${styles.header} ${menuOpen ? styles.menuOpen : undefined} ${
@@ -54,7 +57,12 @@ const Header = ({ currentPage }) => {
     >
       <Link href={"/"}>
         <h6 className={styles.logo}>
-          <span className={styles.name}>Will</span>
+          <motion.span
+            className={styles.name}
+            variants={currentPage == "home" ? HeaderVariants.logoWill : {}}
+          >
+            Will
+          </motion.span>
           <br />
           Thomson
         </h6>
@@ -149,7 +157,11 @@ const Header = ({ currentPage }) => {
           <li className={styles.menuItem}>
             <Link href="/" to="/">
               <a
-                className={currentPage == "home" ? styles.selected : undefined}
+                className={
+                  currentPage == "home" && menuRendered
+                    ? styles.selected
+                    : undefined
+                }
               >
                 Home
               </a>
@@ -158,7 +170,11 @@ const Header = ({ currentPage }) => {
           <li className={styles.menuItem}>
             <Link href={"/work"} to={"/work"}>
               <a
-                className={currentPage == "work" ? styles.selected : undefined}
+                className={
+                  currentPage == "work" && menuRendered
+                    ? styles.selected
+                    : undefined
+                }
               >
                 Work
               </a>
@@ -168,7 +184,9 @@ const Header = ({ currentPage }) => {
             <Link href="/contact">
               <a
                 className={
-                  currentPage == "contact" ? styles.selected : undefined
+                  currentPage == "contact" && menuRendered
+                    ? styles.selected
+                    : undefined
                 }
               >
                 Contact

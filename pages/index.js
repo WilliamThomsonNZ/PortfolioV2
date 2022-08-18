@@ -38,7 +38,7 @@ export default function Home() {
       <Head>
         <title>WILL - Web3 Development Solutions</title>
         <meta name="description" content="WEB3 DEVELOPMENT SERVICES" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <AnimatePresence>
         {!introRun ? (

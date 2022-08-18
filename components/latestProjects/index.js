@@ -103,7 +103,7 @@ const LatestProjects = () => {
         whileInView={"whileInView"}
         viewport={{ once: true }}
       >
-        <Link href="/work/basik">
+        <Link href="/work/magma">
           <article className={styles.project}>
             <div className={styles.imageOuter}>
               <motion.div
@@ -114,7 +114,7 @@ const LatestProjects = () => {
                 variants={imageHover}
               >
                 <Image
-                  src={"/testProjectImage.jpg"}
+                  src={"/magmaPass.jpg"}
                   alt={"Reduced to Clear"}
                   width={1000}
                   height={1200}
@@ -137,8 +137,8 @@ const LatestProjects = () => {
                 onHoverEnd={(e) => setIsHovering1(false)}
               >
                 <Image
-                  src={"/testProjectImage2.jpg"}
-                  alt={"Reduced to Clear"}
+                  src={"/basikLanding.jpg"}
+                  alt={"Basik Collective Image"}
                   width={1000}
                   height={1200}
                   objectFit={"cover"}
@@ -146,7 +146,7 @@ const LatestProjects = () => {
                 />{" "}
               </motion.div>
             </div>
-            <h2 className={styles.projectName}>REDUCED TO CLEAR</h2>
+            <h2 className={styles.projectName}>BASIK COLLECTIVE</h2>
           </article>
         </Link>
       </motion.section>
