@@ -58,7 +58,7 @@ const IndexServices = () => {
           whileInView={"whileInView"}
           viewport={{ once: true }}
         >
-          <span className={styles.number}>//01</span>Services
+          <span className={styles.number}>&#92;&#92;01</span>Services
         </motion.h2>
       </div>
       {services.map((service, index) => (

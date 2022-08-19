@@ -33,7 +33,7 @@ const SocialProof = () => {
           <a
             href={"https://twitter.com/reducedtoclear_"}
             className={`${styles.teamImage} ${styles.rtc}`}
-            rel={"noreferrer"}
+            rel="noreferrer"
             target="_blank"
           >
             <Image
@@ -53,7 +53,7 @@ const SocialProof = () => {
           <a
             href={"https://twitter.com/Magma_nft"}
             className={`${styles.teamImage} ${styles.magma}`}
-            rel={"noreferer"}
+            rel="noreferrer"
             target="_blank"
           >
             <Image
@@ -74,7 +74,7 @@ const SocialProof = () => {
             href={"https://twitter.com/_shadowlabs"}
             className={`${styles.teamImage} ${styles.shadow}`}
             target="_blank"
-            rel={"noreferer"}
+            rel="noreferrer"
           >
             <Image
               src={"/shadowlabs.png"}
@@ -93,7 +93,7 @@ const SocialProof = () => {
           <a
             href={"https://twitter.com/reducedtoclear_"}
             className={`${styles.teamImage} ${styles.basik}`}
-            rel={"noreferer"}
+            rel="noreferrer"
             targe={"_blank"}
           >
             basik

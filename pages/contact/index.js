@@ -101,7 +101,7 @@ export default function Contact() {
           <section className={styles.formContainer}>
             <form>
               <label className={styles.formLabel}>
-                <span className={styles.number}>//01</span>
+                <span className={styles.number}>&#92;&#92;01</span>
                 <div className={styles.labelInner}>
                   <span className={styles.question}>What’s your name?</span>
                   <input
@@ -114,7 +114,7 @@ export default function Contact() {
                 </div>
               </label>
               <label className={styles.formLabel}>
-                <span className={styles.number}>//02</span>
+                <span className={styles.number}>&#92;&#92;02</span>
                 <div className={styles.labelInner}>
                   <span className={styles.question}>What’s your email?</span>
                   <input
@@ -127,7 +127,7 @@ export default function Contact() {
                 </div>
               </label>
               <label className={styles.formLabel}>
-                <span className={styles.number}>//03</span>
+                <span className={styles.number}>&#92;&#92;03</span>
                 <div className={styles.labelInner}>
                   <span className={styles.question}>
                     What services do you require?
@@ -142,7 +142,7 @@ export default function Contact() {
                 </div>
               </label>
               <label className={styles.formLabel}>
-                <span className={styles.number}>//04</span>
+                <span className={styles.number}>&#92;&#92;04</span>
                 <div className={styles.labelInner}>
                   <span className={styles.question}>
                     What’s the name of your organization?
@@ -157,7 +157,7 @@ export default function Contact() {
                 </div>
               </label>
               <label className={styles.formLabel}>
-                <span className={styles.number}>//05</span>
+                <span className={styles.number}>&#92;&#92;05</span>
                 <div className={styles.labelInner}>
                   <span className={styles.question}>What’s your message?</span>
                   <textarea

@@ -72,7 +72,7 @@ const LatestProjects = () => {
         whileInView={"whileInView"}
         viewport={{ once: true }}
       >
-        <span className={styles.number}>//02</span>Latest Work
+        <span className={styles.number}>&#92;&#92;02</span>Latest Work
       </motion.h2>
       <motion.section
         className={styles.projectsContainer}

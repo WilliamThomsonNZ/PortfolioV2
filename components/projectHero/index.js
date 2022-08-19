@@ -64,7 +64,7 @@ const ProjectHero = ({
             href={link}
             className={styles.desktopLink}
             target={"_blank"}
-            rel={"noreffer"}
+            rel="noreferrer"
           >
             VIEW LIVE
           </a>

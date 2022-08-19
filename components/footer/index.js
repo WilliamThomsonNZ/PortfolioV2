@@ -43,7 +43,7 @@ const Footer = () => {
           whileInView={"animate"}
           viewport={{ once: true }}
         >
-          <span className={styles.ox}>//0x</span>
+          <span className={styles.ox}>&#92;&#92;0x</span>
           <h6 className={styles.startProject}>Got A Project In Mind?</h6>
           <Link href={"/contact"}>
             <h2 className={styles.chat}>Let&apos;s Talk</h2>
