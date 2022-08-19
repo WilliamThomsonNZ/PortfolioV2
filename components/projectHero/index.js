@@ -71,7 +71,9 @@ const ProjectHero = ({
         </div>
         <div className={styles.roles}>
           {roles.map((role) => (
-            <span className={styles.role}>{role}</span>
+            <span className={styles.role} key={role}>
+              {role}
+            </span>
           ))}
         </div>
       </motion.div>
