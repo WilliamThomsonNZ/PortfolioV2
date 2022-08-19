@@ -16,7 +16,7 @@ const IndexAbout = () => {
             whileInView={"whileInView"}
             viewport={{ once: true }}
           >
-            <span className={styles.number}>//03</span>About
+            <span className={styles.number}>&#92;&#92;03</span>About
           </motion.h6>
 
           <motion.p
