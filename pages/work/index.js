@@ -79,6 +79,7 @@ export default function Projects() {
               link={project.link}
               width={project.width}
               height={project.height}
+              key={project.name}
             />
           ))}
         </section>

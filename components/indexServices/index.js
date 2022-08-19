@@ -8,21 +8,8 @@ import Lines from "../../assets/lines.svg";
 const IndexServices = () => {
   const [darkMode, setDarkMode] = useState(false);
   const { ref, inView, entry } = useInView({
-    /* Optional options */
     threshold: 0.5,
   });
-
-  // useEffect(() => {
-  //   if (inView) {
-  //     setDarkMode(true);
-  //     document.body.classList.add("darkMode");
-  //     document.body.classList.remove("lightkMode");
-  //   } else {
-  //     setDarkMode(false);
-  //     document.body.classList.remove("darkMode");
-  //     document.body.classList.add("lightkMode");
-  //   }
-  // }, [inView]);
 
   const services = [
     {
@@ -73,12 +60,6 @@ const IndexServices = () => {
         >
           <span className={styles.number}>//01</span>Services
         </motion.h2>
-        {/* <p className={styles.serviceDescription}>
-          Our intelligent digital strategy and a pragmatic and thoughtful
-          approach to solving business calls deliver a successful framework for
-          both you and your audience. business calls deliver a successful
-          framework for both you and your clients
-        </p> */}
       </div>
       {services.map((service, index) => (
         <ServiceCard

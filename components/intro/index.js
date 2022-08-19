@@ -18,7 +18,7 @@ const Intro = ({ setLoading }) => {
             Where&nbsp;
           </motion.span>
           <motion.span className={styles.span} variants={introVariants.span}>
-            there's&nbsp;
+            there&apos;s&nbsp;
           </motion.span>
           <motion.span className={styles.span} variants={introVariants.span}>
             a&nbsp;
@@ -44,7 +44,7 @@ const Intro = ({ setLoading }) => {
           exit={"exit"}
         >
           <motion.span className={styles.span} variants={introVariants.span}>
-            there's&nbsp;
+            there&apos;s&nbsp;
           </motion.span>
           <motion.span className={styles.span} variants={introVariants.span}>
             a&nbsp;

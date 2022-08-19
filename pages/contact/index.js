@@ -66,7 +66,7 @@ export default function Contact() {
         >
           <div className={styles.headingTextContainer}>
             <motion.span variants={contactVariants.headingText}>
-              LET'S DISCUSS YOUR
+              LET&apos;S DISCUSS YOUR
             </motion.span>
           </div>
           <div className={styles.headingTextContainer}>
@@ -223,29 +223,3 @@ export default function Contact() {
     </motion.div>
   );
 }
-
-// .latternContainer {
-//   top: -10px;
-//   left: 200px;
-//   position: absolute;
-//   transform-origin: 50% 0;
-//   animation: pendulum 3s ease-in-out infinite;
-// }
-// @keyframes pendulum {
-//   0%,
-//   100% {
-//     transform: rotate(45deg);
-//   }
-//   50% {
-//     transform: rotate(-45deg);
-//   }
-// }
-
-// <div className={styles.latternContainer}>
-// <Image
-//   src={"/testLattern.png"}
-//   height={300}
-//   width={65}
-//   alt="lattern"
-// />
-// </div>

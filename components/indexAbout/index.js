@@ -8,10 +8,6 @@ import Lines from "../../assets/lines.svg";
 const IndexAbout = () => {
   return (
     <section className={styles.aboutContainer}>
-      {/* <div className={styles.backgroundAssets}>
-        <Lines />
-      </div> */}
-
       <div className={styles.topSection}>
         <div className={styles.desktopTop}>
           <motion.h6

@@ -15,30 +15,7 @@ const LatestProjects = () => {
   const [showMouse, setShowMouse] = useState(false);
   const [isHovering1, setIsHovering1] = useState(false);
   const [isHovering2, setIsHovering2] = useState(false);
-  // const [mousePosition, setMousePosition] = useState({
-  //   left: 0,
-  //   top: 0,
-  // });
-  // function handleMouseMove(e) {
-  //   setMousePosition({ left: e.pageX, top: e.pageY });
-  // }
-  // function handleMouse(enter) {
-  //   if (enter) {
-  //     setShowMouse(true);
-  //   } else {
-  //     setShowMouse(false);
-  //   }
-  // }
-  // useEffect(() => {
-  //   console.log(viewport, width);
-  //   if (typeof window != undefined)
-  //     setLargeImages(window.innerWidth > 1400 ? true : false);
-  //   setShowProjects(true);
-  // }, []);
-  // useEffect(() => {
-  //   setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
-  // }, [showProjects]);
-  // console.log(viewport);
+
   const projects = [
     {
       name: "Reduced to Clear",
@@ -153,71 +130,6 @@ const LatestProjects = () => {
       <Link href={"/work"}>
         <a className={styles.moreWorkButton}>VIEW MORE</a>
       </Link>
-      {/* <motion.div
-        className={styles.carousel}
-        ref={carouselRef}
-        variants={ProjectVariants.infoText}
-        whileInView={"whileInView"}
-        viewport={{ once: true }}
-      >
-        <motion.div
-          drag="x"
-          dragConstraints={{ left: -width, right: 0 }}
-          dragPropagation
-          className={styles.innerCarousel}
-        >
-          {showProjects &&
-            projects.map((project, index) => (
-              <motion.article
-                key={index}
-                className={styles.project}
-                style={{ minWidth: project.width }}
-              >
-                <motion.div
-                  layoutId={index.toString()}
-                  variants={projectDisplayVariants.imageVariants}
-                  transition={{
-                    duration: 0,
-                  }}
-                  className={styles.imageContainer}
-                  onMouseMove={handleMouseMove}
-                  onMouseEnter={(e) => handleMouse(true)}
-                  onMouseLeave={(e) => handleMouse(false)}
-                >
-                  <Image
-                    src={project.image}
-                    width={project.width}
-                    height={project.width}
-                    className={styles.projectImageDesktop}
-                  />
-                </motion.div>
-                <div
-                  className={styles.projectInfo}
-                  onMouseEnter={(e) => handleMouse(false)}
-                >
-                  <Link
-                    href={project.url}
-                    to={project.url}
-                    className={styles.projectLink}
-                    scroll={false}
-                  >
-                    <a className={styles.projectA}>
-                      <h6 className={styles.projectTitle}>{project.name}</h6>
-
-                      <Image
-                        src={"/right-arrow.png"}
-                        layout={"fixed"}
-                        width={30}
-                        height={30}
-                        className={styles.arrowImage}
-                      />
-                    </a>
-                  </Link>
-                </div>
-              </motion.article>
-            ))}
-        </motion.div>
-      </motion.div> */}
     </motion.section>
   );
 };

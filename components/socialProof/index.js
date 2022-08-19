@@ -33,7 +33,7 @@ const SocialProof = () => {
           <a
             href={"https://twitter.com/reducedtoclear_"}
             className={`${styles.teamImage} ${styles.rtc}`}
-            rel={"noreferer"}
+            rel={"noreferrer"}
             target="_blank"
           >
             <Image
@@ -94,6 +94,7 @@ const SocialProof = () => {
             href={"https://twitter.com/reducedtoclear_"}
             className={`${styles.teamImage} ${styles.basik}`}
             rel={"noreferer"}
+            targe={"_blank"}
           >
             basik
             <br /> collective
