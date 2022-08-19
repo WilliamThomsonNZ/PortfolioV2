@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../../styles/projects.module.scss";
 import Header from "../../components/header";
 import Link from "next/link";
-import Footer from "../../components/Footer";
+import Footer from "../../components/footer";
 import { motion } from "framer-motion";
 import { contactVariants } from "../../FramerVariants";
 import { useState } from "react";
