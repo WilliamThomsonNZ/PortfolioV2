@@ -60,7 +60,12 @@ const ProjectHero = ({
       <motion.div className={styles.informationContainer} variants={fade}>
         <p className={styles.description}>{description}</p>
         <div className={styles.linkContainer}>
-          <a href={link} className={styles.desktopLink}>
+          <a
+            href={link}
+            className={styles.desktopLink}
+            target={"_blank"}
+            rel={"noreffer"}
+          >
             VIEW LIVE
           </a>
         </div>

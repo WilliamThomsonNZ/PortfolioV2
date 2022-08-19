@@ -194,6 +194,21 @@ export const ProjectVariants = {
       },
     },
   },
+  fadeUp: {
+    initial: {
+      opacity: 0,
+      y: 50,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.76, 0, 0.24, 1],
+        duration: 1,
+        delay: 0.8,
+      },
+    },
+  },
   fade: {
     initial: {
       opacity: 0,

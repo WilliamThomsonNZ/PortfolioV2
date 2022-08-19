@@ -58,9 +58,14 @@ export default function Projects() {
         exit={"exit"}
         className={styles.pageContainer}
       >
-        <div className={styles.firstImage}>
+        <motion.div
+          className={styles.firstImage}
+          variants={ProjectVariants.infoText}
+          whileInView={"whileInView"}
+          viewport={{ once: true }}
+        >
           <Image src={"/shadow1.png"} width={1500} height={800} />
-        </div>
+        </motion.div>
       </motion.main>
       <motion.div
         className={styles.nextProjectContainer}

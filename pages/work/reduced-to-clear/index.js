@@ -68,24 +68,35 @@ export default function Projects() {
         exit={"exit"}
         className={styles.pageContainer}
       >
-        <div className={styles.firstImage}>
+        <motion.div
+          className={styles.firstImage}
+          variants={ProjectVariants.infoText}
+          whileInView={"whileInView"}
+          viewport={{ once: true }}
+        >
           <Image src={"/rtc0.png"} width={1500} height={800} />
-        </div>
+        </motion.div>
         <motion.div
           className={styles.seccondImage}
-          variants={ProjectVariants.fade}
+          variants={ProjectVariants.infoText}
+          whileInView={"whileInView"}
+          viewport={{ once: true }}
         >
           <Image src={"/reduced2.png"} width={1500} height={838.12} />
         </motion.div>
         <motion.div
           className={styles.thirdImage}
-          variants={ProjectVariants.fade}
+          variants={ProjectVariants.infoText}
+          whileInView={"whileInView"}
+          viewport={{ once: true }}
         >
           <Image src={"/reduced3.png"} width={1500} height={838.12} />
         </motion.div>
         <motion.div
           className={styles.seccondImage}
-          variants={ProjectVariants.fade}
+          variants={ProjectVariants.infoText}
+          whileInView={"whileInView"}
+          viewport={{ once: true }}
         >
           <Image src={"/reduced4.png"} width={1500} height={838.12} />
         </motion.div>

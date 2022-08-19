@@ -174,7 +174,7 @@ export default function Contact() {
                 onClick={(e) => handleFormSubmission(e)}
                 disabled={loading}
               >
-                {submitButtonText}
+                {loading ? "Sending" : submitButtonText}
               </button>
             </form>
           </section>

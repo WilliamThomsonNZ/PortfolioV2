@@ -107,7 +107,7 @@ const ServiceCard = ({ service, index, darkMode }) => {
               viewport={{ once: true }}
             ></motion.div>
           </div>
-
+          {/* 
           <div className={styles.moreInformation}>
             <motion.p
               className={styles.hiddenDescription}
@@ -119,19 +119,11 @@ const ServiceCard = ({ service, index, darkMode }) => {
             >
               {service.largeDescription}
             </motion.p>
-          </div>
+          </div> */}
         </div>
         <button
           className={`${styles.servicesButtonMobile} ${styles.servicesButtonDesktop}`}
-          // onClick={(e) => setIsOpen((state) => !state)}
         >
-          {/* <span className={styles.upperLine}></span>
-          <motion.span
-            variants={serviceVariants.serviceButton}
-            className={styles.lowerLine}
-            initial={"initial"}
-            animate={isOpen ? "open" : "close"}
-          ></motion.span> */}
           //
         </button>
       </motion.article>

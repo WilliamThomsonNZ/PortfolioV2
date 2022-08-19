@@ -44,7 +44,9 @@ export default function Projects() {
       >
         <motion.div
           className={styles.firstImage}
-          variants={ProjectVariants.fade}
+          variants={ProjectVariants.infoText}
+          whileInView={"whileInView"}
+          viewport={{ once: true }}
         >
           <Image src={"/basik1.png"} width={1500} height={800} />
         </motion.div>

@@ -57,19 +57,25 @@ export default function Projects() {
       >
         <motion.div
           className={styles.firstImage}
-          variants={ProjectVariants.fade}
+          variants={ProjectVariants.infoText}
+          whileInView={"whileInView"}
+          viewport={{ once: true }}
         >
           <Image src={"/magma1.png"} width={1500} height={838.12} />
         </motion.div>
         <motion.div
           className={styles.seccondImage}
-          variants={ProjectVariants.fade}
+          variants={ProjectVariants.infoText}
+          whileInView={"whileInView"}
+          viewport={{ once: true }}
         >
           <Image src={"/magma2.png"} width={1500} height={838.12} />
         </motion.div>
         <motion.div
           className={styles.thirdImage}
-          variants={ProjectVariants.fade}
+          variants={ProjectVariants.infoText}
+          whileInView={"whileInView"}
+          viewport={{ once: true }}
         >
           <Image src={"/magma4.png"} width={1500} height={838.12} />
         </motion.div>
