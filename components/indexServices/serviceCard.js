@@ -124,7 +124,7 @@ const ServiceCard = ({ service, index, darkMode }) => {
         <button
           className={`${styles.servicesButtonMobile} ${styles.servicesButtonDesktop}`}
         >
-          //
+          &#92;&#92;
         </button>
       </motion.article>
     </>
