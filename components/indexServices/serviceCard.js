@@ -11,7 +11,6 @@ const ServiceCard = ({ service, index, darkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const width = useWindowWidth(200);
   let variants = serviceVariants;
-  &#92;&#92;TODO: Create a hook to handle window width changing.
 
   return (
     <>
