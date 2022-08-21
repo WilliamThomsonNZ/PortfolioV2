@@ -22,6 +22,14 @@ export default function Contact() {
   }, []);
   async function handleFormSubmission(e) {
     e.preventDefault();
+    if (name == "" || email == "" || message == "") {
+      setSubmitButtonText("Missing Fields");
+
+      setTimeout(() => {
+        setSubmitButtonText("send");
+      }, 3000);
+      return;
+    }
     setLoading(true);
     const body = JSON.stringify({ name, message, services, org, email });
     const url = "/api/contact";
@@ -108,7 +116,7 @@ export default function Contact() {
                     type={"text"}
                     value={name}
                     className={styles.textInput}
-                    placeholder={"John Doe *"}
+                    placeholder={"John Doe *Required"}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
@@ -121,7 +129,7 @@ export default function Contact() {
                     type={"email"}
                     value={email}
                     className={styles.textInput}
-                    placeholder={"example@example.com *"}
+                    placeholder={"example@example.com *Required"}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
@@ -136,7 +144,7 @@ export default function Contact() {
                     type={"text"}
                     value={services}
                     className={styles.textInput}
-                    placeholder={"Web Development *"}
+                    placeholder={"Web Development "}
                     onChange={(e) => setServices(e.target.value)}
                   />
                 </div>
@@ -151,7 +159,7 @@ export default function Contact() {
                     type={"text"}
                     value={org}
                     className={styles.textInput}
-                    placeholder={"Example Company *"}
+                    placeholder={"Example Company"}
                     onChange={(e) => setOrg(e.target.value)}
                   />
                 </div>
@@ -162,7 +170,7 @@ export default function Contact() {
                   <span className={styles.question}>What’s your message?</span>
                   <textarea
                     type={"text"}
-                    placeholder={"What you would like to say *"}
+                    placeholder={"What you would like to say *Required"}
                     value={message}
                     className={styles.textInput}
                     onChange={(e) => setMessage(e.target.value)}
