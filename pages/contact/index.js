@@ -55,6 +55,12 @@ export default function Contact() {
         <title>Will - Contact</title>
         <meta name="description" content="Let's discuss your next project" />
         <link rel="icon" href="/favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <Header currentPage={"contact"} />
       <main className={styles.sectionContainer}>
@@ -90,13 +96,7 @@ export default function Contact() {
             >
               hello@williamthomson.co.nz
             </a>
-            <a
-              href={"mailto:hello@williamthomson.co.nz"}
-              rel={"noreffer"}
-              className={styles.socialLink}
-            >
-              Discord Willl#8451
-            </a>
+            <span className={styles.socialLink}>Discord Willl#8451</span>
           </section>
           <section className={styles.formContainer}>
             <form>
@@ -136,7 +136,7 @@ export default function Contact() {
                     type={"text"}
                     value={services}
                     className={styles.textInput}
-                    placeholder={"Smart contract development *"}
+                    placeholder={"Web Development *"}
                     onChange={(e) => setServices(e.target.value)}
                   />
                 </div>
@@ -189,24 +189,25 @@ export default function Contact() {
                 >
                   hello@williamthomson.co.nz
                 </a>
-                <a
-                  href={"mailto:hello@williamthomson.co.nz"}
-                  rel={"noreffer"}
-                  className={styles.socialLink}
-                >
-                  Discord Willl#8451
-                </a>
+                <a className={styles.socialLink}>Discord Willl#8451</a>
               </div>
             </section>
             <section className={styles.socials}>
               <h6 className={styles.sectionTitle}>Socials</h6>
-              <a href={"#"} rel={"noreffer"} className={styles.socialLink}>
+              <a
+                href={"https://twitter.com/willthomson__"}
+                target={"_blank"}
+                rel={"noreffer"}
+                className={styles.socialLink}
+              >
                 Twitter
               </a>
-              <a href={"#"} rel={"noreffer"} className={styles.socialLink}>
-                Linkedin
-              </a>
-              <a href={"#"} rel={"noreffer"} className={styles.socialLink}>
+              <a
+                href={"https://github.com/WilliamThomsonNZ"}
+                rel={"noreffer"}
+                target={"_blank"}
+                className={styles.socialLink}
+              >
                 Github
               </a>
             </section>

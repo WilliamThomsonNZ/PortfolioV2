@@ -57,43 +57,37 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <motion.a
-            href="#"
+            href="https://twitter.com/willthomson__"
             className={styles.contactLink}
             variants={footerVariants.links}
             whileInView={"animate"}
             viewport={{ once: true }}
+            target={"_blank"}
+            rel="noreferrer"
           >
             Twitter
           </motion.a>
           <motion.a
-            href="#"
+            href="https://github.com/WilliamThomsonNZ"
             className={styles.contactLink}
             variants={footerVariants.links}
             whileInView={"animate"}
             viewport={{ once: true }}
+            rel="noreferrer"
+            target={"_blank"}
           >
             Github
           </motion.a>
-          <motion.a
-            href="#"
-            className={styles.contactLink}
-            variants={footerVariants.links}
-            whileInView={"animate"}
-            viewport={{ once: true }}
-          >
-            Linkedin
-          </motion.a>
-          <motion.a
-            href="#"
+          <motion.span
             className={styles.contactLink}
             variants={footerVariants.links}
             whileInView={"animate"}
             viewport={{ once: true }}
           >
             Discord Willl#8451
-          </motion.a>
+          </motion.span>
           <motion.a
-            href="#"
+            href="mailto:hello@williamthomson.co.nz"
             className={styles.contactLink}
             variants={footerVariants.links}
             whileInView={"animate"}

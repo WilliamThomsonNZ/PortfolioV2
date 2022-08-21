@@ -19,11 +19,11 @@ const IndexServices = () => {
       largeDescription:
         "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
     },
-    {
-      name: "Smart Contract Development",
-      initialDescription:
-        "Creating gas efficient and secure smart contracts to suit your project is my top priority. This includes NFT contracts, token/tokenomics contracts, whitelisting and governance.",
-    },
+    // {
+    //   name: "Smart Contract Development",
+    //   initialDescription:
+    //     "Creating gas efficient and secure smart contracts to suit your project is my top priority. This includes NFT contracts, token/tokenomics contracts, whitelisting and governance.",
+    // },
     {
       name: "Web3 Integration",
       initialDescription:
