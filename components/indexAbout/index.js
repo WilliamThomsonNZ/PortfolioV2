@@ -63,7 +63,7 @@ const IndexAbout = () => {
         whileInView={"whileInView"}
         viewport={{ once: true }}
       >
-        <Image src={"/will2.jpg"} height={1000} width={1000} />
+        <Image src={"/will2.JPG"} height={1000} width={1000} />
       </motion.div>
       <p className={styles.mobileDescription}>
         If you have got to this point , you are probably ready to find out more
