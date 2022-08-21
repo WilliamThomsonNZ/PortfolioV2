@@ -192,7 +192,7 @@ export default function Contact() {
                 <h6 className={styles.sectionTitle}>Contact details</h6>
                 <a
                   href={"mailto:hello@williamthomson.co.nz"}
-                  rel={"noreffer"}
+                  rel={"noreferrer"}
                   className={styles.socialLink}
                 >
                   hello@williamthomson.co.nz
@@ -205,14 +205,14 @@ export default function Contact() {
               <a
                 href={"https://twitter.com/willthomson__"}
                 target={"_blank"}
-                rel={"noreffer"}
+                rel={"noreferrer"}
                 className={styles.socialLink}
               >
                 Twitter
               </a>
               <a
                 href={"https://github.com/WilliamThomsonNZ"}
-                rel={"noreffer"}
+                rel={"noreferrer"}
                 target={"_blank"}
                 className={styles.socialLink}
               >
