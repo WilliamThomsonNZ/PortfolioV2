@@ -70,10 +70,10 @@
     font-size: 16px;
     line-height: 1;
     margin-bottom: 12px;
-    &:nth-child(3) {
+    &:nth-child(2) {
       margin-bottom: 40px;
     }
-    &:nth-child(5) {
+    &:nth-child(4) {
       margin-bottom: 120px;
     }
     position: relative;
@@ -151,7 +151,7 @@
       &::after {
         height: 5px;
       }
-      &:nth-child(3) {
+      &:nth-child(2) {
         margin-bottom: 40px;
       }
     }

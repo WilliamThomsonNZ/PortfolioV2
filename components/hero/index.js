@@ -110,9 +110,12 @@ const Hero = () => {
           </div>
         </h1>
       </motion.div>
-      <div className={styles.heroBackground}>
+      <motion.div
+        className={styles.heroBackground}
+        variants={heroVariants.block}
+      >
         <BackgroundGrid />
-      </div>
+      </motion.div>
       <motion.div
         className={styles.scrollWrapper}
         variants={heroVariants.portfolioText}
