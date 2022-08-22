@@ -7,6 +7,9 @@ body {
   background-color: #000;
   scroll-behavior: smooth;
 }
+.overflowHidden {
+  overflow-y: hidden;
+}
 body {
   position: relative;
   z-index: 2;

@@ -40,11 +40,8 @@ export const HeaderVariants = {
       opacity: 1,
       transition: {
         ease: [0.76, 0, 0.24, 1],
-        duration: 0.8,
+        duration: 0.4,
       },
-    },
-    exit: {
-      opacity: 0,
     },
   },
   mobileMenuFooter: {
@@ -63,17 +60,15 @@ export const HeaderVariants = {
     },
   },
   mobileMenuContainer: {
-    initial: {},
+    initial: { opacity: 0 },
     animate: {
+      opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.2,
       },
     },
     exit: {
       opacity: 0,
-      transition: {
-        delay: 0.5,
-      },
     },
   },
   mobileToggle: {

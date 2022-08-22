@@ -11,8 +11,13 @@ const Header = ({ currentPage }) => {
   const [temp, setTemp] = useState(0);
   const [menuRendered, setMenuRendered] = useState(false);
   function handleMenuOpen() {
+    if (menuOpen) {
+      document.body.parentElement.classList.remove("overflowHidden");
+    } else {
+      document.body.parentElement.classList.add("overflowHidden");
+    }
+
     setMenuOpen((menuState) => !menuState);
-    document.body.style.overFlow = "hidden";
   }
   const date = new Date();
   const utcTime = date.getTime() + date.getTimezoneOffset() * 60000;
@@ -56,7 +61,9 @@ const Header = ({ currentPage }) => {
       variants={HeaderVariants.header}
     >
       <Link href={"/"}>
-        <h6 className={styles.logo}>
+        <h6
+          className={`${styles.logo} ${menuOpen ? styles.logoOpen : undefined}`}
+        >
           <motion.span
             className={styles.name}
             variants={currentPage == "home" ? HeaderVariants.logoWill : {}}
@@ -69,9 +76,10 @@ const Header = ({ currentPage }) => {
       </Link>
 
       <motion.div
-        className={styles.menuToggle}
+        className={`${styles.menuToggle} ${
+          menuOpen ? styles.menuOpen : undefined
+        }`}
         initial={"initial"}
-        animate={menuOpen ? "open" : "close"}
       >
         <motion.button
           className={styles.mobileMenuButton}
@@ -86,71 +94,6 @@ const Header = ({ currentPage }) => {
             variants={HeaderVariants.mobileToggle}
           ></motion.span>
         </motion.button>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="64"
-          height="64"
-          viewBox="0 0 64 64"
-          onClick={(e) => handleMenuOpen()}
-          className={styles.svgArrow}
-        >
-          <g id="Group_1" data-name="Group 1" transform="translate(-152 -439)">
-            <motion.line
-              id="Line_1"
-              data-name="Line 1"
-              y1="14.91"
-              transform="translate(184 463.788)"
-              fill="none"
-              stroke="#000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2.5"
-              variants={HeaderVariants.line1}
-            />
-            <motion.path
-              id="Path_1"
-              data-name="Path 1"
-              d="M6,9.155,10.949,5"
-              transform="translate(173.051 458.302)"
-              fill="none"
-              stroke="#000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2.5"
-              variants={HeaderVariants.path1}
-            />
-            <motion.path
-              id="Path_2"
-              data-name="Path 2"
-              d="M10.949,5,15.9,9.155"
-              transform="translate(173.051 458.302)"
-              fill="none"
-              stroke="#000"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2.5"
-              variants={HeaderVariants.path2}
-            />
-            <g
-              id="Ellipse_1"
-              dataname="Ellipse 1"
-              transform="translate(152 439)"
-              fill="none"
-              stroke="rgba(0,0,0,0.2)"
-              strokeWidth="2.5"
-            >
-              <motion.circle cx="32" cy="32" r="32" stroke="none" />
-              <motion.circle
-                id="circle"
-                cx="32"
-                cy="32"
-                r="25"
-                fill="none"
-                variants={HeaderVariants.circle}
-              />
-            </g>
-          </g>
-        </svg>
       </motion.div>
       <nav className={styles.desktopNavigationContainer}>
         <ul className={styles.menulinks}>
@@ -224,36 +167,77 @@ const Header = ({ currentPage }) => {
                     className={styles.menuItem}
                     variants={HeaderVariants.mobileMenuItem}
                   >
-                    Home
+                    <Link href={"/"}>
+                      <a>
+                        <span className={styles.menuNumber}>//01</span>
+                        <span className={styles.menuTitle}>Home</span>
+                      </a>
+                    </Link>
                   </motion.li>
                   <motion.li
                     className={styles.menuItem}
                     variants={HeaderVariants.mobileMenuItem}
                   >
-                    Projects
+                    <Link href={"/work"}>
+                      <a>
+                        <span className={styles.menuNumber}>//02</span>
+                        <span className={styles.menuTitle}>Work</span>
+                      </a>
+                    </Link>
                   </motion.li>
+
                   <motion.li
                     className={styles.menuItem}
                     variants={HeaderVariants.mobileMenuItem}
                   >
-                    About
-                  </motion.li>
-                  <motion.li
-                    className={styles.menuItem}
-                    variants={HeaderVariants.mobileMenuItem}
-                  >
-                    Contact
+                    <Link href={"/contact"}>
+                      <a>
+                        <span className={styles.menuNumber}>//03</span>
+                        <span className={styles.menuTitle}>Contact</span>
+                      </a>
+                    </Link>
                   </motion.li>
                 </ul>
                 <ul></ul>
               </div>
-              <motion.div
-                className={styles.menuFooter}
-                variants={HeaderVariants.mobileMenuFooter}
-              >
-                <span>&copy; Will 2021. All Rights Resevered</span>
-              </motion.div>
             </nav>
+            <motion.div
+              className={styles.contactDetailsContainer}
+              variants={HeaderVariants.mobileMenuFooter}
+            >
+              <motion.section className={styles.contactDetailsDesktop}>
+                <div className={styles.contactDetails}>
+                  <h6 className={styles.sectionTitle}>Contact details</h6>
+                  <a
+                    href={"mailto:hello@williamthomson.co.nz"}
+                    rel={"noreferrer"}
+                    className={styles.socialLink}
+                  >
+                    hello@williamthomson.co.nz
+                  </a>
+                  <a className={styles.socialLink}>Discord Willl#8451</a>
+                </div>
+              </motion.section>
+              <motion.section className={styles.socials}>
+                <h6 className={styles.sectionTitle}>Socials</h6>
+                <a
+                  href={"https://twitter.com/willthomson__"}
+                  target={"_blank"}
+                  rel={"noreferrer"}
+                  className={styles.socialLink}
+                >
+                  Twitter
+                </a>
+                <a
+                  href={"https://github.com/WilliamThomsonNZ"}
+                  rel={"noreferrer"}
+                  target={"_blank"}
+                  className={styles.socialLink}
+                >
+                  Github
+                </a>
+              </motion.section>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

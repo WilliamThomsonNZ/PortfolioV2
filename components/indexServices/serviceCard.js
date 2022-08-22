@@ -97,14 +97,6 @@ const ServiceCard = ({ service, index, darkMode }) => {
             >
               {service.initialDescription}
             </motion.p>
-            <motion.div
-              className={styles.image}
-              variants={variants.descriptions}
-              whileInView={index == 1 ? "whileInView" : undefined}
-              initial={"initial"}
-              animate={isOpen ? "open" : "close"}
-              viewport={{ once: true }}
-            ></motion.div>
           </div>
           {/* 
           <div className={styles.moreInformation}>

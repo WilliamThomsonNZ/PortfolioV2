@@ -79,6 +79,11 @@
     font-weight: normal;
     font-family: $headingFont;
     text-transform: uppercase;
+    position: relative;
+    z-index: 6;
+    &.logoOpen {
+      color: #fff !important;
+    }
     cursor: pointer;
     .name {
       color: $accentColour;
@@ -107,35 +112,69 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: relative;
+    z-index: 6;
+    &.menuOpen {
+      span {
+        background: #fff;
+      }
+    }
+  }
+  .sectionTitle {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.5);
   }
   .mobileMenuOuterContainer {
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 0;
+    height: 100vh;
     left: 0;
     width: 100vw;
     padding: 0 24px;
-    background: #e1dfdd;
+    background: #000;
     z-index: 5;
+  }
+  .socialLink {
+    font-family: $font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
   }
   .mobileNavigationContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100vh - 80px);
+
     z-index: 5;
 
     .menuLinks {
       padding: 0;
       margin: 0;
-      padding-top: 150px;
+      padding-top: 200px;
     }
     .menuItem {
       list-style: none;
       padding: 0;
       margin: 0;
-      font-size: 65px;
+      font-size: 55px;
       margin-bottom: 30px;
       line-height: 1;
+      color: #fff;
+      font-family: $headingFont;
+    }
+    .menuNumber {
+      font-size: 12px;
+      color: $accentColour;
+      margin-right: 10px;
+      display: inline-block;
     }
     .menuFooter {
       padding-bottom: 24px;
