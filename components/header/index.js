@@ -169,7 +169,7 @@ const Header = ({ currentPage }) => {
                   >
                     <Link href={"/"}>
                       <a>
-                        <span className={styles.menuNumber}>//01</span>
+                        <span className={styles.menuNumber}>&#92;&#92;01</span>
                         <span className={styles.menuTitle}>Home</span>
                       </a>
                     </Link>
@@ -180,7 +180,7 @@ const Header = ({ currentPage }) => {
                   >
                     <Link href={"/work"}>
                       <a>
-                        <span className={styles.menuNumber}>//02</span>
+                        <span className={styles.menuNumber}>&#92;&#92;02</span>
                         <span className={styles.menuTitle}>Work</span>
                       </a>
                     </Link>
@@ -192,7 +192,7 @@ const Header = ({ currentPage }) => {
                   >
                     <Link href={"/contact"}>
                       <a>
-                        <span className={styles.menuNumber}>//03</span>
+                        <span className={styles.menuNumber}>&#92;&#92;03</span>
                         <span className={styles.menuTitle}>Contact</span>
                       </a>
                     </Link>
