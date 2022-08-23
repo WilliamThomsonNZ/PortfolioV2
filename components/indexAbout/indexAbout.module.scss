@@ -36,6 +36,7 @@
   font-family: $headingFont;
   font-weight: normal;
   margin: 0;
+  margin-bottom: 30px;
   text-transform: uppercase;
   .number {
     font-size: 16px;
@@ -131,13 +132,14 @@
     margin-top: 30px;
     display: block;
   }
-}
-.title {
-  font-size: 85px;
-  .number {
-    font-size: 20px;
+  .title {
+    font-size: 85px;
+    .number {
+      font-size: 20px;
+    }
   }
 }
+
 .backgroundAssets {
   position: absolute;
   left: 0;
