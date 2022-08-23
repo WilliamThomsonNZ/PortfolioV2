@@ -486,6 +486,7 @@ export const heroVariants = {
   container: {
     initial: {},
     animate: {},
+    exit: { y: 110 },
   },
   portfolioText: {
     initial: {

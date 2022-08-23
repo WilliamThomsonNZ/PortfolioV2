@@ -15,28 +15,28 @@ const IndexServices = () => {
     {
       name: "Web Development",
       initialDescription:
-        "I build scalable and performant applications on the web. Having a fully functional and flawless website is one of the keys to a successful business.",
+        "I plan, design, build, test and maintain scalable full stack web applications and dApps. Ensuring a projects website is built to handle the demand of Web3 is crucial in this space.",
       largeDescription:
         "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
     },
-    // {
-    //   name: "Smart Contract Development",
-    //   initialDescription:
-    //     "Creating gas efficient and secure smart contracts to suit your project is my top priority. This includes NFT contracts, token/tokenomics contracts, whitelisting and governance.",
-    // },
     {
       name: "Web3 Integration",
       initialDescription:
-        "With a solid track record integrating wallets and other web3 functionality into projects, I deliver secure and optimised web3 integration into both new and existing projects.",
+        "With a solid track record integrating Web3 functionality into products, I deliver secure and optimised Web3 integration into both new and existing projects.",
       largeDescription:
         "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
     },
     {
       name: "Technical Advisory",
       initialDescription:
-        "Our intelligent digital strategy and a pragmatic and thoughtful approach to solving business calls deliver a successful framework for both you and your audience.",
+        "Understanding the technical side of Web3 is hard and putting the pieces together is even more difficult. I help projects succeed by guiding technical decisions to ensure products are built as expected.",
       largeDescription:
         "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
+    },
+    {
+      name: "Smart Contract Development",
+      initialDescription:
+        "Crafting secure and gas efficient smart contracts tailored to your project is my top priority. I build contracts inline with modern and recognised industry standards such as ERC721A and ERC1155.",
     },
   ];
 

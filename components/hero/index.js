@@ -66,6 +66,8 @@ const Hero = () => {
         variants={heroVariants.container}
         animate={"animate"}
         initial={"initial"}
+        exit={"exit"}
+        key={"index-hero"}
       >
         <h1 className={styles.heading}>
           <div className={styles.heroSpanContainer}>
