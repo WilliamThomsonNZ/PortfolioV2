@@ -33,11 +33,11 @@ const IndexServices = () => {
       largeDescription:
         "              In the design process, they create both functional and beaut things. The team possesses unique individuality and strong qualifications and can easily translate something so abstract an visionary into a digital experience. They always put the clients first no matter how complicated the tasks are.",
     },
-    {
-      name: "Smart Contract Development",
-      initialDescription:
-        "Crafting secure and gas efficient smart contracts tailored to your project is my top priority. I build contracts inline with modern and recognised industry standards such as ERC721A and ERC1155.",
-    },
+    // {
+    //   name: "Smart Contract Development",
+    //   initialDescription:
+    //     "Crafting secure and gas efficient smart contracts tailored to your project is my top priority. I build contracts inline with modern and recognised industry standards such as ERC721A and ERC1155.",
+    // },
   ];
 
   return (
